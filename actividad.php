@@ -174,11 +174,11 @@
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6 widget">
-                            <h5>Latest News</h5>
+                            <h5>Noticias de la zona:</h5>
                             <ul class="blog_posts">
-                                <li><a href="blog-post.html">Live your myth in Greece</a> <small>AUGUST 13, 2017</small></li>
-                                <li><a href="blog-post.html">Hotel Zante in pictures</a> <small>AUGUST 16, 2017</small></li>
-                                <li><a href="blog-post.html">Hotel Zante family party</a> <small>SEPTEMBER 15, 2017</small></li>
+                                <li><a href="http://www.villafranca.es/">Villafranca</a> <small>Web ayuntamiento Villafranca</small></li>
+                                <li><a href="http://www.tudela.es/">Tudela</a> <small>Web ayuntamiento Tudela</small></li>
+                                <li><a href="http://www.olite.es/">Olite</a> <small>Web ayuntamiento Olite</small></li>
                             </ul>
                         </div>
                         <div class="col-md-3 col-sm-6 widget">

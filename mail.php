@@ -14,8 +14,27 @@
 
     // Instantiation and passing `true` enables exceptions
     $mail = new PHPMailer(true);
-
-    try {
+    if(isset($_POST['email_cl'])){
+        $email_cl = $_POST['email_cl'];
+    }else if(isset($_POST['email'])){
+        $email_cl = $_POST['email'];
+    }
+    if(isset($_POST['name_cl'])){
+        $name_cl = $_POST['name_cl'];
+    }else if(isset($_POST['msj'])){
+        $msj = $_POST['msj'];
+    }else if(isset($_POST['message'])){
+        $msj = $_POST['message'];
+    }
+    if(isset($_POST['phone'])&&isset($_POST['subject'])){
+        $telf = $_POST['phone'];
+        $asunto = $_POST['subject'];
+        $mensaje = '<html><head></head><body>Nombre cliente: '.$name_cl.'<br>Asunto: '.$asunto.'<br>E-mail cliente: '.$email_cl.'   Teléfono: '.$telf.'<br><br>'.$msj.'</body></html>';
+    }
+    $mensaje = '<html><head></head><body>Nombre cliente: '.$name_cl.'<br>E-mail cliente: '.$email_cl.'<br><br>'.$msj.'</body></html>';
+    echo $mensaje;
+    $email = 'pserranomanzarbeitia@gmail.com';
+    try {   
         //Server settings
         $mail->SMTPDebug = 0;                      // Enable verbose debug output
         $mail->isSMTP();                                            // Send using SMTP
@@ -34,10 +53,16 @@
         // Content
         $mail->isHTML(true);                                  // Set email format to HTML
         $mail->Subject = 'Reserva - HOSPEDERÍA DE ALESVES';
-        $mail->Body    = '';           
+        $mail->Body    = utf8_decode($mensaje);   
+        $mail->AltBody = 'hola';
         $mail->send();
         echo 'Message has been sent';
-        header("Location: Login.php");
+        if($_GET['lugar']=='contacto'){
+            header("Location: contacto.php?mail=enviado");
+        }else{
+            (header("Location: index.php?mail=enviado#contact"));            
+        }
+    
     } catch (Exception $e) {
         echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
     }

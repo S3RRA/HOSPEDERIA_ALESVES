@@ -46,7 +46,14 @@
 
 <body>
     <div id="smoothpage" class="wrapper">
-<?php require './conexion.php';?>
+<?php 
+    require './conexion.php';
+    if(isset($_POST['email'])){
+        $email = $_POST['email'];
+        setcookie('email',$email);
+    }
+
+?>
         <!-- ========== TOP MENU ========== -->
         <div class="top_menu">
             <div class="container">
@@ -90,16 +97,17 @@
                     <ul class="nav navbar-nav">
                         <li class="mobile_menu_title" style="display:none;">MENU</li>
                         <li class="dropdown simple_menu">
-                            <a href="index.php">INICIO<b class="caret"></b></a>          
+                            <a href="index.php" data-toggle="dropdown">INICIO</a>                            
                         </li>
-                        <li class="dropdown simple_menu active">
-                            <a href="elige_hab.php">ALOJAMIENTO<b class="caret"></b></a>            
+                        <li class="dropdown simple_menu">
+                            <a href="elige_hab.php">ALOJAMIENTO<b class="caret"></b></a>                            
                         </li>
-                        <li class="dropdown mega_menu mega_menu_fullwidth"><a href="#" data-toggle="dropdown" class="dropdown-toggle" aria-expanded="true">RESTAURACION<b class="caret"></b></a></li>
-                        <li class="dropdown simple_menu"><a href="banners.php" data-toggle="dropdown" class="dropdown-toggle" aria-expanded="true">ACTIVIDADES<b class="caret"></b></a>s</li>
+                        <li class="dropdown simple_menu">
+                            <a href="banners.php">ACTIVIDADES<b class="caret"></b></a>                            
+                        </li>
                         <li><a href="contacto.php">CONTACTO</a></li>
                         <li class="menu_button">
-                            <a href="bookin.php" class="button  btn_yellow"><i class="fa fa-calendar"></i>RESERVA</a>
+                            <a href="bookin.php" class="button  btn_yellow"><i class="fa fa-calendar"></i>RESERVAR</a>
                         </li>
                     </ul>
                 </nav>
@@ -127,51 +135,125 @@
                     <?php
                     if(isset($_GET['booked'])){
                         echo '<div class="main_title a_left upper">
-                                <h3>Su reserva se ha realizado con éxito, verifique su correo para más detalles.</h3>
+                                <h3>Su reserva se ha realizado con éxito.</h3> <p>Verifique su correo para más detalles.</p>
+                            </div>
+                        </div>';
+                    }else if($_GET['disponibilidad']){
+                        echo '<div class="main_title a_left upper">
+                                <h3>Lo sentimos.</h3> <p>Carecemos de disponibilidad en el tipo de habitación elegida en las fechas seleccionadas.</p>
+                                <p>Por favor, elija otras fechas u otro tipo de habitación.</p>
+                                <p>Para más información póngase en contacto con nosotros vía mail: <a href="mailto:info@hospederiadealesves.com">info@hospederiadealesves.com</a> o telefónica: <a href="tel:948845686">(+34) 948 845 686</a></p>
                             </div>
                         </div>';
                     }else{
                         echo '
                             <div class="main_title a_left upper">
                                 <h2>Reserva online</h2>
-                            </div>';
-                    
+                            </div>';                    
                     ?>
                             <!-- ========== BOOKING FORM ========== -->
                             <div class="row">
                                 <form method="post" action="puente_bookin.php">
+                                    <div class='com-md-12'>
+                                        <div class='form-group'>Campos obligatorios</div>
+                                    </div><hr>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Nombre:</label>
-                                            <input name="nombre" type="text" class="form-control" placeholder="Indique su nombre:">
+                                            <input name="nombre" type="text" class="form-control" placeholder="Indique su nombre:" required>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Apellidos:</label>
-                                            <input class="form-control" name="apellidos" type="text" placeholder="Indique sus dos apellidos:">
+                                            <input class="form-control" name="apellidos" type="text" placeholder="Indique sus dos apellidos:" required>
                                         </div>
                                     </div>
-                                    <br><br><br><br>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>DNI:</label>
-                                            <input class="form-control" name="dni" type="text" placeholder="Indique su DNI:">
+                                            <input class="form-control" name="dni" type="text" placeholder="Indique su DNI:"required>
+                                        </div>
+                                    </div>              
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Número de teléfono:</label>
+                                            <input name="telefono" type="text" class="form-control" placeholder="Indique su nº de teléfono:" required>
                                         </div>
                                     </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Llegada:
+                                                <a href="#" title="Llegada" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Llegada a partir de las 11:00 am"> <i class="label_icon_info fa fa-info-circle"></i></a>
+                                            </label>
+                                            <div class="form_date">
+                                                <input type="datetime" class="datepicker form-control " name="llegada" placeholder="Fecha de llegada:" readonly required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Salida:
+                                                <a href="#" title="Salida" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Salida a partir de las 12:00 am"> <i class="label_icon_info fa fa-info-circle"></i></a>
+                                            </label>
+                                            <div class="form_date">
+                                                <input type="datetime" class="datepicker form-control" name="salida" placeholder="Fecha de salida:" readonly required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                     <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Tipo de habitación:</label>
+                                            <div class="form_select">
+                                                <select name="tipo" class="form-control" title="Tipo de habitación:" data-header="Tipo de habitación:">
+                                                    <option value="individual" data-subtext="<span class='label label-info'>56€ / noche</span>" <?php if(isset($_GET['tipo'])=='individual'){echo 'selected';} ?>>Individual</option>
+                                                    <option value="doble" data-subtext="<span class='label label-info'>68€ / noche</span>" <?php if(isset($_GET['tipo'])=='doble'){echo 'selected';} ?>>Doble</option>
+                                                    <option value="superior" data-subtext="<span class='label label-info'>77€ / noche</span>" <?php if(isset($_GET['tipo'])=='superior'){echo 'selected';} ?>>Superior</option>
+                                                    <option value="triple" data-subtext="<span class='label label-info'>86€ / noche</span>" <?php if(isset($_GET['tipo'])=='triple'){echo 'selected';} ?>>Triple</option>
+                                                    <option value="familiar" data-subtext="<span class='label label-info'>118€ / noche</span>" <?php if(isset($_GET['tipo'])=='familiar'){echo 'selected';} ?>>Familiar</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Desayuno:<a href="#" title="Desayuno" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="+ 6.50€"> <i class="label_icon_info fa fa-info-circle"></i></a></label>
+                                            <input class="form-control" class="form-check-input" name="desayuno" type="checkbox">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Cena:<a href="#" title="Cena" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="+ 6.50€"> <i class="label_icon_info fa fa-info-circle"></i></a></label>
+                                            <input class="form-control" class="form-check-input" name="cena" type="checkbox">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Adultos:
+                                                <a href="#" title="Adultos:" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="+18 años"> <i class="label_icon_info fa fa-info-circle"></i></a>
+                                            </label>
+                                            <div class="form_select">
+                                                <select name="adultos" class="form-control" title="Adultos:" data-header="Adultos:">
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div><br>
+                                </div>
+                            <br><br>
+                                <div class="row">
+                                    <div class='com-md-12'>
+                                        <div class='form-group'>Campos opcionales</div>
+                                    </div><hr>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Email:
                                                 <a href="#" title="Email" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Le enviaremos un correo con los datos de su reserva."> <i class="label_icon_info fa fa-info-circle"></i></a>
                                             </label>
-                                            <input class="form-control" name="email" type="text" placeholder="Indique su email:">
-                                        </div>
-                                    </div>
-                                    <br><br><br><br>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Número de teléfono:</label>
-                                            <input name="telefono" type="text" class="form-control" placeholder="Indique su nº de teléfono:">
+                                            <input class="form-control" name="email" type="text" <?php if(isset($_POST['email'])){echo'value="'.$email.'" placeholder="'.$email.'"';}else echo 'placeholder="Indique su email:"';?>>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -431,55 +513,9 @@
                                         </div>
                                     </div>
                                     <br><br><br><br>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Llegada:
-                                                <a href="#" title="Llegada" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Llegada a partir de las 11:00 am"> <i class="label_icon_info fa fa-info-circle"></i></a>
-                                            </label>
-                                            <div class="form_date">
-                                                <input type="datetime" class="datepicker form-control " name="llegada" placeholder="Fecha de llegada:" readonly>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Salida:
-                                                <a href="#" title="Salida" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Salida a partir de las 12:00 am"> <i class="label_icon_info fa fa-info-circle"></i></a>
-                                            </label>
-                                            <div class="form_date">
-                                                <input type="datetime" class="datepicker form-control" name="salida" placeholder="Fecha de salida:" readonly>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    
                                     <br><br><br><br>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Desayuno:<a href="#" title="Desayuno" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="+ 6.50€"> <i class="label_icon_info fa fa-info-circle"></i></a></label>
-                                            <input class="form-control" class="form-check-input" name="desayuno" type="checkbox">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Cena:<a href="#" title="Cena" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="+ 6.50€"> <i class="label_icon_info fa fa-info-circle"></i></a></label>
-                                            <input class="form-control" class="form-check-input" name="cena" type="checkbox">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Adultos:
-                                                <a href="#" title="Adultos:" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="+18 años"> <i class="label_icon_info fa fa-info-circle"></i></a>
-                                            </label>
-                                            <div class="form_select">
-                                                <select name="adultos" class="form-control" title="Adultos:" data-header="Adultos:">
-                                                    <option value="0">0</option>
-                                                    <option value="1">1</option>
-                                                    <option value="2">2</option>
-                                                    <option value="3">3</option>
-                                                    <option value="4">4</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Niños:
@@ -522,22 +558,7 @@
                                                 </select>
                                             </div>
                                         </div>
-                                    </div>
-                                    <br><br><br><br>
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label>Tipo de habitación:</label>
-                                            <div class="form_select">
-                                                <select name="tipo" class="form-control" title="Tipo de habitación:" data-header="Tipo de habitación:">
-                                                    <option value="individual" data-subtext="<span class='label label-info'>56€ / noche</span>" <?php if(isset($_GET['tipo'])=='individual'){echo 'selected';} ?>>Individual</option>
-                                                    <option value="doble" data-subtext="<span class='label label-info'>68€ / noche</span>" <?php if(isset($_GET['tipo'])=='doble'){echo 'selected';} ?>>Doble</option>
-                                                    <option value="superior" data-subtext="<span class='label label-info'>77€ / noche</span>" <?php if(isset($_GET['tipo'])=='superior'){echo 'selected';} ?>>Superior</option>
-                                                    <option value="triple" data-subtext="<span class='label label-info'>86€ / noche</span>" <?php if(isset($_GET['tipo'])=='triple'){echo 'selected';} ?>>Triple</option>
-                                                    <option value="familiar" data-subtext="<span class='label label-info'>118€ / noche</span>" <?php if(isset($_GET['tipo'])=='familiar'){echo 'selected';} ?>>Familiar</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    </div>                                   
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label>Comentarios:</label>
@@ -547,6 +568,7 @@
                                     <br><br><br><br>
                                     <div class="col-md-11"></div>
                                     <div class="col-md-12">
+                                        <br>
                                         <button type="submit" class="button btn_blue pull-right"> <i class="fa fa-calendar-check-o" aria-hidden="true"></i> RESERVAR HABITACION </button>
                                     </div>
                                 </form>
@@ -618,21 +640,21 @@
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6 widget">
-                            <h5>Latest News</h5>
+                            <h5>Noticias de la zona:</h5>
                             <ul class="blog_posts">
-                                <li><a href="blog-post.html">Live your myth in Greece</a> <small>AUGUST 13, 2017</small></li>
-                                <li><a href="blog-post.html">Hotel Zante in pictures</a> <small>AUGUST 16, 2017</small></li>
-                                <li><a href="blog-post.html">Hotel Zante family party</a> <small>SEPTEMBER 15, 2017</small></li>
+                                <li><a href="http://www.villafranca.es/">Villafranca</a> <small>Web ayuntamiento Villafranca</small></li>
+                                <li><a href="http://www.tudela.es/">Tudela</a> <small>Web ayuntamiento Tudela</small></li>
+                                <li><a href="http://www.olite.es/">Olite</a> <small>Web ayuntamiento Olite</small></li>
                             </ul>
                         </div>
                         <div class="col-md-3 col-sm-6 widget">
                             <h5>Actividades</h5>
                             <ul class="useful_links">
-                                <li><a href="#">Las Bardenas Reales</a></li>
-                                <li><a href="#">Castillo de Olite</a></li>
-                                <li><a href="#">Turismo enológico</a></li>
-                                <li><a href="#">Ruta del Císter</a></li>
-                                <li><a href="#">Senda Viva</a></li>
+                                <li><a href="http://www.lasbardenasreales.com/">Las Bardenas Reales</a></li>
+                                <li><a href="https://www.olite.com.es/">Olite</a></li>
+                                <li><a href="https://www.turismo.navarra.es/esp/home/">Turismo Navarra</a></li>
+                                <li><a href="https://www.larutadelcister.info/es">Ruta del Císter</a></li>
+                                <li><a href="https://www.sendaviva.com/">Senda Viva</a></li>
                             </ul>
                         </div>
                         <div class="col-md-3 col-sm-6 widget">

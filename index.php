@@ -41,11 +41,6 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <style>
-        #tripadvisor{
-            
-        }
-    </style>
 </head>
 
 <body>
@@ -62,6 +57,32 @@
     </div>
     
     <div class="wrapper">
+        <!-- ========== TOP MENU ========== -->
+        <div class="top_menu">
+            <div class="container">
+                <div class="welcome_mssg hidden-xs">
+                    Bienvenido a la Hospedería de Alesves
+                </div>
+                <ul class="top_menu_right">
+                    <li><i class="fa fa-phone"></i><a href="tel:948845686"> (+34) 948 845 686</a></li>
+                    <li class="email hidden-xxs"><i class="fa fa-envelope-o "></i> <a href="mailto:info@hospederiadealesves.com">info@hospederiadealesves.com</a></li>
+                    <li class="language-switcher">
+                        <nav class="dropdown">
+                            <a href="#" class="dropdown-toggle select" data-hover="dropdown" data-toggle="dropdown">
+                                <i class="famfamfam-flag-gb "></i>Español<b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#"><i class="famfamfam-flag-gr"></i>Ελληνικά</a></li>
+                                <li><a href="#"><i class="famfamfam-flag-it"></i>Italiano</a></li>
+                                <li><a href="#"><i class="famfamfam-flag-de"></i>Deutsch</a></li>
+                                <li><a href="#"><i class="famfamfam-flag-fr"></i>Français</a></li>
+                                <li><a href="#"><i class="famfamfam-flag-es"></i>English</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                </ul>
+            </div>
+        </div>
         <!-- ========== HEADER ========== -->
         <header class="fixed transparent">
             <div class="container">
@@ -84,11 +105,10 @@
                             <a href="index.php" data-toggle="dropdown">INICIO</a>                            
                         </li>
                         <li class="dropdown simple_menu">
-                            <a href="elige_hab.php">ALOJAMIENTO<b class="caret"></b></a>
-                            
+                            <a href="elige_hab.php">ALOJAMIENTO<b class="caret"></b></a>                            
                         </li>
-                        <li class="dropdown mega_menu mega_menu_fullwidth"><a href="elige_hab.php" aria-expanded="true">RESTAURACION<b class="caret"></b></a></li>
-                        <li class="dropdown simple_menu"><a href="banners.php">ACTIVIDADES<b class="caret"></b></a>                            
+                        <li class="dropdown simple_menu">
+                            <a href="banners.php">ACTIVIDADES<b class="caret"></b></a>                            
                         </li>
                         <li><a href="contacto.php">CONTACTO</a></li>
                         <li class="menu_button">
@@ -103,8 +123,7 @@
         <section id="slider" class="full_slider">
             <div class="rev_slider_wrapper fullscreen-container">
                 <div id="fullscreen_slider" class="rev_slider fullscreenbanner gradient_slider" style="display:none">
-                    <ul>
-                        
+                    <ul>                        
                         <!-- SLIDE NR. 1 -->  
                         <li data-transition="fade">
                             <!-- MAIN IMAGE -->
@@ -307,11 +326,9 @@
                                         <div class="form-group">
                                             <div class="form_select">
                                                 <select name="adultos" class="form-control md_noborder_right" title="Adultos:" data-header="Adultos">
-                                                    <option value="0">0</option>
                                                     <option value="1">1</option>
                                                     <option value="2">2</option>
                                                     <option value="3">3</option>
-                                                    <option value="4">4</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -320,7 +337,6 @@
                                         <div class="form-group">
                                             <div class="form_select childrens_select">
                                                 <select name="niños" class="form-control dropup" title="Niños:" data-header="Niños">
-                                                    <option value="0">0</option>
                                                     <option value="1">1</option>
                                                     <option value="2">2</option>
                                                     <option value="3">3</option>
@@ -422,7 +438,7 @@
                                 <span class="media-left"><i class="flaticon-food"></i></span>
                                 <div class="media-body">
                                     <h5>Restaurante</h5>
-                                    <p>En la Hospedería contamos con una alta cocina que llenará su paladar del auténtico sabor de productos locales, naturales y de buena calidad.</p>
+                                    <p>En la Hospedería contamos con una cocina que llenará su paladar con el auténtico sabor de productos de proximidad locales, naturales y de buena calidad.</p>
                                 </div>
                             </div>
                             <div class="owl-thumb-item">
@@ -449,7 +465,7 @@
         </section>
      
         <!-- ========== ABOUT ========== -->
-        <section id="about_style_2" class="blue_bg">
+        <section id="about_style_2" class="blue_bg" >
             <div class="container-fluid">
                 <div class="row">
                     
@@ -488,114 +504,79 @@
                         </p>                                          
                 </div>
             </div>
+        
         </section>
         
-        <!-- ========== BLOG ========== -->
-        <section id="blog">
+        <!-- ========== TESTIMONIALS ========== -->
+        <section id="testimonials" class="lightgrey_bg">
             <div class="container">
-                <div class="main_title mt_wave mt_yellow a_center">  
-                    <div id="TA_certificateOfExcellence759" class="TA_certificateOfExcellence"><ul id="bhBsUKKXW" class="TA_links TsJshP2IwG"><li id="ipxz2jJyHmu" class="EPyLooE"><a target="_blank" href="https://www.tripadvisor.es/Hotel_Review-g1078800-d1047568-Reviews-Hospederia_de_Alesves-Villafranca_Navarra.html"><img src="https://www.tripadvisor.es/img/cdsi/img2/awards/CoE2017_WidgetAsset-14348-2.png" alt="TripAdvisor" class="widCOEImg" id="CDSWIDCOELOGO"/></a></li></ul></div><script async src="https://www.jscache.com/wejs?wtype=certificateOfExcellence&amp;uniq=759&amp;locationId=1047568&amp;lang=es&amp;year=2019&amp;display_version=2" data-loadtrk onload="this.loadtrk=true"></script>                                   
-                    <h2>TITULO PENDIENTE</h2>
-                </div>
-                
-                <p class="main_description a_center">Para que puedas conocer más sobre la Hospedería, te dejamos aquí algunas opiniones de clientes además de una visita fotográfica.</p>
-
                 <div class="row">
-                    <!-- ITEM -->
-                    <div class="col-md-6 col-sm-6">
-                        <article class="blog_item">
-                            <div class="row">
-                                <div class="col-md-5">
-                                    <figure>
-                                        
-                                    </figure>
-                                </div>
-                                <div class="col-md-7">
-                                    <div class="main">
-                                        <h3><a href="blog-post.html">CERTIFICADO EXCELENCIA</a></h3>
-                                        <p>“La cena riquísima, con una música de fondo suave sin la estridencia del televisor un sitio para estar a gusto. Y descansar es una auténtica experiencia para los sentidos. El olor a madera en la habitación. Las vistas al amanecer. Sin duda alguna recomendable.”</p>
-                                        <a href="https://www.tripadvisor.es/Hotel_Review-g1078800-d1047568-Reviews-Hospederia_de_Alesves-Villafranca_Navarra.html" class="button btn_xs btn_blue">Leer más</a>
-                                        <div class="info">
-                                            <i class="fa fa-comment-o" aria-hidden="true"></i><a href="https://www.booking.com/hotel/es/hospederia-de-alesves.es.html?label=gen173nr-1FCAEoggI46AdIM1gEaEaIAQGYAQq4ARfIAQzYAQHoAQH4AQuIAgGoAgO4AuH77_EFwAIB;sid=efcf210924b04204ed5198074742f606;dest_id=-407603;dest_type=city;dist=0;group_adults=2;group_children=0;hapos=1;hpos=1;no_rooms=1;room1=A%2CA;sb_price_type=total;sr_order=popularity;srepoch=1580989928;srpvid=19565374ab6200f7;type=total;ucfs=1&#hotelTmpl">Más de 300 opiniones</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
+                    <div class="col-md-6">
+                        <div class="main_title mt_wave a_left">
+                            <h2>OPINIONES DE NUESTROS CLIENTES</h2>
+                        </div>
+                        <p class="main_description">En la Hospedería de Alesves hacemos todo lo que nos sea posible para asegurar la felicidad, bienestar y disfrute de todos nuestros clientes sin excepción.
+                        <br><br>
+                        Por esta misma razón siempre estaremos abiertos a mejoras y críticas constuctivas de las que puedan percatarse. No duden en informarnos e intentaremos agradarles en todo lo que nos sea posible.              
+                        <br><br>
+                        En la Hospedería de Alesves cuidamos hasta el más mínimo detalle para que pueda disfrutar al máximo de su estancia, es por ello que hemos ganado durante 5 años seguidos (2015-2019) el certificado de excelencia de TripAdvisor.
                     </div>
-                    <!-- ITEM -->
-                    <div class="col-md-6 col-sm-6">
-                        <article class="blog_item">
-                            <div class="row">
-                                <div class="col-md-5">
-                                    <figure>
-                                        <a href="blog-post.html" class="hover_effect h_blue h_link"><img src="images/comedor.jpg" class="img-responsive" alt="Image"></a>
-                                    </figure>
-                                </div>
-                                <div class="col-md-7">
-                                    <div class="main">
-                                        <h3><a href="visitaFotografica.php">Visita fotográfica</a></h3>
-                                        <p>Disfruta de fotografías de la hospedería y proximidades.</p>
-                                        <a href="visitaFotografica.php" class="button btn_xs btn_blue">Ver más</a>                                        
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                    <!-- ITEM -->
-                    <div class="col-md-6 col-sm-6">
-                        <article class="blog_item">
-                            <div class="row">
-                                <div class="col-md-5">
-                                    <figure>
-                                        <a href="blog-post.html" class="hover_effect h_blue h_link"><img src="images/persona.jpg" class="img-responsive" alt="Image" style="border-radius:100;"></a>
-                                    </figure>
-                                </div>
-                                <div class="col-md-7">
-                                    <div class="main">
-                                        <h3><a href="https://www.tripadvisor.es/ShowUserReviews-g1078800-d1047568-r672866541-Hospederia_de_Alesves-Villafranca_Navarra.html?m=19905">"<i>Para repetir!"</i></a></h3>
-                                        <p><i>"Hotelito muy acogedor situado en un pequeño pueblo algo alejado pero suficientemente cerca de todo a la vez.<br>
-                                            El personal es encantador, muy amable y atento.<br>
-                                            Las camas son muy cómodas!!<br><br>
 
-                                            Cada vez que venimos por la zona repetimos!"</i>
-                                        </p>
-                                        <a href="https://www.tripadvisor.es/ShowUserReviews-g1078800-d1047568-r672866541-Hospederia_de_Alesves-Villafranca_Navarra.html?m=19905" class="button btn_xs btn_blue">Ver comentario</a>
-                                        <div class="info">
-                                            <i class="fa fa-user" aria-hidden="true"></i><a href="#">Elia p.</a>
-                                            <i class="fa fa-calendar" aria-hidden="true"></i><a href="#">Abril de 2019</a>
-                                        </div>
+                    <div class="col-md-6">
+                        <div id="testimonials_slider" class="owl-carousel">
+                            <!-- ITEM -->
+                            <div class="item">
+                                <img src="images/persona.jpg" alt="Image">
+                                <div class="review_content">
+                                    <p><i>"Hotelito muy acogedor situado en un pequeño pueblo algo alejado pero suficientemente cerca de todo a la vez.
+                                        El personal es encantador, muy amable y atento.
+                                        Las camas son muy cómodas!!
+                                        Cada vez que venimos por la zona repetimos!"</i>
+                                    </p>
+                                    <div class="review_rating">
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
                                     </div>
+                                    <div class="review_author">Elia P. desde <a href="https://www.tripadvisor.es/ShowUserReviews-g1078800-d1047568-r672866541-Hospederia_de_Alesves-Villafranca_Navarra.html?m=19905">Trip Advisor</a></div>
                                 </div>
                             </div>
-                        </article>
-                    </div>
-                    <!-- ITEM -->
-                    <div class="col-md-6 col-sm-6">
-                        <article class="blog_item">
-                            <div class="row">
-                                <div class="col-md-5">
-                                    <figure>
-                                        <a href="blog-post.html" class="hover_effect h_blue h_link"><img src="images/blog/latest_news4.jpg" class="img-responsive" alt="Image"></a>
-                                    </figure>
-                                </div>
-                                <div class="col-md-7">
-                                    <div class="main">
-                                        <h3><a href="blog-post.html">Reservas para comidas</a></h3>
-                                        <p>¿Estás planteandote hacer una comida o cena para varias personas? Ponte en contacto con nostros.</p>
-                                        <a href="blog-post.html" class="button btn_xs btn_blue">Read More</a>
-                                        <div class="info">
-                                            <i class="fa fa-user" aria-hidden="true"></i><a href="#">JOHN DOE</a>
-                                            <i class="fa fa-calendar" aria-hidden="true"></i><a href="#">OCTOBER 20, 2015</a>
-                                            <i class="fa fa-comment-o" aria-hidden="true"></i><a href="#">0 COMMENTS</a>
-                                        </div>
+                            <!-- ITEM -->
+                            <div class="item">
+                                <img src="images/cara.jpg" alt="Image">
+                                <div class="review_content">
+                                    <p><b><i>"Donde la paz y el sosiego se sienten.</b> La cena riquísima, con una música de fondo suave sin la estridencia del televisor un sitio para estar a gusto. Y descansar es una auténtica experiencia para los sentidos. El olor a madera en la habitación. Las vistas al amanecer. Sin duda alguna recomendable.</i></p>
+                                    <div class="review_rating">
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
                                     </div>
+                                    <div class="review_author">Luis desde <a href="https://www.booking.com/hotel/es/hospederia-de-alesves.es.html#tab-reviews">Booking</a></div>
                                 </div>
                             </div>
-                        </article>
-                    </div>
+                            <!-- ITEM -->
+                            <div class="item">
+                                <img src="images/cara2.jpg" alt="Image">
+                                <div class="review_content">
+                                    <p><i><b>"Lugar agradable y para descansar.</b> Edificio bonito ,con amplias y luminosas habitaciones. Personal agradable . Recomendable para todo el mundo!!!"</i></p>
+                                    <div class="review_rating">
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="review_author">Pilar Hernan desde <a href="https://www.escapadarural.com/opiniones/hospederia-de-alesves/5412c8e78e20d">Escapada Rural</a></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+            </div>
         </section>
         
         <!-- ========== CONTACT ========== -->
@@ -607,35 +588,15 @@
                 <p class="main_description a_center">Nos encontramos en un lugar muy céntrico, estando a menos de 15 minutos de emblemáticos sitios como Olite, Tudela o Alfaro, y a una hora de Pamplona, Logroño o Zaragoza.</p>
                 <div class="row">
                     <div class="col-md-6">
-                        <div class="embed-responsive">
+                        <div class="embed-responsive-item">
                             <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1476.008799115618!2d-1.7498762!3d42.2781477!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd5a66cbeca9a55f%3A0xa339c0ae8d943e1f!2sHospeder%C3%ADa%20de%20Alesves%20(Entre%20las%20Bardenas%20y%20los%20r%C3%ADos)!5e0!3m2!1ses!2ses!4v1580839915806!5m2!1ses!2ses" width="500" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="row">
-                            <div class="contact-items">
-                                <div class="col-md-4 col-sm-4">
-                                    <div class="contact-item">
-                                        <i class="glyphicon glyphicon-map-marker"></i>
-                                        <h6>C/Bajo el Arco, 34, Villafranca</h6>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 col-sm-4">
-                                    <div class="contact-item">
-                                        <i class="glyphicon glyphicon-phone-alt"></i>
-                                        <h6>(+34) 948 84 56 86</h6>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 col-sm-4">
-                                    <div class="contact-item">
-                                        <i class="fa fa-envelope"></i>
-                                        <h6>info@hospederiadealesves.com</h6>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <form id="contact-form" name="contact-form" method="post" action="mail.php">
-                            <div id="contact-result"></div>
+                    <div class="col-md-6">   
+                        <?php if(isset($_GET['mail'])){?>
+                        <h3>Hemos recibido su email, le contestaremos con la mayor brevedad posible.</h3>                       
+                        <?php } else { ?>
+                        <form name="contact-form" method="post" action="mail.php">                            
                             <div class="form-group">
                                 <input class="form-control" name="name_cl" placeholder="Su nombre:" type="text">
                             </div>
@@ -647,6 +608,7 @@
                             </div>
                             <button class="button btn_lg btn_blue btn_full upper" type="submit"><i class="fa fa-location-arrow"></i>Enviar mensaje</button>
                         </form>
+                        <?php } ?>
                     </div>
                 </div>
             </div>
@@ -660,26 +622,25 @@
                         <div class="col-md-3 col-sm-6 widget">
                             <div class="about">
                                 <a href="index.html"><img class="logo" src="images/hospederia-de-alesves.gif" height="80" alt="Logo"></a>
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.</p>
-                                <p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip.</p>
+                               
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6 widget">
-                            <h5>Latest News</h5>
+                            <h5>Noticias de la zona:</h5>
                             <ul class="blog_posts">
-                                <li><a href="blog-post.html">Live your myth in Greece</a> <small>AUGUST 13, 2017</small></li>
-                                <li><a href="blog-post.html">Hotel Zante in pictures</a> <small>AUGUST 16, 2017</small></li>
-                                <li><a href="blog-post.html">Hotel Zante family party</a> <small>SEPTEMBER 15, 2017</small></li>
+                                <li><a href="http://www.villafranca.es/">Villafranca</a> <small>Web ayuntamiento Villafranca</small></li>
+                                <li><a href="http://www.tudela.es/">Tudela</a> <small>Web ayuntamiento Tudela</small></li>
+                                <li><a href="http://www.olite.es/">Olite</a> <small>Web ayuntamiento Olite</small></li>
                             </ul>
                         </div>
                         <div class="col-md-3 col-sm-6 widget">
                             <h5>Actividades</h5>
                             <ul class="useful_links">
-                                <li><a href="#">Las Bardenas Reales</a></li>
-                                <li><a href="#">Castillo de Olite</a></li>
-                                <li><a href="#">Turismo enológico</a></li>
-                                <li><a href="#">Ruta del Císter</a></li>
-                                <li><a href="#">Senda Viva</a></li>
+                                <li><a href="http://www.lasbardenasreales.com/">Las Bardenas Reales</a></li>
+                                <li><a href="https://www.olite.com.es/">Olite</a></li>
+                                <li><a href="https://www.turismo.navarra.es/esp/home/">Turismo Navarra</a></li>
+                                <li><a href="https://www.larutadelcister.info/es">Ruta del Císter</a></li>
+                                <li><a href="https://www.sendaviva.com/">Senda Viva</a></li>
                             </ul>
                         </div>
                         <div class="col-md-3 col-sm-6 widget">
@@ -688,7 +649,7 @@
                                 <ul class="address_details">
                                     <li><i class="glyphicon glyphicon-map-marker"></i>C/ bajo el arco, 34, 31330 Villafranca, Navarra</li>
                                     <li><i class="glyphicon glyphicon-phone-alt"></i> Teléfono: <a href="tel:948845686">(+34) 948 84 56 86</a></li>
-                                    <li><i class="fa fa-fax"></i> Fax: (+34) 948 84 61 82</li>
+                                    <li><i class="fa fa-fax"></i> Fax: <a href="fax:948846182">(+34) 948 84 61 82</a></li>
                                     <li><i class="fa fa-envelope"></i> Email: <a href="mailto:info@hospederiadealesves.com">info@hospederiadealesves.com</a></li>
                                 </ul>
                             </address>

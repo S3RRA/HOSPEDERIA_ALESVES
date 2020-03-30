@@ -504,13 +504,11 @@
                             </ul>
                         </div>
                         <div class="col-md-3 col-sm-6 widget">
-                            <h5>Useful Links</h5>
-                            <ul class="useful_links">
-                                <li><a href="#">About us</a></li>
-                                <li><a href="#">Contact us</a></li>
-                                <li><a href="#">History</a></li>
-                                <li><a href="#">Gallery</a></li>
-                                <li><a href="#">Location</a></li>
+                            <h5>Noticias de la zona:</h5>
+                            <ul class="blog_posts">
+                                <li><a href="http://www.villafranca.es/">Villafranca</a> <small>Web ayuntamiento Villafranca</small></li>
+                                <li><a href="http://www.tudela.es/">Tudela</a> <small>Web ayuntamiento Tudela</small></li>
+                                <li><a href="http://www.olite.es/">Olite</a> <small>Web ayuntamiento Olite</small></li>
                             </ul>
                         </div>
                         <div class="col-md-3 col-sm-6 widget">

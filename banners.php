@@ -55,7 +55,7 @@
                     Bienvenido a la Hospedería de Alesves
                 </div>
                 <ul class="top_menu_right">
-                    <li><i class="fa  fa-phone"></i><a href="tel:18475555555"> 1-888-123-4567 </a></li>
+                    <li><i class="fa  fa-phone"></i><a href="tel:18475555555"> (+34) 948 845 686 </a></li>
                     <li class="email"><i class="fa  fa-envelope-o "></i> <a href="mailto:info@hospederiadealesves.com">info@hospederiadealesves.com</a></li>
                     <li class="language-switcher">
                         <nav class="dropdown">
@@ -92,20 +92,19 @@
                     <ul class="nav navbar-nav">
                         <li class="mobile_menu_title" style="display:none;">MENU</li>
                         <li class="dropdown simple_menu">
-                            <a href="index.php">INICIO<b class="caret"></b></a>          
+                            <a href="index.php" data-toggle="dropdown">INICIO</a>                            
                         </li>
                         <li class="dropdown simple_menu">
-                            <a href="elige_hab.php">ALOJAMIENTO<b class="caret"></b></a>            
-                        </li>
-                        <li class="dropdown simple_menu">
-                            <a href="#" data-toggle="dropdown" class="dropdown-toggle" aria-expanded="true">RESTAURACION<b class="caret"></b></a>                        
+                            <a href="elige_hab.php">ALOJAMIENTO<b class="caret"></b></a>                            
                         </li>
                         <li class="dropdown simple_menu active">
-                            <a href="banners.php" data-toggle="dropdown" class="dropdown-toggle" aria-expanded="true">ACTIVIDADES<b class="caret"></b></a>                            
+                            <a href="banners.php">ACTIVIDADES<b class="caret"></b></a>                            
                         </li>
-                        <li><a href="contacto.php">CONTACTO</a></li>
+                        <li>
+                            <a href="contacto.php">CONTACTO</a>
+                        </li>
                         <li class="menu_button">
-                            <a href="bookin.php" class="button  btn_yellow"><i class="fa fa-calendar"></i>RESERVA</a>
+                            <a href="bookin.php" class="button  btn_yellow"><i class="fa fa-calendar"></i>RESERVAR</a>
                         </li>
                     </ul>
                 </nav>
@@ -116,10 +115,10 @@
         <div class="page_title gradient_overlay"  style="background: url(images/hospederia.jpg)bottom right no-repeat,url(images/06_exterior.jpg) center no-repeat,url(images/jardin_1.jpg   ) center repeat;">
             <div class="container">
                 <div class="inner">
-                    <h1>Descubre la Ribera Navarra</h1>
+                    <h1>Descubre el sur de Navarra</h1>
                     <ol class="breadcrumb">
                         <li><a href="index.php">Inicio</a></li>
-                        <li>Descubre la Ribera Navarra</li>
+                        <li>Descubre el sur de Navarra</li>
                     </ol>
                 </div>
             </div>
@@ -313,11 +312,11 @@
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6 widget">
-                            <h5>Latest News</h5>
+                            <h5>Noticias de la zona:</h5>
                             <ul class="blog_posts">
-                                <li><a href="blog-post.html">Live your myth in Greece</a> <small>AUGUST 13, 2017</small></li>
-                                <li><a href="blog-post.html">Hotel Zante in pictures</a> <small>AUGUST 16, 2017</small></li>
-                                <li><a href="blog-post.html">Hotel Zante family party</a> <small>SEPTEMBER 15, 2017</small></li>
+                                <li><a href="http://www.villafranca.es/">Villafranca</a> <small>Web ayuntamiento Villafranca</small></li>
+                                <li><a href="http://www.tudela.es/">Tudela</a> <small>Web ayuntamiento Tudela</small></li>
+                                <li><a href="http://www.olite.es/">Olite</a> <small>Web ayuntamiento Olite</small></li>
                             </ul>
                         </div>
                         <div class="col-md-3 col-sm-6 widget">

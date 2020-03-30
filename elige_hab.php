@@ -97,14 +97,7 @@
                             <a href="elige_hab.php">ALOJAMIENTO<b class="caret"></b></a>                            
                         </li>
                         <li class="dropdown simple_menu">
-                            <a href="#" data-toggle="dropdown" class="dropdown-toggle" aria-expanded="true">RESTAURACIÓN<b class="caret"></b></a>                            
-                        </li>
-                        <li class="dropdown simple_menu"><a href="#" data-toggle="dropdown" class="dropdown-toggle" aria-expanded="true">ACTIVIDADES<b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="typography.html">Typography</a></li>
-                                <li><a href="buttons.html">Buttons</a></li>
-                                <li><a href="icons.html">Icons</a></li>
-                            </ul>
+                            <a href="banners.php">ACTIVIDADES<b class="caret"></b></a>                            
                         </li>
                         <li><a href="contacto.php">CONTACTO</a></li>
                         <li class="menu_button">
@@ -306,21 +299,21 @@
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6 widget">
-                            <h5>Latest News</h5>
+                            <h5>Noticias de la zona:</h5>
                             <ul class="blog_posts">
-                                <li><a href="blog-post.html">Live your myth in Greece</a> <small>AUGUST 13, 2017</small></li>
-                                <li><a href="blog-post.html">Hotel Zante in pictures</a> <small>AUGUST 16, 2017</small></li>
-                                <li><a href="blog-post.html">Hotel Zante family party</a> <small>SEPTEMBER 15, 2017</small></li>
+                                <li><a href="http://www.villafranca.es/">Villafranca</a> <small>Web ayuntamiento Villafranca</small></li>
+                                <li><a href="http://www.tudela.es/">Tudela</a> <small>Web ayuntamiento Tudela</small></li>
+                                <li><a href="http://www.olite.es/">Olite</a> <small>Web ayuntamiento Olite</small></li>
                             </ul>
                         </div>
                         <div class="col-md-3 col-sm-6 widget">
                             <h5>Actividades</h5>
                             <ul class="useful_links">
-                                <li><a href="#">Las Bardenas Reales</a></li>
-                                <li><a href="#">Castillo de Olite</a></li>
-                                <li><a href="#">Turismo enológico</a></li>
-                                <li><a href="#">Ruta del Císter</a></li>
-                                <li><a href="#">Senda Viva</a></li>
+                                <li><a href="http://www.lasbardenasreales.com/">Las Bardenas Reales</a></li>
+                                <li><a href="https://www.olite.com.es/">Olite</a></li>
+                                <li><a href="https://www.turismo.navarra.es/esp/home/">Turismo Navarra</a></li>
+                                <li><a href="https://www.larutadelcister.info/es">Ruta del Císter</a></li>
+                                <li><a href="https://www.sendaviva.com/">Senda Viva</a></li>
                             </ul>
                         </div>
                         <div class="col-md-3 col-sm-6 widget">

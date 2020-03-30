@@ -96,58 +96,8 @@
                         <li class="dropdown simple_menu active">
                             <a href="elige_hab.php">ALOJAMIENTO<b class="caret"></b></a>
                         </li>
-                        <li class="dropdown mega_menu mega_menu_fullwidth"><a href="#" data-toggle="dropdown" class="dropdown-toggle" aria-expanded="true">RESTAURACIÓN<b class="caret"></b></a>
-                            <ul class="dropdown-menu"> 
-                                <li>
-                                    <div class="mega_menu_inner">
-                                        <div class="row">
-                                            <ul class="col-md-3">
-                                                <li class="list_title">PAGES</li>
-                                                <li><a href="gallery.html">Gallery 4 Columns</a></li>
-                                                <li><a href="gallery-3columns.html">Gallery 3 Columns</a></li>
-                                                <li><a href="gallery-2columns.html">Gallery 2 Columns</a></li>
-                                                <li><a href="gallery-withoutdetails.html">Gallery Without Details</a></li>
-                                                <li><a href="gallery-withoutfilters.html">Gallery Without Filters</a></li>
-                                                <li><a href="gallery-slider.html">Gallery Slider</a></li>
-                                                <li><a href="gallery2.html">Gallery Version 2</a></li>
-                                            </ul>
-                                            <ul class="col-md-3">
-                                                <li class="list_title">PAGES</li>
-                                                <li><a href="contact2.html">Contact Us Version 2</a></li>
-                                                <li><a href="about-us.html">About Us</a></li>
-                                                <li><a href="404.html">404 Page Version 1</a></li>
-                                                <li><a href="404-v2.html">404 Page Version 2</a></li>
-                                                <li><a href="coming-soon.html">Coming Soon</a></li>
-                                                <li><a href="location.html">Our Location</a></li>
-                                                <li><a href="restaurant.html">Our Restaurant</a></li>
-                                            </ul>
-                                            <ul class="col-md-3">
-                                                <li class="list_title">PAGES</li>
-                                                <li><a href="blog-post.html">Blog Details 1</a></li>
-                                                <li><a href="blog-post2.html">Blog Details 2</a></li>
-                                                <li><a href="places.html">Places</a></li>
-                                                <li><a href="place-details.html">Place Details</a></li>
-                                                <li><a href="events.html">Events</a></li>
-                                                <li><a href="event-details.html">Event Details</a></li>
-                                                <li><a href="spa.html">Our Spa</a></li> 
-                                            </ul>
-                                            <ul class="col-md-3">
-                                                <li class="list_title">MORE PAGES</li> 
-                                                <li><a href="loading.html">Loading Page </a></li>
-                                                <li><a href="loading2.html">Loading Page 2</a></li>
-                                                <li><a href="loading3.html">Loading Page 3</a></li>
-                                                <li><a href="full-width.html">Full Width Page</a></li>
-                                                <li><a href="right-sidebar.html">Right Sidebar Page</a></li>
-                                                <li><a href="left-sidebar.html">Left Sidebar Page</a></li>
-                                                <li><a href="our-staff.html">Our Staff</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="dropdown simple_menu"><a href="banners.php">ACTIVIDADES<b class="caret"></b></a>
-                            
+                        <li class="dropdown simple_menu">
+                            <a href="banners.php">ACTIVIDADES<b class="caret"></b></a>                            
                         </li>
                         <li><a href="contacto.php">CONTACTO</a></li>
                         <li class="menu_button">
@@ -270,32 +220,31 @@
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6 widget">
-                            <h5>Latest News</h5>
+                            <h5>Noticias de la zona:</h5>
                             <ul class="blog_posts">
-                                <li><a href="blog-post.html">Live your myth in Greece</a> <small>AUGUST 13, 2017</small></li>
-                                <li><a href="blog-post.html">Hotel Zante in pictures</a> <small>AUGUST 16, 2017</small></li>
-                                <li><a href="blog-post.html">Hotel Zante family party</a> <small>SEPTEMBER 15, 2017</small></li>
+                                <li><a href="http://www.villafranca.es/">Villafranca</a> <small>Web ayuntamiento Villafranca</small></li>
+                                <li><a href="http://www.tudela.es/">Tudela</a> <small>Web ayuntamiento Tudela</small></li>
+                                <li><a href="http://www.olite.es/">Olite</a> <small>Web ayuntamiento Olite</small></li>
                             </ul>
                         </div>
                         <div class="col-md-3 col-sm-6 widget">
                             <h5>Actividades</h5>
                             <ul class="useful_links">
-                                <li><a href="#">Las Bardenas Reales</a></li>
-                                <li><a href="#">Castillo de Olite</a></li>
-                                <li><a href="#">Turismo enológico</a></li>
-                                <li><a href="#">Ruta del Císter</a></li>
-                                <li><a href="#">Senda Viva</a></li>
+                                <li><a href="http://www.lasbardenasreales.com/">Las Bardenas Reales</a></li>
+                                <li><a href="https://www.olite.com.es/">Olite</a></li>
+                                <li><a href="https://www.turismo.navarra.es/esp/home/">Turismo Navarra</a></li>
+                                <li><a href="https://www.larutadelcister.info/es">Ruta del Císter</a></li>
+                                <li><a href="https://www.sendaviva.com/">Senda Viva</a></li>
                             </ul>
                         </div>
                         <div class="col-md-3 col-sm-6 widget">
-                            <h5>Contact Us</h5>
+                            <h5>Contáctanos:</h5>
                             <address>
                                 <ul class="address_details">
-                                        <li><i class="glyphicon glyphicon-map-marker"></i> 25, Navagio Zakynthos, Greece</li>
-                                        <li><i class="glyphicon glyphicon-phone-alt"></i> Phone: 800 123 3456 </li>
-                                        <li><i class="fa fa-fax"></i> Fax: 800 123 3456</li>
-                                        <li><i class="fa fa-envelope"></i> Email: <a href="mailto:info@site.com">contact@site.com</a></li>
-                                </ul>
+                                    <li><i class="glyphicon glyphicon-map-marker"></i>C/ bajo el arco, 34, 31330 Villafranca, Navarra</li>
+                                    <li><i class="glyphicon glyphicon-phone-alt"></i> Teléfono: <a href="tel:948845686">(+34) 948 84 56 86</a></li>
+                                    <li><i class="fa fa-fax"></i> Fax: (+34) 948 84 61 82</li>
+                                    <li><i class="fa fa-envelope"></i> Email: <a href="mailto:info@hospederiadealesves.com">info@hospederiadealesves.com</a></li></ul>
                             </address>
                         </div>
                     </div>
@@ -306,7 +255,7 @@
                     <div class="row">
                         <div class="col-md-6 col-sm-6">
                             <div class="copyrights">
-                                 Copyright 2017 <a href="index.html">Hotel Zante</a> All Rights Reserved.
+                                 Copyright 2020 <i class="far fa-copyright"></i> <a href="index.html">Hospedería de Alesves</a> odos los derechos reservados.
                             </div>
                         </div>
                         <div class="col-md-6 col-sm-6">
