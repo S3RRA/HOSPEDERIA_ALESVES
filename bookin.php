@@ -133,16 +133,21 @@
                     <div class="col-md-8">
                         <div id="booking_advanced">
                     <?php
-                    if(isset($_GET['booked'])){
+                    if(isset($_GET['booked'])&&$_GET['booked']='yes'){
                         echo '<div class="main_title a_left upper">
                                 <h3>Su reserva se ha realizado con éxito.</h3> <p>Verifique su correo para más detalles.</p>
                             </div>
                         </div>';
-                    }else if($_GET['disponibilidad']){
+                    }else if(isset($_GET['booked'])&&$_GET['booked']='yess'){
                         echo '<div class="main_title a_left upper">
-                                <h3>Lo sentimos.</h3> <p>Carecemos de disponibilidad en el tipo de habitación elegida en las fechas seleccionadas.</p>
-                                <p>Por favor, elija otras fechas u otro tipo de habitación.</p>
-                                <p>Para más información póngase en contacto con nosotros vía mail: <a href="mailto:info@hospederiadealesves.com">info@hospederiadealesves.com</a> o telefónica: <a href="tel:948845686">(+34) 948 845 686</a></p>
+                                <h3>Su reserva se ha realizado con éxito.</h3> <p>Póngase en contaco con nosotros para más detalles.</p>
+                            </div>
+                        </div>';
+                    }else if(isset($_GET['disponibilidad'])){
+                        echo '<div class="main_title a_left upper">
+                                <h3>Lo sentimos.</h3> <p>Carecemos de disponibilidad del tipo de habitación elegida en las fechas seleccionadas.</p>
+                                <p>Por favor, elija otras fechas u otro tipo de habitación.</p><br>
+                                <p>Para más información póngase en contacto con nosotros:<br> vía mail: <a href="mailto:info@hospederiadealesves.com">info@hospederiadealesves.com</a><br> o telefónica: <a href="tel:948845686">(+34) 948 845 686</a></p>
                             </div>
                         </div>';
                     }else{
@@ -172,13 +177,38 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>DNI:</label>
-                                            <input class="form-control" name="dni" type="text" placeholder="Indique su DNI:"required>
+                                            <input class="form-control" name="dni" type="text" placeholder="Indique sus dos apellidos:" required>
                                         </div>
-                                    </div>              
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Tarjeta de crédito: 
+                                                <a href="#" title="GARANTÍA" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="No tendrá ningún cargo en su tarjeta a noser que anule la habitación antes de las 72h de su llegada, donde se le cobrará media habitación.">
+                                                    <i class="label_icon_info fa fa-info-circle"></i>
+                                                </a>
+                                            </label>
+                                            <input class="form-control" name="tarjeta" type="text" placeholder="Indique su nº de tarjeta:" required><br>
+                                            <input class="form-control" name="caducidad" type="text" placeholder="Fecha de caducidad:" required>
+                                        </div>
+                                    </div> <br>             
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Número de teléfono:</label>
                                             <input name="telefono" type="text" class="form-control" placeholder="Indique su nº de teléfono:" required>
+                                        </div>
+                                    </div><br>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Tipo de habitación:</label>
+                                            <div class="form_select">
+                                                <select name="tipo" class="form-control" title="Tipo de habitación:" data-header="Tipo de habitación:">
+                                                    <option value="individual" data-subtext="<span class='label label-info'>56€ / noche</span>" <?php if(isset($_GET['tipo'])=='individual'){echo 'selected';} ?>>Individual</option>
+                                                    <option value="doble" data-subtext="<span class='label label-info'>68€ / noche</span>" <?php if(isset($_GET['tipo'])=='doble'){echo 'selected';} ?>>Doble</option>
+                                                    <option value="superior" data-subtext="<span class='label label-info'>77€ / noche</span>" <?php if(isset($_GET['tipo'])=='superior'){echo 'selected';} ?>>Superior</option>
+                                                    <option value="triple" data-subtext="<span class='label label-info'>86€ / noche</span>" <?php if(isset($_GET['tipo'])=='triple'){echo 'selected';} ?>>Triple</option>
+                                                    <option value="familiar" data-subtext="<span class='label label-info'>118€ / noche</span>" <?php if(isset($_GET['tipo'])=='familiar'){echo 'selected';} ?>>Familiar</option>
+                                                </select>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -198,20 +228,6 @@
                                             </label>
                                             <div class="form_date">
                                                 <input type="datetime" class="datepicker form-control" name="salida" placeholder="Fecha de salida:" readonly required>
-                                            </div>
-                                        </div>
-                                    </div>
-                                     <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label>Tipo de habitación:</label>
-                                            <div class="form_select">
-                                                <select name="tipo" class="form-control" title="Tipo de habitación:" data-header="Tipo de habitación:">
-                                                    <option value="individual" data-subtext="<span class='label label-info'>56€ / noche</span>" <?php if(isset($_GET['tipo'])=='individual'){echo 'selected';} ?>>Individual</option>
-                                                    <option value="doble" data-subtext="<span class='label label-info'>68€ / noche</span>" <?php if(isset($_GET['tipo'])=='doble'){echo 'selected';} ?>>Doble</option>
-                                                    <option value="superior" data-subtext="<span class='label label-info'>77€ / noche</span>" <?php if(isset($_GET['tipo'])=='superior'){echo 'selected';} ?>>Superior</option>
-                                                    <option value="triple" data-subtext="<span class='label label-info'>86€ / noche</span>" <?php if(isset($_GET['tipo'])=='triple'){echo 'selected';} ?>>Triple</option>
-                                                    <option value="familiar" data-subtext="<span class='label label-info'>118€ / noche</span>" <?php if(isset($_GET['tipo'])=='familiar'){echo 'selected';} ?>>Familiar</option>
-                                                </select>
                                             </div>
                                         </div>
                                     </div>

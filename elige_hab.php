@@ -1,3 +1,6 @@
+<?php
+    require 'idiomas/es.php';
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -51,7 +54,7 @@
         <div class="top_menu">
             <div class="container">
                 <div class="welcome_mssg hidden-xs">
-                    Bienvenido a la Hospedería de Alesves
+                    <?php echo $welcome;?>
                 </div>
                 <ul class="top_menu_right">
                     <li><i class="fa fa-phone"></i><a href="tel:948845686">(+34) 948 845 686 </a></li>
@@ -59,14 +62,11 @@
                     <li class="language-switcher">
                         <nav class="dropdown">
                             <a href="#" class="dropdown-toggle select" data-hover="dropdown" data-toggle="dropdown">
-                                <i class="famfamfam-flag-gb "></i>Español<b class="caret"></b>
+                                <i class="famfamfam-flag-gb "></i><?php echo $idioma['1'];?><b class="caret"></b>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a href="#"><i class="famfamfam-flag-gr"></i>Ελληνικά</a></li>
-                                <li><a href="#"><i class="famfamfam-flag-it"></i>Italiano</a></li>
-                                <li><a href="#"><i class="famfamfam-flag-de"></i>Deutsch</a></li>
-                                <li><a href="#"><i class="famfamfam-flag-fr"></i>Français</a></li>
-                                <li><a href="#"><i class="famfamfam-flag-es"></i>English</a></li>
+                                <li><a href="#"><i class="famfamfam-flag-gr"></i><?php echo $idioma['2'];?></a></li>
+                                <li><a href="#"><i class="famfamfam-flag-it"></i><?php echo $idioma['3'];?></a></li>
                             </ul>
                         </nav>
                     </li>
@@ -89,19 +89,19 @@
                 </div>
                 <nav id="main_menu" class="mobile_menu navbar-collapse">
                     <ul class="nav navbar-nav">
-                        <li class="mobile_menu_title" style="display:none;">MENU</li>
+                        <li class="mobile_menu_title" style="display:none;"><?php echo $menu['1']?></li>
                         <li class="dropdown simple_menu">
-                            <a href="index.php">INICIO <b class="caret"></b></a>                           
+                            <a href="index.php"><?php echo $menu['2']?><b class="caret"></b></a>                           
                         </li>
                         <li class="dropdown simple_menu active">
-                            <a href="elige_hab.php">ALOJAMIENTO<b class="caret"></b></a>                            
+                            <a href="elige_hab.php"><?php echo $menu['3']?><b class="caret"></b></a>                            
                         </li>
                         <li class="dropdown simple_menu">
-                            <a href="banners.php">ACTIVIDADES<b class="caret"></b></a>                            
+                            <a href="banners.php"><?php echo $menu['4']?><b class="caret"></b></a>                            
                         </li>
-                        <li><a href="contacto.php">CONTACTO</a></li>
+                        <li><a href="contacto.php"><?php echo $menu['5']?></a></li>
                         <li class="menu_button">
-                            <a href="bookin.php" class="button  btn_yellow"><i class="fa fa-calendar"></i>RESERVA</a>
+                            <a href="bookin.php" class="button  btn_yellow"><i class="fa fa-calendar"></i><?php echo $menu['6']?></a>
                         </li>
                     </ul>
                 </nav>
@@ -112,10 +112,10 @@
         <div class="page_title gradient_overlay" style="background: url(images/hospederia.jpg)bottom right no-repeat,url(images/06_exterior.jpg) center no-repeat,url(images/jardin_1.jpg) center repeat;">
             <div class="container">
                 <div class="inner">
-                    <h1>Alojamiento</h1>
+                    <h1><?php echo $elige_hab;?></h1>
                     <ol class="breadcrumb">
-                        <li><a href="index.html">Inicio</a></li>
-                        <li>Alojamiento</li>
+                        <li><a href="index.html"><?php echo $inicio;?></a></li>
+                        <li><?php echo $elige_hab;?></li>
                     </ol>
                 </div>
             </div>
@@ -137,19 +137,19 @@
                     <div class="col-lg-8 col-md-7 col-sm-12">
                        <div class="room_details row-flex">
                           <div class="col-md-9 col-sm-9 col-xs-12 room_desc">
-                              <h3><a href="habitacion.php?tipo=individual">Habitación Individual</a></h3>
-                             <p>Habitación individual, perfecta si vienes por trabajo o estás de paso.</p>
+                              <h3><a href="habitacion.php?tipo=individual"><?php echo $habitacion['1'];?></a></h3>
+                             <p><?php echo $habitacion['1.1'];?></p>
                              <div class="room_services">                                
-                                <i class="fa fa-cutlery" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Mini bar en la habitación" data-original-title="Mini bar"></i>                                 
-                                <i class="fa fa-wifi" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="WiFi Gratis" data-original-title="WiFi"></i>
-                                <i class="fa fa-television" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Televisión en la habitación" data-original-title="TV de plasma"></i>     
+                                <i class="fa fa-cutlery" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="<?php echo $servicios['1'];?>" data-original-title="<?php echo $servicios['2'];?>"></i>                                 
+                                <i class="fa fa-wifi" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="<?php echo $servicios['3'];?>" data-original-title="<?php echo $servicios['4'];?>"></i>
+                                <i class="fa fa-television" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="<?php echo $servicios['5'];?>" data-original-title="<?php echo $servicios['6'];?>"></i>     
                             </div>
                           </div>
                           <div class="col-md-3 col-sm-3 col-xs-12 room_price">
                              <div class="room_price_inner">
                                 <span class="room_price_number">56.00€</span>
-                                <small class="upper">por noche</small>
-                                <a href="bookin.php?tipo=individual" class="button  btn_blue btn_full upper">Reservar ahora</a>
+                                <small class="upper"><?php echo $pornoche;?></small>
+                                <a href="bookin.php?tipo=individual" class="button  btn_blue btn_full upper"><?php echo $rahora;?></a>
                              </div>
                           </div>
                        </div>
@@ -169,19 +169,19 @@
                     <div class="col-lg-8 col-md-7 col-sm-12">
                        <div class="room_details row-flex">
                           <div class="col-md-9 col-sm-9 col-xs-12 room_desc">
-                              <h3><a href="habitacion.php?tipo=doble">Habitación Doble</a></h3>
-                             <p>Habitación para dos personas</p>
+                             <h3><a href="habitacion.php?tipo=doble"><?php echo $habitacion['2'];?></a></h3>
+                             <p><?php echo $habitacion['2.1'];?></p>
                              <div class="room_services">
-                                <i class="fa fa-cutlery" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Mini bar en la habitación" data-original-title="Mini bar"></i>                                 
-                                <i class="fa fa-wifi" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="WiFi Gratis" data-original-title="WiFi"></i>
-                                <i class="fa fa-television" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Televisión en la habitación" data-original-title="TV de plasma"></i>     
+                                <i class="fa fa-cutlery" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="<?php echo $servicios['1'];?>" data-original-title="<?php echo $servicios['2'];?>"></i>                                 
+                                <i class="fa fa-wifi" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="<?php echo $servicios['3'];?>" data-original-title="<?php echo $servicios['4'];?>"></i>
+                                <i class="fa fa-television" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="<?php echo $servicios['5'];?>" data-original-title="<?php echo $servicios['6'];?>"></i>     
                             </div>
                           </div>
                           <div class="col-md-3 col-sm-3 col-xs-12 room_price">
                              <div class="room_price_inner">
                                 <span class="room_price_number">68.00€</span>
-                                <small class="upper">por noche</small>
-                                <a href="bookin.php?tipo=doble" class="button  btn_blue btn_full upper">Reservar ahora</a>
+                                <small class="upper"><?php echo $pornoche;?></small>
+                                <a href="bookin.php?tipo=doble" class="button  btn_blue btn_full upper"><?php echo $rahora;?></a>
                              </div>
                           </div>
                        </div>
@@ -201,19 +201,19 @@
                     <div class="col-lg-8 col-md-7 col-sm-12">
                        <div class="room_details row-flex">
                           <div class="col-md-9 col-sm-9 col-xs-12 room_desc">
-                              <h3><a href="habitacion.php?tipo=superior">Habitación Doble Superior</a></h3>
-                             <p>Habitación doble exclusiva.</p>
+                              <h3><a href="habitacion.php?tipo=superior"><?php echo $habitacion['3'];?></a></h3>
+                             <p><?php echo $habitacion['3.1'];?></p>
                              <div class="room_services">                                
-                                <i class="fa fa-cutlery" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Mini bar en la habitación" data-original-title="Mini bar"></i>                                 
-                                <i class="fa fa-wifi" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="WiFi Gratis" data-original-title="WiFi"></i>
-                                <i class="fa fa-television" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Televisión en la habitación" data-original-title="TV de plasma"></i>     
+                                <i class="fa fa-cutlery" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="<?php echo $servicios['1'];?>" data-original-title="<?php echo $servicios['2'];?>"></i>                                 
+                                <i class="fa fa-wifi" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="<?php echo $servicios['3'];?>" data-original-title="<?php echo $servicios['4'];?>"></i>
+                                <i class="fa fa-television" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="<?php echo $servicios['5'];?>" data-original-title="<?php echo $servicios['6'];?>"></i>     
                             </div>
                           </div>
                           <div class="col-md-3 col-sm-3 col-xs-12 room_price">
                              <div class="room_price_inner">
                                 <span class="room_price_number">77.00€</span>
-                                <small class="upper">por noche</small>
-                                <a href="bookin.php?tipo=superior" class="button  btn_blue btn_full upper">Reservar ahora</a>
+                                <small class="upper"><?php echo $pornoche;?></small>
+                                <a href="bookin.php?tipo=superior" class="button  btn_blue btn_full upper"><?php echo $rahora;?></a>
                              </div>
                           </div>
                        </div>
@@ -233,19 +233,19 @@
                     <div class="col-lg-8 col-md-7 col-sm-12">
                        <div class="room_details row-flex">
                           <div class="col-md-9 col-sm-9 col-xs-12 room_desc">
-                              <h3><a href="habitacion.php?tipo=triple">Habitación Triple</a></h3>
-                             <p>Habitación para tres personas.</p>
+                              <h3><a href="habitacion.php?tipo=triple"><?php echo $habitacion['4']?></a></h3>
+                             <p><?php echo $habitacion['4.1'];?></p>
                              <div class="room_services">
-                                <i class="fa fa-cutlery" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Mini bar en la habitación" data-original-title="Mini bar"></i>                                 
-                                <i class="fa fa-wifi" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="WiFi Gratis" data-original-title="WiFi"></i>
-                                <i class="fa fa-television" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Televisión en la habitación" data-original-title="TV de plasma"></i>     
+                                <i class="fa fa-cutlery" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="<?php echo $servicios['1'];?>" data-original-title="<?php echo $servicios['2'];?>"></i>                                 
+                                <i class="fa fa-wifi" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="<?php echo $servicios['3'];?>" data-original-title="<?php echo $servicios['4'];?>"></i>
+                                <i class="fa fa-television" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="<?php echo $servicios['5'];?>" data-original-title="<?php echo $servicios['6'];?>"></i>     
                             </div>
                           </div>
                           <div class="col-md-3 col-sm-3 col-xs-12 room_price">
                              <div class="room_price_inner">
                                 <span class="room_price_number">86.00€</span>
-                                <small class="upper">por noche</small>
-                                <a href="bookin.php?tipo=triple" class="button  btn_blue btn_full upper">Reservar ahora</a>
+                                <small class="upper"><?php echo $pornoche;?></small>
+                                <a href="bookin.php?tipo=triple" class="button  btn_blue btn_full upper"><?php echo $rahora;?></a>
                              </div>
                           </div>
                        </div>
@@ -264,19 +264,19 @@
                     <div class="col-lg-8 col-md-7 col-sm-12">
                        <div class="room_details row-flex">
                           <div class="col-md-9 col-sm-9 col-xs-12 room_desc">
-                             <h3><a href="habitacion?tipo=familiar">Habitación familiar</a></h3>
-                             <p>Para cuatro personas, dos habitaciones comunicadas por una puerta. Cada una de las habitaciones cuenta con su propia TV y cuarto de baño.</p>
+                             <h3><a href="habitacion?tipo=familiar"><?php echo $habitacion['5'];?></a></h3>
+                             <p><?php echo $habitacion['5.1'];?></p>
                              <div class="room_services"> 
-                                <i class="fa fa-cutlery" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Mini bar en la habitación" data-original-title="Mini bar"></i>                                 
-                                <i class="fa fa-wifi" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="WiFi Gratis" data-original-title="WiFi"></i>
-                                <i class="fa fa-television" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Televisión en la habitación" data-original-title="TV de plasma"></i>     
+                                <i class="fa fa-cutlery" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="<?php echo $servicios['1'];?>" data-original-title="<?php echo $servicios['2'];?>"></i>                                 
+                                <i class="fa fa-wifi" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="<?php echo $servicios['3'];?>" data-original-title="<?php echo $servicios['4'];?>"></i>
+                                <i class="fa fa-television" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="<?php echo $servicios['5'];?>" data-original-title="<?php echo $servicios['6'];?>"></i>     
                             </div>
                           </div>
                           <div class="col-md-3 col-sm-3 col-xs-12 room_price">
                              <div class="room_price_inner">
                                 <span class="room_price_number">118.00€</span>
-                                <small class="upper">por noche</small>
-                                <a href="bookin.php?tipo=familiar" class="button  btn_blue btn_full upper">Reservar ahora</a>
+                                <small class="upper"><?php echo $pornoche;?></small>
+                                <a href="bookin.php?tipo=familiar" class="button  btn_blue btn_full upper"><?php echo $rahora;?></a>
                              </div>
                           </div>
                        </div>
@@ -294,20 +294,18 @@
                         <div class="col-md-3 col-sm-6 widget">
                             <div class="about">
                                 <a href="index.html"><img class="logo" src="images/hospederia-de-alesves.gif" height="80" alt="Logo"></a>
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.</p>
-                                <p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip.</p>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6 widget">
-                            <h5>Noticias de la zona:</h5>
+                            <h5><?php echo $noticias;?></h5>
                             <ul class="blog_posts">
-                                <li><a href="http://www.villafranca.es/">Villafranca</a> <small>Web ayuntamiento Villafranca</small></li>
-                                <li><a href="http://www.tudela.es/">Tudela</a> <small>Web ayuntamiento Tudela</small></li>
-                                <li><a href="http://www.olite.es/">Olite</a> <small>Web ayuntamiento Olite</small></li>
+                                <li><a href="http://www.villafranca.es/">Villafranca</a> <small>Web <?php echo $ayuntamiento;?> Villafranca</small></li>
+                                <li><a href="http://www.tudela.es/">Tudela</a> <small>Web <?php echo $ayuntamiento;?> Tudela</small></li>
+                                <li><a href="http://www.olite.es/">Olite</a> <small>Web <?php echo $ayuntamiento;?> Olite</small></li>
                             </ul>
                         </div>
                         <div class="col-md-3 col-sm-6 widget">
-                            <h5>Actividades</h5>
+                            <h5><?php echo $actividades;?></h5>
                             <ul class="useful_links">
                                 <li><a href="http://www.lasbardenasreales.com/">Las Bardenas Reales</a></li>
                                 <li><a href="https://www.olite.com.es/">Olite</a></li>
@@ -317,11 +315,11 @@
                             </ul>
                         </div>
                         <div class="col-md-3 col-sm-6 widget">
-                            <h5>Contáctanos:</h5>
+                            <h5><?php echo $contact_us;?></h5>
                             <address>
                                 <ul class="address_details">
                                     <li><i class="glyphicon glyphicon-map-marker"></i>C/ bajo el arco, 34, 31330 Villafranca, Navarra</li>
-                                    <li><i class="glyphicon glyphicon-phone-alt"></i> Teléfono: <a href="tel:948845686">(+34) 948 84 56 86</a></li>
+                                    <li><i class="glyphicon glyphicon-phone-alt"></i> <?php echo $telefono;?>: <a href="tel:948845686">(+34) 948 84 56 86</a></li>
                                     <li><i class="fa fa-fax"></i> Fax: (+34) 948 84 61 82</li>
                                     <li><i class="fa fa-envelope"></i> Email: <a href="mailto:info@hospederiadealesves.com">info@hospederiadealesves.com</a></li>
                                 </ul>
@@ -335,7 +333,7 @@
                     <div class="row">
                         <div class="col-md-6 col-sm-6">
                             <div class="copyrights">
-                                 Copyright 2020 <a href="index.html">Hospedería de Alesves</a> Todos los derechos reservados.
+                                 Copyright 2020 <a href="index.html">Hospedería de Alesves</a><?php echo ' '.$derechos;?>
                             </div>
                         </div>
                         <div class="col-md-6 col-sm-6">

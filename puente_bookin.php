@@ -57,52 +57,75 @@ require './conexion.php';
     foreach($_POST as $post => $contenido){
         echo $post.'='.$contenido.'<br>';
     }
-    echo $salida;
-    echo '<br>'.$llegada.'<br>';
     
-    /*CASTEO DE LLEGADA Y SALIDA A TIPO DATE*/
-    $llegadaa = date_create($llegada); $llegadacas = date_format($llegadaa, 'Y-m-d');
-    $salidaa = date_create($salida); $salidacas = date_format($salidaa, 'Y-m-d');
+    /*HASH DE DATOS BANCARIOS*/
+    $tar = $_POST['tarjeta'];
+    $cad = $_POST['caducidad'];
     
-    /*COMPRUEBA DISPONIBILIDAD*/    
-    $sql = "SELECT hab,salida,llegada FROM habitaciones BETWEEN $llegadacas AND $salidacas";
-    if($resu = mysqli_query($con, $sql)){ 
+    /*CASTEO DE LLEGADA A TIPO DATE*/
+    $llegadaa = str_replace("/","-",$llegada);
+    $d = new DateTime($llegadaa);
+    $timestamp = $d->getTimestamp();
+    $llegada_cas = $d->format('Y-m-d');
+    
+    /*CASTEO DE SALIDA A TIPO DATE*/
+    $salidaa = str_replace("/","-",$salida);
+    $d = new DateTime($salidaa);
+    $timestamp = $d->getTimestamp();
+    $salida_cas = $d->format('Y-m-d');
+    
+    /*ALMACENAMOS TODOS LOS DÍAS ENTRE LAS DOS FECHAS SELECCIONADAS*/
+    $estancia[] = "";
+    for($i=$llegada_cas;$i<=$salida_cas;$i=("Y-m-d". strtotime($i."+1 days"))){
+        echo $i.'<br>';
+        $estancia = $i;
+    }
+    /*COMPRUEBA DISPONIBILIDAD*/ 
+    $habNoDisp[]="";
+    $sql = "SELECT hab,salida,llegada FROM reservas WHERE salida BETWEEN '$llegada_cas' AND '$salida_cas'";
+    if($res = mysqli_query($con, $sql)){ 
+        echo 'QUERY COMPRUEBA DISPONIBILIDAD: <br>';
         while($row = mysqli_fetch_assoc($res)){
-            $habNoDisp = $row['hab'];
-        }    
-        $sql = "SELECT numero FROM habitaciones WHERE tipo = '$tipo' AND disponible = 'si' LIMIT 1";
-        if($res = mysqli_query($con, $sql)){
-            while ($row = mysqli_fetch_assoc($res)){
-                global $num;
-                $num = $row['numero']; 
-                echo $num.'<br>';
-            }
+            $habNoDisp[] = $row['hab'];
+            echo $row['hab'].'<br>';
+        }  
+    }
+    /*HABITACIONES ACTIVAS*/
+    $sql = "SELECT numero FROM habitaciones WHERE tipo = '$tipo' AND disponible = 'si'";
+    if($res = mysqli_query($con, $sql)){
+        echo 'QUERY HABITACIONES ACTIVAS: <br>';
+        while ($row = mysqli_fetch_assoc($res)){
+            global $num;
+            $num = $row['numero']; 
+            echo $num.'<br>';
         }
     }
-    if($num!==null){
+    /*COMPARA DISPONIBILIDAD Y HABITACIONES*/
+    if($num!==null&&!in_array($num, $habNoDisp)){
         
-    /*INSCRIPCION RESERVA EN BBDD*/
+        /*INSCRIPCION RESERVA EN BBDD*/
         $sql = "INSERT INTO reservas(llegada, salida, tipo_habitacion, desayuno, cena, adultos, dni, ninos, supletoria, cuna, comentarios, hab)"
-               . " VALUES ('$llegadacas','$salidacas','$tipo','$desayuno','$cena',$adultos,'$dni',$ninos,$supletoria,$cuna,'$comentario', $num)";
+               . " VALUES ('$llegada_cas','$salida_cas','$tipo','$desayuno','$cena',$adultos,'$dni',$ninos,$supletoria,$cuna,'$comentario', $num)";
         $resultado = mysqli_query($con, $sql) or die (mysqli_error($con)); 
         
         /*COMPRUEBA SI YA HA VENIDO CLIENTE*/
         $DNIexiste = "SELECT dni FROM clientes WHERE dni = '$dni'";
         $DNIexisteRes = mysqli_query($con,$DNIexiste) or die (mysqli_error($con));
         if(mysqli_num_rows($DNIexisteRes)==0){
-            $sql2 = "INSERT INTO clientes (dni, nombre, apellidos, telefono, email, pais, NumeroVisitas)"
-                     ."VALUES ('$dni', '$nombre', '$apellidos', '$telf', '$email', '$pais', 1)";
+            $sql2 = "INSERT INTO clientes (dni, nombre, apellidos, telefono, email, pais, NumeroVisitas, tarjeta, caducidad)"
+                     ."VALUES ('$dni', '$nombre', '$apellidos', '$telf', '$email', '$pais', 1, '$tar', '$cad')";
             $resultado2 = mysqli_query($con, $sql2) or die (mysqli_error($con));
         }else{
             $sql3 = "UPDATE clientes SET NumeroVisitas = NumeroVisitas+1 WHERE dni = '$dni'";
             $resultado3 = mysqli_query($con, $sql3) or die (mysqli_error($con));
         }
+        
         /*ACTUALIZA DISPONIBILIDAD*/
        /* $sql4 = "UPDATE habitaciones SET disponible = 'no' WHERE numero = $num";
         $resultado4 = mysqli_query($con,$sql4) or die (mysqli_error($con)); */      
-        //header("Location: bookin.php?booked=yes");        
+        header("Location: bookin.php?booked=yes");        
     }else{
-        //header("Location: bookin.php?disponibilidad=no");
+        header("Location: bookin.php?disponibilidad=no");
     }
     
 /*MAIL VERIFICACION*/

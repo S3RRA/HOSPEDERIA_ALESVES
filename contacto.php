@@ -1,3 +1,6 @@
+<?php
+    require 'idiomas/es.php';
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -51,7 +54,7 @@
         <div class="top_menu">
             <div class="container">
                 <div class="welcome_mssg hidden-xs">
-                    Bienvenido a la Hospedería de Alesves
+                    <?php echo $welcome;?>
                 </div>
                 <ul class="top_menu_right">
                     <li><i class="fa fa-phone"></i><a href="tel:948845686"> (+34) 948 845 686 </a></li>
@@ -59,14 +62,11 @@
                     <li class="language-switcher">
                         <nav class="dropdown">
                             <a href="#" class="dropdown-toggle select" data-hover="dropdown" data-toggle="dropdown">
-                                <i class="famfamfam-flag-es "></i>Español<b class="caret"></b>
+                                <i class="famfamfam-flag-es "></i><?php echo $idioma['1']?><b class="caret"></b>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a href="#"><i class="famfamfam-flag-gr"></i>Ελληνικά</a></li>
-                                <li><a href="#"><i class="famfamfam-flag-it"></i>Italiano</a></li>
-                                <li><a href="#"><i class="famfamfam-flag-de"></i>Deutsch</a></li>
-                                <li><a href="#"><i class="famfamfam-flag-fr"></i>Français</a></li>
-                                <li><a href="#"><i class="famfamfam-flag-gb"></i>English</a></li>
+                                <li><a href="#"><i class="famfamfam-flag-gr"></i><?php echo $idioma['2']?></a></li>
+                                <li><a href="#"><i class="famfamfam-flag-it"></i><?php echo $idioma['3']?></a></li>
                             </ul>
                         </nav>
                     </li>
@@ -89,21 +89,21 @@
                 </div>
                 <nav id="main_menu" class="mobile_menu navbar-collapse">
                     <ul class="nav navbar-nav">
-                        <li class="mobile_menu_title" style="display:none;">MENU</li>
+                        <li class="mobile_menu_title" style="display:none;"><?php echo $menu['1'];?></li>
                         <li class="dropdown simple_menu">
-                            <a href="index.php" data-toggle="dropdown">INICIO</a>                            
+                            <a href="index.php" data-toggle="dropdown"><?php echo $menu['2'];?></a>                            
                         </li>
                         <li class="dropdown simple_menu">
-                            <a href="elige_hab.php">ALOJAMIENTO<b class="caret"></b></a>                            
+                            <a href="elige_hab.php"><?php echo $menu['3'];?><b class="caret"></b></a>                            
                         </li>
                         <li class="dropdown simple_menu">
-                            <a href="banners.php">ACTIVIDADES<b class="caret"></b></a>                            
+                            <a href="banners.php"><?php echo $menu['4'];?><b class="caret"></b></a>                            
                         </li>
                         <li class="dropdown simple_menu active">
-                            <a href="contacto.php">CONTACTO</a>
+                            <a href="contacto.php"><?php echo $menu['5'];?></a>
                         </li>
                         <li class="menu_button">
-                            <a href="bookin.php" class="button  btn_yellow"><i class="fa fa-calendar"></i>RESERVAR</a>
+                            <a href="bookin.php" class="button  btn_yellow"><i class="fa fa-calendar"></i><?php echo $menu['6'];?></a>
                         </li>
                     </ul>
                 </nav>
@@ -114,10 +114,10 @@
         <div class="page_title gradient_overlay" style="background: url(images/hospederia.jpg)bottom right no-repeat,url(images/06_exterior.jpg) center no-repeat,url(images/jardin_1.jpg) center repeat;">
             <div class="container">
                 <div class="inner">
-                    <h1>Contacto</h1>
+                    <h1><?php echo $contacto;?></h1>
                     <ol class="breadcrumb">
-                        <li><a href="index.html">Inicio</a></li>
-                        <li>Contacto</li>
+                        <li><a href="index.html"><?php echo $inicio;?></a></li>
+                        <li><?php echo $contacto;?></li>
                     </ol>
                 </div>
             </div>
@@ -131,36 +131,36 @@
                     <div class="col-md-8">
                         <?php if(isset($_GET['mail'])) { ?>
                         <div class="main_title  a_left">
-                            <h2>Hemos recibido su email, nos pondremos en contacto con usted lo antes posible.</h2>
+                            <h2><?php echo $form_mail;?></h2>
                         </div>
                         <?php }else{ ?>
                         <div class="main_title  a_left">
-                            <h2>CONTACTA CON NOSOTROS</h2>
+                            <h2><?php echo $contact_us_MAY;?></h2>
                         </div>
                         <form id="contact-form-page" method='post' action=''>
                             <div class="row">
                                 <div class="form-group col-md-6 col-sm-6">
                                     <label class="control-label">Nombre:</label>
-                                    <input type="text" class="form-control" name="name" placeholder="Su nombre:">
+                                    <input type="text" class="form-control" name="name" placeholder="<?php echo $form_mail['2'];?>">
                                 </div>
                                 <div class="form-group col-md-6 col-sm-6">
                                     <label class="control-label">Teléfono:</label>
-                                    <input type="text" class="form-control" name="phone" placeholder="Su teléfono:">
+                                    <input type="text" class="form-control" name="phone" placeholder="<?php echo $phone;?>">
                                 </div>
                                 <div class="form-group col-md-6 col-sm-6">
                                     <label class="control-label">Email</label>
-                                    <input type="email" class="form-control" name="email" placeholder="Su email:">
+                                    <input type="email" class="form-control" name="email" placeholder="<?php echo $form_mail['3'];?>">
                                 </div>
                                 <div class="form-group col-md-6 col-sm-6">
                                     <label class="control-label">Asunto</label>
-                                    <input type="text" class="form-control" name="subject" placeholder="Indique el asunto a tratar:">
+                                    <input type="text" class="form-control" name="subject" placeholder="<?php echo $asunto;?>">
                                 </div>
                                 <div class="form-group col-md-12 col-sm-12 col-xs-12">
                                     <label class="control-label">Mensaje</label>
-                                    <textarea class="form-control" name="message" placeholder="Su mensaje..."></textarea>
+                                    <textarea class="form-control" name="message" placeholder="<?php echo $form_mail['4'];?>"></textarea>
                                 </div>
                                 <div class="form-group col-md-12 col-sm-12 col-xs-12">
-                                    <button class="button btn_lg btn_blue btn_full upper" type="submit"><i class="fa fa-location-arrow"></i>Enviar mensaje</button>
+                                    <button class="button btn_lg btn_blue btn_full upper" type="submit"><i class="fa fa-location-arrow"></i><?php echo $form_mail['5'];?></button>
                                 </div>
                             </div>
                         </form>
@@ -174,7 +174,7 @@
                             </div>
                               <ul class="contact-info upper mt40">
                             <li>
-                                <span class="ci_item">DIRECCIÓN:</span>
+                                <span class="ci_item"><?php echo $contact_titles['1'];?></span>
                                 Calle Bajo el Arco, 34, 31330 Villafranca, Navarra
                             </li>
                             <li>
@@ -186,7 +186,7 @@
                                 wwww.hospederiadealesves.com
                             </li>
                             <li>
-                                <span class="ci_item">TELÉFONO:</span>
+                                <span class="ci_item"><?php echo $contact_titles['2'];?></span>
                                 <a href="tel:948845686">(+34) <strong>948 84 56 86</strong></a>
                             </li>
                             <li>
@@ -220,12 +220,10 @@
                         <div class="col-md-3 col-sm-6 widget">
                             <div class="about">
                                 <a href="index.php"><img class="logo" src="images/hospederia-de-alesves.gif" height="32" alt="Logo"></a>
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.</p>
-                                <p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip.</p>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6 widget">
-                            <h5>Noticias de la zona:</h5>
+                            <h5><?php echo $noticias;?></h5>
                             <ul class="blog_posts">
                                 <li><a href="http://www.villafranca.es/">Villafranca</a> <small>Web ayuntamiento Villafranca</small></li>
                                 <li><a href="http://www.tudela.es/">Tudela</a> <small>Web ayuntamiento Tudela</small></li>
@@ -233,7 +231,7 @@
                             </ul>
                         </div>
                         <div class="col-md-3 col-sm-6 widget">
-                            <h5>Actividades</h5>
+                            <h5><?php echo $actividades;?></h5>
                             <ul class="useful_links">
                                 <li><a href="http://www.lasbardenasreales.com/">Las Bardenas Reales</a></li>
                                 <li><a href="https://www.olite.com.es/">Olite</a></li>
@@ -243,11 +241,11 @@
                             </ul>
                         </div>
                         <div class="col-md-3 col-sm-6 widget">
-                            <h5>Contáctanos:</h5>
+                            <h5><?php echo $contact_us;?></h5>
                             <address>
                                 <ul class="address_details">
                                         <li><i class="glyphicon glyphicon-map-marker"></i>Calle Bajo el Arco, 34, 31330 Villafranca, Navarra</li>
-                                        <li><i class="glyphicon glyphicon-phone-alt"></i> Teléfono: <a href="tel:948845686">(+34) 948 845 686</a> </li>
+                                        <li><i class="glyphicon glyphicon-phone-alt"></i><?php echo $telefono; ?><a href="tel:948845686">(+34) 948 845 686</a> </li>
                                         <li><i class="fa fa-fax"></i> Fax: (+34) 948 84 61 82</li>
                                         <li><i class="fa fa-envelope"></i> Email: <a href="mailto:info@hospederiadealesves.com">info@hospederiadealesves.com</a></li>
                                 </ul>
@@ -261,7 +259,7 @@
                     <div class="row">
                         <div class="col-md-6 col-sm-6">
                             <div class="copyrights">
-                                Copyright 2020 <a href="index.html">Hospedería de Alesves</a> Todos los derechos reservados.
+                                Copyright 2020 <a href="index.html">Hospedería de Alesves</a> <?php echo $derechos;?>
                             </div>
                         </div>
                         <div class="col-md-6 col-sm-6">

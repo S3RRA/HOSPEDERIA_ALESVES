@@ -1,6 +1,14 @@
+<?php
+
+    session_start();
+    
+    require './idiomas/language.php';
+
+
+?>
 <!DOCTYPE html>
-<html>
-<head>
+<html lang="<?php echo $lang;?>">
+    <head>
     <meta charset="utf-8">
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
@@ -61,22 +69,18 @@
         <div class="top_menu">
             <div class="container">
                 <div class="welcome_mssg hidden-xs">
-                    Bienvenido a la Hospedería de Alesves
+                    <?php echo $welcome ?>
                 </div>
                 <ul class="top_menu_right">
                     <li><i class="fa fa-phone"></i><a href="tel:948845686"> (+34) 948 845 686</a></li>
                     <li class="email hidden-xxs"><i class="fa fa-envelope-o "></i> <a href="mailto:info@hospederiadealesves.com">info@hospederiadealesves.com</a></li>
                     <li class="language-switcher">
                         <nav class="dropdown">
-                            <a href="#" class="dropdown-toggle select" data-hover="dropdown" data-toggle="dropdown">
-                                <i class="famfamfam-flag-gb "></i>Español<b class="caret"></b>
-                            </a>
+                            <?php echo $idioma['1'];?>
                             <ul class="dropdown-menu">
-                                <li><a href="#"><i class="famfamfam-flag-gr"></i>Ελληνικά</a></li>
-                                <li><a href="#"><i class="famfamfam-flag-it"></i>Italiano</a></li>
-                                <li><a href="#"><i class="famfamfam-flag-de"></i>Deutsch</a></li>
-                                <li><a href="#"><i class="famfamfam-flag-fr"></i>Français</a></li>
-                                <li><a href="#"><i class="famfamfam-flag-es"></i>English</a></li>
+                                <li><?php echo $idioma['2'];?></li>
+                                <li><?php echo $idioma['3']; ?></li>                                
+                                <li><?php echo $idioma['4']; ?></li>
                             </ul>
                         </nav>
                     </li>
@@ -92,27 +96,22 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <!--
-                   <a class="navbar-brand" href="index.html" style="position: relative;top:-30px;">
-                        <img src="images/hospederia-de-alesves.gif" height="74" alt="Logo">
-                    </a>
-                    -->
                 </div>
                 <nav id="main_menu" class="mobile_menu navbar-collapse">
                     <ul class="nav navbar-nav">
-                        <li class="mobile_menu_title" style="display:none;">MENU</li>
-                        <li class="dropdown simple_menu active">
-                            <a href="index.php" data-toggle="dropdown">INICIO</a>                            
+                        <li class="mobile_menu_title" style="display:none;"><?php echo $menu['1'];?></li>
+                        <li class="simple_menu active">
+                            <a href="index.php" data-toggle="dropdown"><?php echo $menu['2'];?></a>                            
                         </li>
-                        <li class="dropdown simple_menu">
-                            <a href="elige_hab.php">ALOJAMIENTO<b class="caret"></b></a>                            
+                        <li class="simple_menu">
+                            <a href="elige_hab.php"><?php echo $menu['3'];?><b class="caret"></b></a>                            
                         </li>
-                        <li class="dropdown simple_menu">
-                            <a href="banners.php">ACTIVIDADES<b class="caret"></b></a>                            
+                        <li class="simple_menu">
+                            <a href="banners.php"><?php echo $menu['4'];?><b class="caret"></b></a>                            
                         </li>
-                        <li><a href="contacto.php">CONTACTO</a></li>
+                        <li><a href="contacto.php"><?php echo $menu['5'];?></a></li>
                         <li class="menu_button">
-                            <a href="bookin.php" class="button  btn_yellow"><i class="fa fa-calendar"></i>RESERVAR</a>
+                            <a href="bookin.php" class="button  btn_yellow"><i class="fa fa-calendar"></i><?php echo $menu['6'];?></a>
                         </li>
                     </ul>
                 </nav>
@@ -147,7 +146,7 @@
                                  data-lineheight="['60','50','40','30']"
                                  data-whitespace="nowrap" 
                                  data-frames='[{"delay":1000,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":500,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                                 style="z-index: 5; color: #fff; font-weight: 900;">Bienvenido
+                                 style="z-index: 5; color: #fff; font-weight: 900;"><?php echo $slider['1'];?>
                             </div>
                             <!-- LAYER NR. 2 -->
                             <div class="tp-caption tp-resizeme"
@@ -168,7 +167,7 @@
                                  data-basealign="slide" 
                                  data-responsive="off" 
                                  data-elementdelay="0.05"
-                                 style="z-index: 9; font-weight: 400; color: rgba(255, 255, 255, 0.8); font-family: Raleway;">a la Hospedería de Alesves
+                                 style="z-index: 9; font-weight: 400; color: rgba(255, 255, 255, 0.8); font-family: Raleway;"><?php echo $slider['2'];?>
                             </div>   
                         </li>
 
@@ -199,7 +198,7 @@
                                  data-lineheight="['60','50','40','30']"
                                  data-whitespace="nowrap" 
                                  data-frames='[{"delay":1000,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":500,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                                 style="z-index: 5; color: #fff; font-weight: 900;">DISFRUTA DE TUS VACACIONES
+                                 style="z-index: 5; color: #fff; font-weight: 900;"><?php echo $slider['3'];?>
                             </div>
                             <!-- LAYER NR. 2 -->
                             <div class="tp-caption tp-resizeme"
@@ -220,7 +219,7 @@
                                  data-basealign="slide" 
                                  data-responsive="off" 
                                  data-elementdelay="0.05"
-                                 style="z-index: 9; font-weight: 400; color: rgba(255, 255, 255, 0.8); font-family: Raleway;">con nosotros
+                                 style="z-index: 9; font-weight: 400; color: rgba(255, 255, 255, 0.8); font-family: Raleway;"><?php echo $slider['4'];?>
                             </div>   
                         </li>
                         
@@ -251,7 +250,7 @@
                                  data-lineheight="['60','50','40','30']"
                                  data-whitespace="nowrap" 
                                  data-frames='[{"delay":1000,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":500,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                                 style="z-index: 5; color: #fff; font-weight: 900;">el lugar perfecto
+                                 style="z-index: 5; color: #fff; font-weight: 900;"><?php echo $slider['5'];?>
                             </div>
                             <!-- LAYER NR. 2 -->
                             <div class="tp-caption tp-resizeme"
@@ -272,7 +271,7 @@
                                  data-basealign="slide" 
                                  data-responsive="off" 
                                  data-elementdelay="0.05"
-                                 style="z-index: 9; font-weight: 400; color: rgba(255, 255, 255, 0.8); font-family: Raleway;">para relajarse
+                                 style="z-index: 9; font-weight: 400; color: rgba(255, 255, 255, 0.8); font-family: Raleway;"><?php echo $slider['6'];?>
                             </div>   
                         </li>
                         
@@ -286,18 +285,18 @@
                         <form id="booking-form" method="post" action="bookin.php">
                             <div class="col-md-2 md_pr5">
                                 <div class="form-group">
-                                    <input name="email" type="text" id="email" value="" class="form-control" placeholder="Dirección de correo:">
+                                    <input name="email" type="text" id="email" value="" class="form-control" placeholder="<?php echo $bookin['1'];?>">
                                 </div>
                             </div>
                             <div class="col-md-2 md_p5">
                                 <div class="form-group">
                                     <div class="form_select">
-                                        <select name="tipo" class="form-control" title="Seleccione habitación" data-header="Habitaciones:">
-                                            <option value="Single">Individual</option>
-                                            <option value="Double">Doble</option>
-                                            <option value="Deluxe">Triple</option>
-                                            <option value="Double">Superior</option>
-                                            <option value="Deluxe">Familiar</option>
+                                        <select name="tipo" class="form-control" title="<?php echo $bookin['2']; ?>" data-header="<?php echo $habitaciones['1']; ?>">
+                                            <option value="Single"><?php echo $habitaciones['2']; ?></option>
+                                            <option value="Double"><?php echo $habitaciones['3']; ?></option>
+                                            <option value="Deluxe"><?php echo $habitaciones['4']; ?></option>
+                                            <option value="Double"><?php echo $habitaciones['5']; ?></option>
+                                            <option value="Deluxe"><?php echo $habitaciones['6']; ?></option>
                                         </select>
                                     </div>
                                 </div>
@@ -307,14 +306,14 @@
                                     <div class="col-md-6 col-sm-6 arrival_date md_pl5 md_nopadding_right">
                                         <div class="form-group">
                                             <div class="form_date">
-                                                <input type="text" class="datepicker form-control md_noborder_right" name="checkin" placeholder="Fecha de llegada:" readonly>
+                                                <input type="text" class="datepicker form-control md_noborder_right" name="checkin" placeholder="<?php echo $bookin['3'];?>" readonly>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-sm-6 departure_date md_pr5 md_nopadding_left">
                                         <div class="form-group">
                                             <div class="form_date departure">
-                                                <input type="text" class="datepicker form-control" name="checkout" placeholder="Fecha de salida:" readonly>
+                                                <input type="text" class="datepicker form-control" name="checkout" placeholder="<?php echo $bookin['4'];?>" readonly>
                                             </div>
                                         </div>
                                     </div>
@@ -325,7 +324,7 @@
                                     <div class="col-md-6 col-sm-6 adults md_pl5 md_nopadding_right">
                                         <div class="form-group">
                                             <div class="form_select">
-                                                <select name="adultos" class="form-control md_noborder_right" title="Adultos:" data-header="Adultos">
+                                                <select name="adultos" class="form-control md_noborder_right" title="<?php echo $bookin['5'];?>:" data-header="<?php echo $bookin['5'];?>">
                                                     <option value="1">1</option>
                                                     <option value="2">2</option>
                                                     <option value="3">3</option>
@@ -336,7 +335,7 @@
                                     <div class="col-md-6 col-sm-6 children md_pr5 md_nopadding_left">
                                         <div class="form-group">
                                             <div class="form_select childrens_select">
-                                                <select name="niños" class="form-control dropup" title="Niños:" data-header="Niños">
+                                                <select name="niños" class="form-control dropup" title="<?php echo $bookin['6'];?>:" data-header="<?php echo $bookin['6'];?>">
                                                     <option value="1">1</option>
                                                     <option value="2">2</option>
                                                     <option value="3">3</option>
@@ -348,7 +347,7 @@
                                 </div>
                             </div>
                             <div class="col-md-2 md_pl5">
-                                <button type="submit" class="button  btn_blue btn_full" onclick="location.href='bookin.php'">RESERVAR</button>
+                                <button type="submit" class="button  btn_blue btn_full" onclick="location.href='bookin.php'"><?php echo $menu['6']; ?>  </button>
                             </div>
                         </form>
                     </div>
@@ -360,23 +359,30 @@
         <section class="white_bg" id="rooms">
             <div class="container">
                 <div class="main_title mt_wave mt_yellow a_center">
-                    <h2>NUESTRAS HABITACIONES</h2>
+                    <h2><?php echo $rooms['1']; ?></h2>
                 </div> 
-                    <p class="main_description a_center">Nuestras once habitaciones, sorprenden por su atractivo diseño, funcionalidad y ambiente acogedor. Todas ellas conservan sus altos techos de madera y sus grandes y abocinados ventanales, que se asoman al jardín. Están dotadas de:
-                        aire acondicionado, calefacción, baño, teléfono, televisión LCD de pantalla plana, conexión a Internet de alta velocidad, secador y minibar.
-                        Una de ellas, al igual que todas las zonas comunes del hotel, está adaptada para minusválidos.
+                    <p class="main_description a_center">
+                        <?php echo $rooms['2']; ?>
                     </p> 
                 <div class="row">
                     <div class="col-md-4">
                         <article class="room">
                             <figure>
-                                <div class="price">56€ <span>/ noche</span></div>
+                                <div class="price">56€ <span>/ <?php echo $noche;?></span></div>
                                 <a class="hover_effect h_blue h_link" href="habitacion.php?tipo=individual">
                                     <img src="images/habitacion_1.jpg" class="img-responsive" alt="Image">
                                 </a>
                                 <figcaption>
-                                    <h4><a href="room.html">Individual</a></h4>
-                                    <span class="f_right"><a href="habitacion.php?tipo=individual" class="button btn_sm btn_blue">Ver detalles</a></span>
+                                    <h4>
+                                        <a href="room.html">
+                                            <?php echo $habitaciones['2'];?>
+                                        </a>
+                                    </h4>
+                                    <span class="f_right">
+                                        <a href="habitacion.php?tipo=individual" class="button btn_sm btn_blue">
+                                        <?php echo $detalles;?>
+                                        </a>
+                                    </span>
                                 </figcaption>
                             </figure>
                         </article>
@@ -384,13 +390,21 @@
                     <div class="col-md-4">
                         <article class="room">
                             <figure>
-                                <div class="price">68€<span>/ noche</span></div>
+                                <div class="price">68€<span>/ <?php echo $noche;?></span></div>
                                 <a class="hover_effect h_blue h_link" href="habitacion.php?tipo=doble">
                                     <img src="images/habitacion_3.jpg" class="img-responsive" alt="Image">
                                 </a>
                                 <figcaption>
-                                    <h4><a href="room.html">Doble</a></h4>
-                                    <span class="f_right"><a href="habitacion.php?tipo=doble" class="button btn_sm btn_blue">Ver detalles</a></span>
+                                    <h4>
+                                        <a href="habitacion.php?tipo=doble">
+                                            <?php echo $habitaciones['3'];?>
+                                        </a>
+                                    </h4>
+                                    <span class="f_right">
+                                        <a href="habitacion.php?tipo=doble" class="button btn_sm btn_blue">
+                                            <?php echo $detalles;?>
+                                        </a>
+                                    </span>
                                 </figcaption>
                             </figure>
                         </article>
@@ -398,20 +412,28 @@
                     <div class="col-md-4">
                         <article class="room">
                             <figure>
-                                <div class="price">83€ <span>/ noche</span></div>
+                                <div class="price">83€ <span>/ <?php echo $noche;?></span></div>
                                 <a class="hover_effect h_blue h_link" href="habitacion.php?tipo=superior">
                                     <img src="images/habitacion_2.jpg" class="img-responsive" alt="Image">
                                 </a>
                                 <figcaption>
-                                    <h4><a href="habitacion.php?tipo=superior">Superior</a></h4>
-                                    <span class="f_right"><a href="room.html" class="button btn_sm btn_blue">Ver detalles</a></span>
+                                    <h4>
+                                        <a href="habitacion.php?tipo=superior">
+                                            <?php echo $habitaciones['3'];?>
+                                        </a>
+                                    </h4>
+                                    <span class="f_right">
+                                        <a href="room.html" class="button btn_sm btn_blue">
+                                            <?php echo $detalles;?>
+                                        </a>
+                                    </span>
                                 </figcaption>
                             </figure>
                         </article>
                     </div>
                 </div>
                 <div class="mt40 a_center">
-                    <a class="button btn_sm btn_yellow" href="elige_hab.php">Ver todas las habitaciones</a>
+                    <a class="button btn_sm btn_yellow" href="elige_hab.php"><?php echo $rooms['3'];?></a>
                 </div>
             </div>
         </section>
@@ -420,9 +442,11 @@
         <section class="lightgrey_bg" id="features">
             <div class="container">
                 <div class="main_title mt_wave mt_yellow a_center">
-                    <h2>Servicios y actividades</h2>
+                    <h2><?php echo $features['1'];?></h2>
                 </div>
-                <p class="main_description a_center">En la Hospedería de Alesves ponemos a su disposición una serie de servicios y actividades únicas para que su comfort sea el máximo posible.</p>
+                <p class="main_description a_center">
+                   <?php echo $features['2'];?>
+                </p>
                 
                 <div class="row">
                     <div class="col-md-7">
@@ -437,28 +461,28 @@
                             <div class="owl-thumb-item">
                                 <span class="media-left"><i class="flaticon-food"></i></span>
                                 <div class="media-body">
-                                    <h5>Restaurante</h5>
-                                    <p>En la Hospedería contamos con una cocina que llenará su paladar con el auténtico sabor de productos de proximidad locales, naturales y de buena calidad.</p>
+                                    <h5><?php echo $features['3'];?></h5>
+                                    <p><?php echo $features['4'];?></p>
                                 </div>
                             </div>
                             <div class="owl-thumb-item">
                                 <span class="media-left"><i class="flaticon-person"></i></span>
                                 <div class="media-body">
-                                    <h5>Las Bardenas Reales</h5>
-                                    <p>Este parque natural declarado por la UNESCO Reserva de la Biosfera es de obligada visita, encontrando diversas actividades como senderismo, rutas en bicicleta, 4x4, caballo o quad entre muchas otras.</p>
+                                    <h5><?php echo $features['5'];?></h5>
+                                    <p><?php echo $features['6'];?></p>
                                 </div>
                             </div>
                             <div class="owl-thumb-item">
                                 <span class="media-left"><i class="flaticon-business"></i></span>
                                 <div class="media-body">
-                                    <h5>Turismo enológico</h5>
-                                    <p>De entre las múltiples actividades que se pueden realizar en Navarra, especialmente en la Ribera, relacionadas con la gastronomía brilla con luz propia la del turismo enológico puesto que Navarra cuenta con una importante producción de vino y la presencia de tres denominaciones de origen diferentes dentro de Navarra: Rioja, Navarra y Ribera del Queiles.</p>
+                                    <h5><?php echo $features['7'];?></h5>
+                                    <p><?php echo $features['8'];?></p>
                                 </div>
                             </div>                            
                         </div>
                     </div>
                     <div class="mt40 a_center">
-                        <a class="button btn_sm btn_yellow" href="banners.php">Ver todas las actividades</a>
+                        <a class="button btn_sm btn_yellow" href="banners.php"><?php echo $features['9'];?></a>
                     </div>
                 </div>
             </div>
@@ -490,21 +514,16 @@
                     
                     <div class="col-md-6 col-sm-12">
                         <div class="main_title mt_wave mt_white a_left">
-                            <h2>LA HOSPEDERÍA</h2>
+                            <h2><?php echo $about['1'];?></h2>
                         </div>
                         <p class="main_description md_white">
-                            Alesves es el antiguo topónimo vascón de la villa, hasta que el rey Sancho VI el Sabio le concedió el privilegio de Franca en agradecimiento a sus favores a la corona.
-                            La hospedería está junto al Convento de los Padres Carmelitas
-                            El convento fué construido en el año 1.734 y está catalogado como Patrimonio cultural por la Institución Príncipe de Viana.
-                            El edificio se construyó en 1893 como colegio anexo al convento. Se inauguró en 1.914.
+                            <?php echo $about['2'];?>
                         <br><br>
-                            Villafranca es uno de los 22 pueblos limítrofes del Parque natural de Bardenas Reales,(donde se encuentra el parque temático Senda Viva).
-                            Estamos entre las Bardenas y los ríos Arga y Aragón, con sus diversos atractivos naturales.
-                            Nos rodea la cultura que rezuma la Ruta del Cister y las ciudades cercanas como Tudela, Olite o Pamplona.
+                            <?php echo $about['3'];?>
                         </p>                                          
                 </div>
             </div>
-        
+                
         </section>
         
         <!-- ========== TESTIMONIALS ========== -->
@@ -513,13 +532,11 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="main_title mt_wave a_left">
-                            <h2>OPINIONES DE NUESTROS CLIENTES</h2>
+                            <h2><?php echo $opiniones['1'];?></h2>
                         </div>
-                        <p class="main_description">En la Hospedería de Alesves hacemos todo lo que nos sea posible para asegurar la felicidad, bienestar y disfrute de todos nuestros clientes sin excepción.
-                        <br><br>
-                        Por esta misma razón siempre estaremos abiertos a mejoras y críticas constuctivas de las que puedan percatarse. No duden en informarnos e intentaremos agradarles en todo lo que nos sea posible.              
-                        <br><br>
-                        En la Hospedería de Alesves cuidamos hasta el más mínimo detalle para que pueda disfrutar al máximo de su estancia, es por ello que hemos ganado durante 5 años seguidos (2015-2019) el certificado de excelencia de TripAdvisor.
+                        <p class="main_description">
+                           <?php echo $opiniones['2'];?>
+                        </p>
                     </div>
 
                     <div class="col-md-6">
@@ -583,9 +600,11 @@
         <section class="white_bg" id="contact">
             <div class="container">
                 <div class="main_title mt_wave mt_yellow a_center">
-                    <h2>LOCALIZACIÓN Y CONTACTO</h2>
+                    <h2><?php echo $contact['1'];?></h2>
                 </div>
-                <p class="main_description a_center">Nos encontramos en un lugar muy céntrico, estando a menos de 15 minutos de emblemáticos sitios como Olite, Tudela o Alfaro, y a una hora de Pamplona, Logroño o Zaragoza.</p>
+                <p class="main_description a_center">
+                    <?php echo $contact['2'];?>
+                </p>
                 <div class="row">
                     <div class="col-md-6">
                         <div class="embed-responsive-item">
@@ -594,20 +613,22 @@
                     </div>
                     <div class="col-md-6">   
                         <?php if(isset($_GET['mail'])){?>
-                        <h3>Hemos recibido su email, le contestaremos con la mayor brevedad posible.</h3>                       
+                            <h3><?php echo $form_mail['1'];?></h3>                       
                         <?php } else { ?>
-                        <form name="contact-form" method="post" action="mail.php">                            
-                            <div class="form-group">
-                                <input class="form-control" name="name_cl" placeholder="Su nombre:" type="text">
-                            </div>
-                            <div class="form-group">
-                                <input class="form-control" name="email_cl" type="email" placeholder="Su email:">
-                            </div>
-                            <div class="form-group">
-                                <textarea class="form-control" name="msj" placeholder="Su mensaje:"></textarea>
-                            </div>
-                            <button class="button btn_lg btn_blue btn_full upper" type="submit"><i class="fa fa-location-arrow"></i>Enviar mensaje</button>
-                        </form>
+                            <form name="contact-form" method="post" action="mail.php">                            
+                                <div class="form-group">
+                                    <input class="form-control" name="name_cl" placeholder="<?php echo $form_mail['2'];?>" type="text">
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" name="email_cl" type="email" placeholder="<?php echo $form_mail['3'];?>">
+                                </div>
+                                <div class="form-group">
+                                    <textarea class="form-control" name="msj" placeholder="<?php echo $form_mail['4'];?>"></textarea>
+                                </div>
+                                <button class="button btn_lg btn_blue btn_full upper" type="submit"><i class="fa fa-location-arrow"></i>
+                                    <?php echo $form_mail['5'];?>
+                                </button>
+                            </form>
                         <?php } ?>
                     </div>
                 </div>
@@ -626,15 +647,15 @@
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6 widget">
-                            <h5>Noticias de la zona:</h5>
+                            <h5><?php echo $noticias;?></h5>
                             <ul class="blog_posts">
-                                <li><a href="http://www.villafranca.es/">Villafranca</a> <small>Web ayuntamiento Villafranca</small></li>
-                                <li><a href="http://www.tudela.es/">Tudela</a> <small>Web ayuntamiento Tudela</small></li>
-                                <li><a href="http://www.olite.es/">Olite</a> <small>Web ayuntamiento Olite</small></li>
+                                <li><a href="http://www.villafranca.es/">Villafranca</a> <small>Web <?php echo $ayuntamiento;?> Villafranca</small></li>
+                                <li><a href="http://www.tudela.es/">Tudela</a> <small>Web <?php echo $ayuntamiento;?> Tudela</small></li>
+                                <li><a href="http://www.olite.es/">Olite</a> <small>Web <?php echo $ayuntamiento;?> Olite</small></li>
                             </ul>
                         </div>
                         <div class="col-md-3 col-sm-6 widget">
-                            <h5>Actividades</h5>
+                            <h5><?php echo $actividades;?></h5>
                             <ul class="useful_links">
                                 <li><a href="http://www.lasbardenasreales.com/">Las Bardenas Reales</a></li>
                                 <li><a href="https://www.olite.com.es/">Olite</a></li>
@@ -644,11 +665,11 @@
                             </ul>
                         </div>
                         <div class="col-md-3 col-sm-6 widget">
-                            <h5>Contacta con nosotros</h5>
+                            <h5><?php echo $contact_us;?></h5>
                             <address>
                                 <ul class="address_details">
                                     <li><i class="glyphicon glyphicon-map-marker"></i>C/ bajo el arco, 34, 31330 Villafranca, Navarra</li>
-                                    <li><i class="glyphicon glyphicon-phone-alt"></i> Teléfono: <a href="tel:948845686">(+34) 948 84 56 86</a></li>
+                                    <li><i class="glyphicon glyphicon-phone-alt"></i> <?php echo $telefono;?>: <a href="tel:948845686">(+34) 948 84 56 86</a></li>
                                     <li><i class="fa fa-fax"></i> Fax: <a href="fax:948846182">(+34) 948 84 61 82</a></li>
                                     <li><i class="fa fa-envelope"></i> Email: <a href="mailto:info@hospederiadealesves.com">info@hospederiadealesves.com</a></li>
                                 </ul>
@@ -662,7 +683,7 @@
                     <div class="row">
                         <div class="col-md-6 col-sm-6">
                             <div class="copyrights">
-                                 Copyright 2020 <a href="index.html">Hospedería de Alesves</a> Todos los derechos reservados.
+                                 Copyright 2020 <a href="index.html">Hospedería de Alesves</a> <?php echo $derechos?>
                             </div>
                         </div>
                         <div class="col-md-6 col-sm-6">
