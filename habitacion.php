@@ -433,6 +433,7 @@
                         <div class="col-md-3 col-sm-6 widget">
                             <div class="about">
                                 <a href="index.html"><img class="logo" src="images/hospederia-de-alesves.gif" height="80" alt="Logo"></a>
+                                <?php echo $descr;?>
                             </div>
                         </div>                        
                         <div class="col-md-3 col-sm-6 widget">

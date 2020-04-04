@@ -1,5 +1,5 @@
 <?php
-    require 'idiomas/es.php';
+    require 'idiomas/language.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -220,6 +220,7 @@
                         <div class="col-md-3 col-sm-6 widget">
                             <div class="about">
                                 <a href="index.php"><img class="logo" src="images/hospederia-de-alesves.gif" height="32" alt="Logo"></a>
+                                <?php echo $descr;?>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6 widget">

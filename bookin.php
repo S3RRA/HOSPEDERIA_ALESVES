@@ -1,3 +1,6 @@
+<?php
+    require './idiomas/language.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -58,29 +61,24 @@
         <div class="top_menu">
             <div class="container">
                 <div class="welcome_mssg hidden-xs">
-                    Bienvenido a la Hospedería de Alesves
+                    <?php echo $welcome ?>
                 </div>
                 <ul class="top_menu_right">
                     <li><i class="fa fa-phone"></i><a href="tel:948845686"> (+34) 948 845 686</a></li>
                     <li class="email hidden-xxs"><i class="fa fa-envelope-o "></i> <a href="mailto:info@hospederiadealesves.com">info@hospederiadealesves.com</a></li>
                     <li class="language-switcher">
                         <nav class="dropdown">
-                            <a href="#" class="dropdown-toggle select" data-hover="dropdown" data-toggle="dropdown">
-                                <i class="famfamfam-flag-gb "></i>Español<b class="caret"></b>
-                            </a>
+                            <?php echo $idioma['1'];?>
                             <ul class="dropdown-menu">
-                                <li><a href="#"><i class="famfamfam-flag-gr"></i>Ελληνικά</a></li>
-                                <li><a href="#"><i class="famfamfam-flag-it"></i>Italiano</a></li>
-                                <li><a href="#"><i class="famfamfam-flag-de"></i>Deutsch</a></li>
-                                <li><a href="#"><i class="famfamfam-flag-fr"></i>Français</a></li>
-                                <li><a href="#"><i class="famfamfam-flag-es"></i>English</a></li>
+                                <li><?php echo $idioma['2'];?></li>
+                                <li><?php echo $idioma['3']; ?></li>                                
+                                <li><?php echo $idioma['4']; ?></li>
                             </ul>
                         </nav>
                     </li>
                 </ul>
             </div>
         </div>
-
         <header class="fixed">
             <div class="container">
                 <div class="navbar-header">
@@ -95,19 +93,19 @@
                 </div>
                 <nav id="main_menu" class="mobile_menu navbar-collapse">
                     <ul class="nav navbar-nav">
-                        <li class="mobile_menu_title" style="display:none;">MENU</li>
+                        <li class="mobile_menu_title" style="display:none;"><?php echo $menu['1'];?></li>
                         <li class="dropdown simple_menu">
-                            <a href="index.php" data-toggle="dropdown">INICIO</a>                            
+                            <a href="index.php"><?php echo $menu[2];?></a>                            
                         </li>
                         <li class="dropdown simple_menu">
-                            <a href="elige_hab.php">ALOJAMIENTO<b class="caret"></b></a>                            
+                            <a href="elige_hab.php"><?php echo $menu['3'];?><b class="caret"></b></a>                            
                         </li>
                         <li class="dropdown simple_menu">
-                            <a href="banners.php">ACTIVIDADES<b class="caret"></b></a>                            
+                            <a href="banners.php"><?php echo $menu['4'];?><b class="caret"></b></a>                            
                         </li>
-                        <li><a href="contacto.php">CONTACTO</a></li>
+                        <li><a href="contacto.php"><?php echo $menu['5'];?></a></li>
                         <li class="menu_button">
-                            <a href="bookin.php" class="button  btn_yellow"><i class="fa fa-calendar"></i>RESERVAR</a>
+                            <a href="bookin.php" class="button  btn_yellow"><i class="fa fa-calendar"></i><?php echo $menu['6'];?></a>
                         </li>
                     </ul>
                 </nav>
@@ -118,10 +116,10 @@
         <div class="page_title gradient_overlay" style="background: url(images/hospederia.jpg)bottom right no-repeat,url(images/06_exterior.jpg) center no-repeat,url(images/jardin_1.jpg   ) center repeat;">
             <div class="container">
                 <div class="inner">
-                    <h1>Realiza tu reserva</h1>
+                    <h1><?php echo $r_reserva;?></h1>
                     <ol class="breadcrumb">
-                        <li><a href="index.php">Inicio</a></li>
-                        <li>Realiza tu reserva</li>
+                        <li><a href="index.php"><?php echo $inicio?></a></li>
+                        <li><?php echo $r_reserva;?></li>
                     </ol>
                 </div>
             </div>
@@ -158,59 +156,63 @@
                     ?>
                             <!-- ========== BOOKING FORM ========== -->
                             <div class="row">
+                                
                                 <form method="post" action="puente_bookin.php">
                                     <div class='com-md-12'>
-                                        <div class='form-group'>Campos obligatorios</div>
+                                        <div class='form-group'><?php echo $campos_obl['1'];?></div>
                                     </div><hr>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>Nombre:</label>
-                                            <input name="nombre" type="text" class="form-control" placeholder="Indique su nombre:" required>
+                                            <label><?php echo $obl_tit['1'];?></label>
+                                            <input name="nombre" type="text" class="form-control" placeholder="<?php echo $campos_obl['2'];?>" required>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>Apellidos:</label>
-                                            <input class="form-control" name="apellidos" type="text" placeholder="Indique sus dos apellidos:" required>
+                                            <label><?php echo $obl_tit['2'];?></label>
+                                            <input class="form-control" name="apellidos" type="text" placeholder="<?php echo $campos_obl['3'];?>" required>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>DNI:</label>
-                                            <input class="form-control" name="dni" type="text" placeholder="Indique sus dos apellidos:" required>
+                                            <label><?php echo $obl_tit['3'];?></label>
+                                            <input class="form-control" name="dni" type="text" placeholder="<?php echo $campos_obl['4'];?>:" required>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>Tarjeta de crédito: 
-                                                <a href="#" title="GARANTÍA" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="No tendrá ningún cargo en su tarjeta a noser que anule la habitación antes de las 72h de su llegada, donde se le cobrará media habitación.">
+                                            <label>
+                                                <a href="#" title="<?php echo $campos_obl['5.1'];?>" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="<?php echo $campos_obl['5.2'];?>">
                                                     <i class="label_icon_info fa fa-info-circle"></i>
                                                 </a>
                                             </label>
-                                            <input class="form-control" name="tarjeta" type="text" placeholder="Indique su nº de tarjeta:" required><br>
-                                            <input class="form-control" name="caducidad" type="text" placeholder="Fecha de caducidad:" required>
+                                            <input class="form-control" name="tarjeta" type="text" placeholder="<?php echo $campos_obl['5.3'];?>" required><br>
+                                            <input class="form-control" name="caducidad" type="text" placeholder="<?php echo $campos_obl['5.4'];?>" required>
                                         </div>
                                     </div> <br>             
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>Número de teléfono:</label>
-                                            <input name="telefono" type="text" class="form-control" placeholder="Indique su nº de teléfono:" required>
+                                            <label><?php echo $obl_tit['5'];?></label>
+                                            <input name="telefono" type="text" class="form-control" placeholder="<?php echo $campos_obl['6'];?>" required>
                                         </div>
                                     </div><br>
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label>Tipo de habitación:</label>
+                                            <label></label>
                                             <div class="form_select">
                                                 <select name="tipo" class="form-control" title="Tipo de habitación:" data-header="Tipo de habitación:">
-                                                    <option value="individual" data-subtext="<span class='label label-info'>56€ / noche</span>" <?php if(isset($_GET['tipo'])=='individual'){echo 'selected';} ?>>Individual</option>
-                                                    <option value="doble" data-subtext="<span class='label label-info'>68€ / noche</span>" <?php if(isset($_GET['tipo'])=='doble'){echo 'selected';} ?>>Doble</option>
-                                                    <option value="superior" data-subtext="<span class='label label-info'>77€ / noche</span>" <?php if(isset($_GET['tipo'])=='superior'){echo 'selected';} ?>>Superior</option>
-                                                    <option value="triple" data-subtext="<span class='label label-info'>86€ / noche</span>" <?php if(isset($_GET['tipo'])=='triple'){echo 'selected';} ?>>Triple</option>
-                                                    <option value="familiar" data-subtext="<span class='label label-info'>118€ / noche</span>" <?php if(isset($_GET['tipo'])=='familiar'){echo 'selected';} ?>>Familiar</option>
+                                                    <option value="individual" data-subtext="<span class='label label-info'>56€ / <?php echo $noche;?></span>" <?php if(isset($_GET['tipo'])=='individual'){echo 'selected';} ?>><?php echo $habitaciones['2'];?></option>
+                                                    <option value="doble" data-subtext="<span class='label label-info'>68€ / <?php echo $noche;?></span>" <?php if(isset($_GET['tipo'])=='doble'){echo 'selected';} ?>><?php echo $habitaciones['3'];?></option>
+                                                    <option value="superior" data-subtext="<span class='label label-info'>77€ / <?php echo $noche;?></span>" <?php if(isset($_GET['tipo'])=='superior'){echo 'selected';} ?>><?php echo $habitaciones['4'];?></option>
+                                                    <option value="triple" data-subtext="<span class='label label-info'>86€ / <?php echo $noche;?></span>" <?php if(isset($_GET['tipo'])=='triple'){echo 'selected';} ?>><?php echo $habitaciones['5'];?></option>
+                                                    <option value="familiar" data-subtext="<span class='label label-info'>118€ / <?php echo $noche;?></span>" <?php if(isset($_GET['tipo'])=='familiar'){echo 'selected';} ?>><?php echo $habitaciones['6'];?></option>
                                                 </select>
                                             </div>
                                         </div>
                                     </div>
+                                    
+                                    /*Cambiar a calendario mas wapo q hay muchos*/
+                                    
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Llegada:
@@ -231,25 +233,28 @@
                                             </div>
                                         </div>
                                     </div>
+                                    
+                                    
+                                    
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>Desayuno:<a href="#" title="Desayuno" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="+ 6.50€"> <i class="label_icon_info fa fa-info-circle"></i></a></label>
+                                            <label><?php echo $obl_tit['7'];?>:<a href="#" title="<?php echo $obl_tit['7'];?>" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="+ 6.50€"> <i class="label_icon_info fa fa-info-circle"></i></a></label>
                                             <input class="form-control" class="form-check-input" name="desayuno" type="checkbox">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>Cena:<a href="#" title="Cena" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="+ 6.50€"> <i class="label_icon_info fa fa-info-circle"></i></a></label>
+                                            <label><?php echo $obl_tit['8'];?>:<a href="#" title="<?php echo $obl_tit['8'];?>" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="+ 6.50€"> <i class="label_icon_info fa fa-info-circle"></i></a></label>
                                             <input class="form-control" class="form-check-input" name="cena" type="checkbox">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>Adultos:
-                                                <a href="#" title="Adultos:" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="+18 años"> <i class="label_icon_info fa fa-info-circle"></i></a>
+                                            <label><?php echo $obl_tit['9'];?>:
+                                                <a href="#" title="<?php echo $obl_tit['9'];?>:" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="+18 <?php echo $anios;?>"> <i class="label_icon_info fa fa-info-circle"></i></a>
                                             </label>
                                             <div class="form_select">
-                                                <select name="adultos" class="form-control" title="Adultos:" data-header="Adultos:">
+                                                <select name="adultos" class="form-control" title="Adultos:" data-header="<?php echo $obl_tit['9'];?>:">
                                                     <option value="1">1</option>
                                                     <option value="2">2</option>
                                                     <option value="3">3</option>
@@ -262,21 +267,21 @@
                             <br><br>
                                 <div class="row">
                                     <div class='com-md-12'>
-                                        <div class='form-group'>Campos opcionales</div>
+                                        <div class='form-group'><?php echo $campos_op['1'];?></div>
                                     </div><hr>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>Email:
-                                                <a href="#" title="Email" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Le enviaremos un correo con los datos de su reserva."> <i class="label_icon_info fa fa-info-circle"></i></a>
+                                            <label><?php echo $campos_op['2'];?>:
+                                                <a href="#" title="<?php echo $campos_op['2'];?>" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="<?php echo $campos_op;?>"> <i class="label_icon_info fa fa-info-circle"></i></a>
                                             </label>
                                             <input class="form-control" name="email" type="text" <?php if(isset($_POST['email'])){echo'value="'.$email.'" placeholder="'.$email.'"';}else echo 'placeholder="Indique su email:"';?>>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>País:</label>
+                                            <label><?php echo $campos_op['4'];?>:</label>
                                             <div class="form_select">
-                                                <select name="pais" class="form-control" title="Seleccione su país:" data-header="Seleccione su país:" data-live-search="true" data-size="5">
+                                                <select name="pais" class="form-control" title="<?php echo $campos_op['5'];?>" data-header="<?php echo $campos_op['5'];?>:" data-live-search="true" data-size="5">
                                                     <option value="Afganistan">Afghanistan</option>
                                                     <option value="Albania">Albania</option>
                                                     <option value="Algeria">Algeria</option>
@@ -534,16 +539,13 @@
                                     
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>Niños:
-                                                <a href="#" title="Niños:" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="0-18 años"> <i class="label_icon_info fa fa-info-circle"></i></a>
+                                            <label><?php echo $campos_op['6'];?>:
+                                                <a href="#" title="<?php echo $campos_op['6'];?>:" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="0-18 <?php echo $anios;?>"> <i class="label_icon_info fa fa-info-circle"></i></a>
                                             </label>
                                             <div class="form_select">
-                                                <select name="niños" class="form-control" title="Niños:" data-header="Niños:">
-                                                    <option value="0">0</option>
+                                                <select name="niños" class="form-control" title="<?php echo $campos_op['6'];?>:" data-header="<?php echo $campos_op['6'];?>:">
                                                     <option value="1">1</option>
                                                     <option value="2">2</option>
-                                                    <option value="3">3</option>
-                                                    <option value="4">4</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -551,12 +553,11 @@
                                     <br><br><br><br>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>Cama supletoria:
-                                                <a href="#" title="Cama supletoria:" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="+20€"> <i class="label_icon_info fa fa-info-circle"></i></a>
+                                            <label><?php echo $campos_op['7'];?>:
+                                                <a href="#" title="<?php echo $campos_op['7'];?>:" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="+20€"> <i class="label_icon_info fa fa-info-circle"></i></a>
                                             </label>
                                             <div class="form_select">
-                                                <select name="supletoria" class="form-control" title="Cama supletoria:  " data-header="Cama supletoria:">
-                                                    <option value="0">0</option>
+                                                <select name="supletoria" class="form-control" title="<?php echo $campos_op['7'];?>:  " data-header="<?php echo $campos_op['7'];?>:">
                                                     <option value="1">1</option>
                                                 </select>
                                             </div>
@@ -564,12 +565,11 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>Cuna:
-                                                <a href="#" title="Cuna:" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="+10€"> <i class="label_icon_info fa fa-info-circle"></i></a>
+                                            <label><?php echo $campos_op['8'];?>:
+                                                <a href="#" title="<?php echo $campos_op['8'];?>:" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="+10€"> <i class="label_icon_info fa fa-info-circle"></i></a>
                                             </label>
                                             <div class="form_select">
-                                                <select name="cuna" class="form-control" title="Cuna:" data-header="Cuna:">
-                                                    <option value="0">0</option>
+                                                <select name="cuna" class="form-control" title="<?php echo $campos_op['8'];?>:" data-header="<?php echo $campos_op['8'];?>:">
                                                     <option value="1">1</option>
                                                 </select>
                                             </div>
@@ -577,36 +577,36 @@
                                     </div>                                   
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label>Comentarios:</label>
-                                            <textarea class="form-control" name="comentario" placeholder="Avísanos de cualquier cosa que veas oportuna."></textarea>
+                                            <label><?php echo $campos_op['9'];?>:</label>
+                                            <textarea class="form-control" name="comentario" placeholder="<?php echo $campos_op['10'];?>"></textarea>
                                         </div>
                                     </div>
                                     <br><br><br><br>
                                     <div class="col-md-11"></div>
                                     <div class="col-md-12">
                                         <br>
-                                        <button type="submit" class="button btn_blue pull-right"> <i class="fa fa-calendar-check-o" aria-hidden="true"></i> RESERVAR HABITACION </button>
+                                        <button type="submit" class="button btn_blue pull-right"> <i class="fa fa-calendar-check-o" aria-hidden="true"></i> <?php echo $r_hab;?> </button>
                                     </div>
                                 </form>
                                 
                             </div>
                         </div>
                     <?php } ?>
-                    </div>
+                    </div>                    
                     <div class="col-md-4">
                         <div class="special_offers">
                             <div class="main_title a_left upper">
-                                <h2>Ofertas:</h2>
+                                <h2><?php echo $ofertas['1'];?>:</h2>
                             </div>
                             <article class="room mb40">
                                 <figure>
-                                    <a href="habitacion.php?tipo=trabajadores   " class="hover_effect h_blue h_link">
+                                    <a href="habitacion.php?tipo=trabajadores" class="hover_effect h_blue h_link">
                                         <img src="images/habitacion_1.jpg" class="img-responsive" alt="Image">
                                     </a>
                                     <figcaption>
-                                        <h4><a href="habitacion.php?tipo=trabajadores">Oferta para trabajadores:</a></h4>
-                                        <p>Incluye habitación doble de uso individual, desayuno y cena. Válido de lunes a jueves no festivos.</p>
-                                        <div class="price">75 €<span>/ noche</span></div>
+                                        <h4><a href="habitacion.php?tipo=trabajadores"><?php echo $ofertas['2'];?>:</a></h4>
+                                        <p><?php echo $ofertas['3'];?></p>
+                                        <div class="price">75 €<span>/ <?php echo $noche;?></span></div>
                                     </figcaption>
                                 </figure>
                             </article>
@@ -616,9 +616,9 @@
                                         <img src="images/habitacion_2.jpg" class="img-responsive" alt="Image">
                                     </a>
                                     <figcaption>
-                                        <h4><a href="habitacion.php?tipo=pareja">Sorprende a tu pareja:</a></h4>
-                                        <p>Disfruta de dos noches en habitación doble incluyendo desayunos y 1 cena de bienvenida, en nuestra hospedería Para 2 personas</p>
-                                        <div class="price">190 €<span>/ noche</span></div>
+                                        <h4><a href="habitacion.php?tipo=pareja"><?php echo $ofertas['4'];?>:</a></h4>
+                                        <p><?php echo $ofertas['5'];?></p>
+                                        <div class="price">190 €<span>/ <?php echo $noche;?></span></div>
                                     </figcaption>
                                 </figure>
                             </article>
@@ -628,11 +628,9 @@
                                         <img src="images/habitacion_3.jpg" class="img-responsive" alt="Image">
                                     </a>
                                     <figcaption>
-                                        <h5><a href="habitacionn.php">Oferta a partir de 3 noches:</a></h5><hr>
-                                        <p>DOBLE ...................................................................... 62€<br>
-                                           TRIPLE ...................................................................... 75€<br>
-                                           FAMILIAR ................................................................ 107€</p>
-                                        <div class="price">Desde 62€<span>/ noche</span></div>
+                                        <h5><a href="habitacionn.php"><?php echo $ofertas['6'];?>:</a></h5><hr>
+                                        <p><?php echo $ofertas['7'];?></p>
+                                        <div class="price"><?php echo $desde;?> 62€<span>/ <?php echo $noche?></span></div>
                                     </figcaption>
                                 </figure>
                             </article>
@@ -651,20 +649,19 @@
                         <div class="col-md-3 col-sm-6 widget">
                             <div class="about">
                                 <a href="index.html"><img class="logo" src="images/hospederia-de-alesves.gif" height="80" alt="Logo"></a>
-                                <p>En la Hospedería de Alesves llevamos trabajando años en el sector, y seguimos dedicando empeño, esfuerzo y sudor como el primer día.</p>
-                                <p>Consideramos que todo trabajo bien hecho es recompensado y por tanto actuamos en consecuencia brindando a nuestros huéspedes una experiencia inolvidable.</p>
+                                <?php echo $descr;?>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6 widget">
-                            <h5>Noticias de la zona:</h5>
+                            <h5><?php echo $noticias;?></h5>
                             <ul class="blog_posts">
-                                <li><a href="http://www.villafranca.es/">Villafranca</a> <small>Web ayuntamiento Villafranca</small></li>
-                                <li><a href="http://www.tudela.es/">Tudela</a> <small>Web ayuntamiento Tudela</small></li>
-                                <li><a href="http://www.olite.es/">Olite</a> <small>Web ayuntamiento Olite</small></li>
+                                <li><a href="http://www.villafranca.es/">Villafranca</a> <small>Web <?php echo $ayuntamiento;?> Villafranca</small></li>
+                                <li><a href="http://www.tudela.es/">Tudela</a> <small>Web <?php echo $ayuntamiento;?> Tudela</small></li>
+                                <li><a href="http://www.olite.es/">Olite</a> <small>Web <?php echo $ayuntamiento;?> Olite</small></li>
                             </ul>
                         </div>
                         <div class="col-md-3 col-sm-6 widget">
-                            <h5>Actividades</h5>
+                            <h5><?php echo $actividades;?></h5>
                             <ul class="useful_links">
                                 <li><a href="http://www.lasbardenasreales.com/">Las Bardenas Reales</a></li>
                                 <li><a href="https://www.olite.com.es/">Olite</a></li>
@@ -674,13 +671,14 @@
                             </ul>
                         </div>
                         <div class="col-md-3 col-sm-6 widget">
-                            <h5>Contáctanos:</h5>
+                            <h5><?php echo $contact_us;?></h5>
                             <address>
                                 <ul class="address_details">
                                     <li><i class="glyphicon glyphicon-map-marker"></i>C/ bajo el arco, 34, 31330 Villafranca, Navarra</li>
-                                    <li><i class="glyphicon glyphicon-phone-alt"></i> Teléfono: <a href="tel:948845686">(+34) 948 84 56 86</a></li>
-                                    <li><i class="fa fa-fax"></i> Fax: (+34) 948 84 61 82</li>
-                                    <li><i class="fa fa-envelope"></i> Email: <a href="mailto:info@hospederiadealesves.com">info@hospederiadealesves.com</a></li></ul>
+                                    <li><i class="glyphicon glyphicon-phone-alt"></i> <?php echo $telefono;?>: <a href="tel:948845686">(+34) 948 84 56 86</a></li>
+                                    <li><i class="fa fa-fax"></i> Fax: <a href="fax:948846182">(+34) 948 84 61 82</a></li>
+                                    <li><i class="fa fa-envelope"></i> Email: <a href="mailto:info@hospederiadealesves.com">info@hospederiadealesves.com</a></li>
+                                </ul>
                             </address>
                         </div>
                     </div>
@@ -691,7 +689,7 @@
                     <div class="row">
                         <div class="col-md-6 col-sm-6">
                             <div class="copyrights">
-                                Copyright 2020 <a href="index.html">Hospedería de Alesves.</a> Todos los derechos reservados.
+                                 Copyright 2020 <a href="index.html">Hospedería de Alesves</a> <?php echo $derechos?>
                             </div>
                         </div>
                         <div class="col-md-6 col-sm-6">
@@ -708,6 +706,7 @@
                 </div>
             </div>
         </footer>
+    
 
     </div>
 

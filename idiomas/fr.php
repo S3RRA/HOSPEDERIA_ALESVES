@@ -1,6 +1,5 @@
 <?php
-
-                        /* I N D E X */
+                            /* I N D E X */
 
 /*BIENVENIDA + IDIOMA*/
     $lang = 'es';
@@ -100,9 +99,6 @@
     $actividades = 'Actividades';
     $telefono = 'Teléfono';
     $derechos = 'Todos los derechos reservados.';
-    $descr = '<p>En la Hospedería de Alesves llevamos trabajando años en el sector, y seguimos dedicando empeño, esfuerzo y sudor como el primer día.</p>
-                <p>Consideramos que todo trabajo bien hecho es recompensado y por tanto actuamos en consecuencia brindando a nuestros huéspedes una experiencia inolvidable.</p>
-                           ';
     
     
     
@@ -187,57 +183,7 @@
     $notelopierdas['5'] = 'Descubre las Bardenas Reales';
     $notelopierdas['6'] = 'Visita el Castillo de Olite';
     $notelopierdas['7'] = 'Saborea lo mejor de la Ribera';
-    
-    
-                                    /* B O O K I N */
-    
-    $r_reserva = 'Realiza tu reserva';
-    
-    /*FORMULARIO RESERVA*/
-    $campos_obl['1'] = 'Campos obligatorios';
-        $obl_tit['1'] = 'Nombre:';
-            $campos_obl['2'] = 'Indique su nombre:';
-        $obl_tit['2'] = 'Apellidos:';
-            $campos_obl['3'] = 'Indique sus apellidos:';
-        $obl_tit['3'] = 'DNI:';
-            $campos_obl['4'] = 'Indique su DNI:';
-        $obl_tit['4'] = 'Tarjeta de crédito:';
-            $campos_obl['5.1'] = 'GARANTÍA';
-            $campos_obl['5.2'] = 'No tendrá ningún cargo en su tarjeta a noser que anule la habitación antes de las 72h de su llegada, donde se le cobrará media habitación.';
-            $campos_obl['5.3'] = 'Indique su nº de tarjeta:';
-            $campos_obl['5.4'] = 'Fecha de caducidad:';
-        $obl_tit['5'] = 'Número de teléfono';
-            $campos_obl['6'] = 'Indique su nº de teléfono:';
-        $obl_tit['6'] = 'Tipo de habitación:';
 
-        $obl_tit['7'] = 'Desayuno';
-        $obl_tit['8'] = 'Cena';
-        $obl_tit['9'] = 'Adultos';
-            $anios = '+18';
-            
-    $campos_op['1'] = 'Campos opcionales:';
-    $campos_op['2'] = 'Email';
-    $campos_op['3'] = 'Le enviaremos un correo con los datos de su reserva.';
-    $campos_op['4'] = 'Country';
-    $campos_op['5'] = 'Seleccione su país:';
-    $campos_op['6'] = 'Niños';
-    $campos_op['7'] = 'Cama supletoria';
-    $campos_op['8'] = 'Cuna';
-    $campos_op['9'] = 'Comentarios';
-    $campos_op['10'] = 'Avísanos de cualquier cosa que veas oportuna.';
-    
-    /*ASIDE*/
-    $ofertas['1'] = 'Ofertas';
-    $ofertas['2'] = 'Oferta para trabajadores';
-    $ofertas['3'] = 'Incluye habitación doble de uso individual, desayuno y cena. Válido de lunes a jueves no festivos.';
-    $ofertas['4'] = 'Sorprende a tu pareja';
-    $ofertas['5'] = 'Disfruta de dos noches en habitación doble incluyendo desayunos y 1 cena de bienvenida, en nuestro restaurante, para 2 personas';
-    $ofertas['6'] = 'Oferta a partir de 3 noches';
-    $ofertas['7'] = 'DOBLE ...................................................................... 62€<br>
-                    TRIPLE ...................................................................... 75€<br>
-                    FAMILIAR ................................................................ 107€';
-    
-    
-    $desde = 'Desde';
 ?>
+
 
