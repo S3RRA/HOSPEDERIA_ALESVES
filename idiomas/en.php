@@ -7,7 +7,7 @@
 
     $welcome = 'Welcome to Hospedería de Alesves';
     
-    $idioma['1'] = '<a href="changelanguage.php?lan=es" class="dropdown-toggle select" data-hover="dropdown" data-toggle="dropdown">
+    $idioma['1'] = '<a href="change_idioma.php?lan=en" class="dropdown-toggle select" data-hover="dropdown" data-toggle="dropdown">
                                 <i class="famfamfam-flag-gb"></i>English<b class="caret"></b>
                             </a>';
     $idioma['2'] = '<a href="idiomas/change_idioma.php?lan=fr"><i class="famfamfam-flag-fr"></i>Français</a>';
@@ -21,6 +21,7 @@
     $menu['4'] = 'ACTIVITIES';
     $menu['5'] = 'CONTACT';
     $menu['6'] = 'BOOK A ROOM';
+    $menu['7'] = 'BLOG';
     
 /*SLIDER*/    
     $slider['1'] = 'Welcome';
@@ -41,8 +42,8 @@
         $habitaciones['6'] = 'Familiar';
     $bookin['3'] = 'Arrival date:';
     $bookin['4'] = 'Departure date:';
-    $bookin['5'] = 'Adults';    
-    $bookin['6'] = 'Kids';
+    $bookin['5'] = 'Contact Phone';    
+    $bookin['6'] = 'ID';
 
 /*HABITACIONES*/
     $rooms['1'] = 'OUR ROOMS';
@@ -101,6 +102,7 @@ Among the many activities that can be carried out in Navarra, especially in the 
     $actividades = 'Activities';
     $telefono = 'Phone';
     $derechos = 'All rights reserved.';
+    $descr = 'At Hospedería de Alesves we have been working for years in the sector, and we continue dedicating effort, effort and sweat like the first day.';
     
     
     
@@ -209,7 +211,7 @@ Among the many activities that can be carried out in Navarra, especially in the 
             $campos_obl['4'] = 'Indicate your ID:';
         $obl_tit['4'] = 'Credit card:';
             $campos_obl['5.1'] = 'WARRANTY';
-            $campos_obl['5.2'] = 'You will not have any charge on your card unless you cancel the room before 72h of your arrival, in that case half of the room will be charged.';
+            $campos_obl['5.2'] = "You will not have any charge on your card unless you cancel the room before 72h of your arrival, where you will be charged one night's stay.";
             $campos_obl['5.3'] = 'Indicate your credit number:';
             $campos_obl['5.4'] = 'Fecha de caducidad:';
         $obl_tit['5'] = 'Número de teléfono';
@@ -245,4 +247,67 @@ Among the many activities that can be carried out in Navarra, especially in the 
     
     
     $desde = 'Desde';
+    
+                                   /* B A N N E R S */
+    
+    $descubre = 'Discover southern Navarra';
+    
+    $fiestas = 'Navarre festivities';    
+    $senderismo = 'Trekking';    
+    $aves = 'Bird observatory';    
+    $y = 'and';    
+    $laguna = 'Pitillas Lagoon';    
+    $cister = 'Císter Route';    
+    $bici = 'Bicycle routes';    
+    $rios = 'Downfall of rivers';
+    $banners_blog = "FOR MORE INFORMATION ABOUT ZONE ACTIVITIES AND NEWS, VISIT OUR <a href='blog.php'> BLOG </a>";
+    
+    
+                                /* A C T I V I D A D E S */
+    
+        if(isset($_SESSION['actividad'])){
+        
+        $act = $_SESSION['actividad'];
+        
+        switch ($act) {
+            case 'Bardenas':
+                $imagen_fondo = 'background: url(images/monolito.jpg) center repeat;';
+                $actividad = 'Bardenas Reales';
+                $f1 = 'images/monolito.jpg';
+                $p1 = "One of the most surprising visits you can make on a tourist trip through Navarra is the Bardenas Reales Natural Park, which you find in the southeast of the community, not far from the town of Tudela. 
+                    There is no doubt that one of the iconic images of Navarra is the beautiful and green landscapes of the Navarrese Pyrenees, which reach their maximum expression in corners such as the Irati Forest or the town of Ochagavia. 
+                    But in Navarra you can also find more typical landscapes to see in Arizona, with spectacular rock formations such as the head of Castildetierra (image above).";
+                $p2 = 'The main characteristic of the Bardenas Reales is its semi-desert landscapes. 
+                    Made up of clays and sandstones that for millions of years have suffered the effects of erosion, the geological result is that now we can see curious rock formations, such as plateaus or the characteristic headwaters. 
+                    But if you visit the Bardenas Reales in winter or spring, you will be amazed by the green landscapes of the plains, largely due to the cereal and rice plantations.';
+                $fotos['1'] = 'images/bardenas.jpg';
+                $fotos['2'] = 'images/bardenas_1.jpg';
+                $fotos['3'] = 'images/bardenas_2.jpg';
+                $fotos['4'] = 'images/bardenas_3.jpg';
+                $p3 = 'It is a semi-desert landscape, in part, where torrential rains have shaped a plaster ground and 
+                    clays. Wide plains are interspersed with ravines, cliffs and hills that reach up to 600 meters 
+                    height. The so-called Bardena Blanca groups the whitest landscapes, of plaster substrate and steppe vegetation. The 
+                    Aleppo pine forests and clay soils are found in the so-called Black Bardena. The landscape wealth of
+                    this environment has also been protected with the figure of Nature Reserve in three specific places. So is the case 
+                    of the Vedado de Eguaras, where you can admire a small circus surrounded by plaster ravines and populated by junipers, 
+                    rebollos and romeros. The so-called Rincón de Bú has cuts where the royal owls, golden eagles and 
+                    Egyptian vultures. For its part, the Falls of La Negra are a set of cracks that reach up to 270 meters in 
+                    depth. Altogether, the Bardenas Reales shelter some 24 birds of prey (peregrine falcon, booted eagle, 
+                    griffon vulture ...), in addition to a steppe bird fauna such as the great bustard or the lark. In the Natural Park too 
+                    there are more than 28 different species of mammals, eight of which correspond to small mammals such as 
+                    shrew or the Moorish mouse. In the rafts of water, both natural and artificial, inhabit trout, barbels, 
+                    tench ... while around him newts and frogs live with a multitude of reptiles. The Caped Lizard, the 
+                    ladder snake or terrapin leper are just some of them.';
+                $p4 = 'From the hostel we recommend you to do these <a href="https://app.bardenasreales.es/descarga-de-rutas-gpxkml"> routes </a> '
+                        . 'created by the association of <a href="https://bardenasreales.es"> Bardenas Reales </a> both for walking, cycling or motor vehicles.';
+                $p5 = 'The Bardenas Reales park can be visited any day from 8 in the morning until an hour before dark. The visiting hours of the Bardenas Reales Visitors Center are from April to August, from 9 to 14 and from 16 to 19 hours; and from September to March, from 9 a.m. to 2 p.m. and from 3 to 5 p.m. (during Easter the center is open continuously from 9 a.m. to 7 p.m.).';
+                $p6 = 'The Bardenas Reales are a unique landscape that gives you the feeling of going to the old west. An experience that can only make the most of your recommended visit. <br>
+                    From the Hospedería you are only 25 km away to reach the heart of this wonderful Natural Park, a must-see.';
+            break;
+
+            default:
+            break;
+        }
+    }
+    
 ?>

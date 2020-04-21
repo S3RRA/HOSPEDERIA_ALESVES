@@ -1,131 +1,209 @@
 <?php
-//error_reporting(E_ERROR);
+error_reporting(E_ERROR);
 require './conexion.php';
-/*DECLARACION VARIABLES NECESARIAS*/
-    //Variables obligatorias
-    $nombre = mysqli_real_escape_string($con,$_POST['nombre']);
-    $apellidos = mysqli_real_escape_string($con,$_POST['apellidos']);    
-    $telf = mysqli_real_escape_string($con,$_POST['telefono']);
-    $tipo = mysqli_real_escape_string($con,$_POST['tipo']);
-    $dni = mysqli_real_escape_string($con,$_POST['dni']);
-    $adultos = mysqli_real_escape_string($con,$_POST['adultos']);
-    $llegada = $_POST['llegada'];
-    $salida = $_POST['salida'];
+/*POSTS*/
+    if(isset($_GET['post_id'])){
+        $id = $_GET['post_id'];
+        $nombre = $_POST['nombre'];
+        $nombre .= ' '.$_POST['apellidos'];
+        $contenido = $_POST['contenido'];
+        
+        $sql = "INSERT INTO comentarios_posts (POST_ID, nombre, fecha, contenido, apto) VALUES ($id,'$nombre',CURRENT_DATE(),'$contenido','no')";
+        $res = mysqli_query($con, $sql) or die (mysqli_error($con));
+
+        header("Location:post.php?id=$id&cmt=env");
+
+    }else{
+
+    /*DECLARACION VARIABLES NECESARIAS*/
     //Variables opcionales
-    if(isset($_POST['cena'])){
-        $cena="Si";        
-    }else{
-        $cena="No";        
-    }
-    if(isset($_POST['desayuno'])){
-        $desayuno='Si';        
-    }else{
-        $desayuno='No';
-    }  
-    if(isset($_POST['comentario'])){
-        $comentario = mysqli_real_escape_string($con,$_POST['comentario']);
-    }else{
-        $comentario='No hay';       
-    } 
-    if(isset($_POST['email'])){
-        $email = mysqli_real_escape_string($con,$_POST['email']);        
-    }else{
-        $email='NULL';
-    }    
-    if(isset($_POST['pais'])){
-        $pais = mysqli_real_escape_string($con,$_POST['pais']);        
-    }else{
-        $pais='NULL';
-    }
-    if(isset($_POST['niños'])){        
-        $ninos = (int)mysqli_real_escape_string($con,$_POST['niños']);
-    }else{
-        $ninos = (int)0;
-    }
-    if(isset($_POST['cuna'])){
-        $cuna = (int)mysqli_real_escape_string($con,$_POST['cuna']);
-    }else{
-        $cuna = (int)0;
-    }
-    if(isset($_POST['supletoria'])){
-        $supletoria = (int)mysqli_real_escape_string($con,$_POST['supletoria']);
-    }else{
-        $supletoria = (int)0;
-    }
-    /*Comprobacion variables*/
-    if($con){echo 'CONEXION REALIZADA <br>';}
-    foreach($_POST as $post => $contenido){
-        echo $post.'='.$contenido.'<br>';
-    }
-    
-    /*HASH DE DATOS BANCARIOS*/
-    $tar = $_POST['tarjeta'];
-    $cad = $_POST['caducidad'];
-    
-    /*CASTEO DE LLEGADA A TIPO DATE*/
-    $llegadaa = str_replace("/","-",$llegada);
-    $d = new DateTime($llegadaa);
-    $timestamp = $d->getTimestamp();
-    $llegada_cas = $d->format('Y-m-d');
-    
-    /*CASTEO DE SALIDA A TIPO DATE*/
-    $salidaa = str_replace("/","-",$salida);
-    $d = new DateTime($salidaa);
-    $timestamp = $d->getTimestamp();
-    $salida_cas = $d->format('Y-m-d');
-    
-    /*ALMACENAMOS TODOS LOS DÍAS ENTRE LAS DOS FECHAS SELECCIONADAS*/
-    $estancia[] = "";
-    for($i=$llegada_cas;$i<=$salida_cas;$i=("Y-m-d". strtotime($i."+1 days"))){
-        echo $i.'<br>';
-        $estancia = $i;
-    }
-    /*COMPRUEBA DISPONIBILIDAD*/ 
-    $habNoDisp[]="";
-    $sql = "SELECT hab,salida,llegada FROM reservas WHERE salida BETWEEN '$llegada_cas' AND '$salida_cas'";
-    if($res = mysqli_query($con, $sql)){ 
-        echo 'QUERY COMPRUEBA DISPONIBILIDAD: <br>';
-        while($row = mysqli_fetch_assoc($res)){
-            $habNoDisp[] = $row['hab'];
-            echo $row['hab'].'<br>';
-        }  
-    }
-    /*HABITACIONES ACTIVAS*/
-    $sql = "SELECT numero FROM habitaciones WHERE tipo = '$tipo' AND disponible = 'si'";
-    if($res = mysqli_query($con, $sql)){
-        echo 'QUERY HABITACIONES ACTIVAS: <br>';
-        while ($row = mysqli_fetch_assoc($res)){
-            global $num;
-            $num = $row['numero']; 
-            echo $num.'<br>';
-        }
-    }
-    /*COMPARA DISPONIBILIDAD Y HABITACIONES*/
-    if($num!==null&&!in_array($num, $habNoDisp)){
-        
-        /*INSCRIPCION RESERVA EN BBDD*/
-        $sql = "INSERT INTO reservas(llegada, salida, tipo_habitacion, desayuno, cena, adultos, dni, ninos, supletoria, cuna, comentarios, hab)"
-               . " VALUES ('$llegada_cas','$salida_cas','$tipo','$desayuno','$cena',$adultos,'$dni',$ninos,$supletoria,$cuna,'$comentario', $num)";
-        $resultado = mysqli_query($con, $sql) or die (mysqli_error($con)); 
-        
-        /*COMPRUEBA SI YA HA VENIDO CLIENTE*/
-        $DNIexiste = "SELECT dni FROM clientes WHERE dni = '$dni'";
-        $DNIexisteRes = mysqli_query($con,$DNIexiste) or die (mysqli_error($con));
-        if(mysqli_num_rows($DNIexisteRes)==0){
-            $sql2 = "INSERT INTO clientes (dni, nombre, apellidos, telefono, email, pais, NumeroVisitas, tarjeta, caducidad)"
-                     ."VALUES ('$dni', '$nombre', '$apellidos', '$telf', '$email', '$pais', 1, '$tar', '$cad')";
-            $resultado2 = mysqli_query($con, $sql2) or die (mysqli_error($con));
+        if(isset($_POST['cena'])){
+            $cena="Si";        
         }else{
-            $sql3 = "UPDATE clientes SET NumeroVisitas = NumeroVisitas+1 WHERE dni = '$dni'";
-            $resultado3 = mysqli_query($con, $sql3) or die (mysqli_error($con));
+            $cena="No";        
+        }
+        if(isset($_POST['desayuno'])){
+            $desayuno='Si';        
+        }else{
+            $desayuno='No';
+        }  
+        if(isset($_POST['comentario'])){
+            $comentario = mysqli_real_escape_string($con,$_POST['comentario']);
+        }else{
+            $comentario='No hay';       
+        } 
+        if(isset($_POST['email'])){
+            $email = mysqli_real_escape_string($con,$_POST['email']);        
+        }else{
+            $email='NULL';
+        }    
+        if(isset($_POST['pais'])){
+            $pais = mysqli_real_escape_string($con,$_POST['pais']);        
+        }else{
+            $pais='NULL';
+        }
+        if(isset($_POST['niños'])){        
+            $ninos = (int)mysqli_real_escape_string($con,$_POST['niños']);
+        }else{
+            $ninos = (int)0;
+        }
+        if(isset($_POST['cuna'])){
+            $cuna = (int)mysqli_real_escape_string($con,$_POST['cuna']);
+        }else{
+            $cuna = (int)0;
+        }
+        if(isset($_POST['supletoria'])){
+            $supletoria = (int)mysqli_real_escape_string($con,$_POST['supletoria']);
+        }else{
+            $supletoria = (int)0;
+        }
+        //Variables obligatorias
+        if(isset($_POST['nombre'])){
+            $nombre = mysqli_real_escape_string($con,$_POST['nombre']);
+        }else{
+            $nombre = 'NULL';
+        }
+        if(isset($_POST['apellidos'])){
+            $apellidos = mysqli_real_escape_string($con,$_POST['apellidos']);
+        }else{
+            $apellidos = 'NULL';
+        }
+        $telf = mysqli_real_escape_string($con,$_POST['telefono']);
+        $tipo = mysqli_real_escape_string($con,$_POST['tipo']);
+        $dni = mysqli_real_escape_string($con,$_POST['dni']);
+        if(isset($_POST['adultos'])){
+            $adultos = mysqli_real_escape_string($con,$_POST['adultos']);
+        }else{
+            switch($tipo):
+                case 'individual':
+                    if(!isset($_POST['supletoria'])){
+                        $adultos = 1+$supletoria;
+                    }else{
+                        $adultos = 1;
+                    }
+                break;
+                case 'doble':
+                    if(!isset($_POST['supletoria'])){
+                        $adultos = 2+$supletoria;
+                    }else{
+                        $supletoria = 2;
+                    }
+                break;
+                case 'superior':
+                    if(!isset($_POST['supletoria'])){
+                        $adultos = 2+$supletoria;
+                    }else{
+                        $adultos = 2;
+                    }
+                break;
+                case 'triple':
+                    if(!isset($_POST['supletoria'])){
+                        $adultos = 3+$supletoria;
+                    }else{
+                        $adultos = 3;
+                    }
+                break;
+                case 'familiar':
+                    if(!isset($_POST['supletoria'])){
+                        $adultos = 4+$supletoria;
+                    }else{
+                        $adultos = 4;
+                    }
+                break;
+            default :
+                $adultos = 0;
+            endswitch;
+        }
+        $llegada = $_POST['llegada'];
+        $salida = $_POST['salida'];
+        
+        /*Comprobacion variables*/
+        if($con){echo 'CONEXION REALIZADA <br>';}
+        foreach($_POST as $post => $contenido){
+            echo $post.'='.$contenido.'<br>';
         }
         
-        /*ACTUALIZA DISPONIBILIDAD*/
-       /* $sql4 = "UPDATE habitaciones SET disponible = 'no' WHERE numero = $num";
-        $resultado4 = mysqli_query($con,$sql4) or die (mysqli_error($con)); */      
-        header("Location: bookin.php?booked=yes");        
-    }else{
-        header("Location: bookin.php?disponibilidad=no");
+        /*HASH DE DATOS BANCARIOS*/
+        if(isset($_POST['tarjeta'])){
+            $tar = $_POST['tarjeta'];        
+        }else{
+            $tar = 'NULL';
+        }
+        if(isset($_POST['caducidad'])){
+            $cad = $_POST['caducidad'];        
+        }else{
+            $cad = 'NULL';
+        }
+        
+        /*CASTEO DE LLEGADA A TIPO DATE*/
+        $llegadaa = str_replace("/","-",$llegada);
+        $d = new DateTime($llegadaa);
+        $timestamp = $d->getTimestamp();
+        $llegada_cas = $d->format('Y-m-d');
+        
+        /*CASTEO DE SALIDA A TIPO DATE*/
+        $salidaa = str_replace("/","-",$salida);
+        $d = new DateTime($salidaa);
+        $timestamp = $d->getTimestamp();
+        $salida_cas = $d->format('Y-m-d');
+        
+        /*ALMACENAMOS TODOS LOS DÍAS ENTRE LAS DOS FECHAS SELECCIONADAS*/
+        $estancia[] = "";
+        for($i=$llegada_cas;$i<=$salida_cas;$i=("Y-m-d". strtotime($i."+1 days"))){
+            echo $i.'<br>';
+            $estancia = $i;
+        }
+        /*COMPRUEBA DISPONIBILIDAD*/ 
+        $habNoDisp[]="";
+        $sql = "SELECT hab,salida,llegada FROM reservas WHERE salida BETWEEN '$llegada_cas' AND '$salida_cas'";
+        if($res = mysqli_query($con, $sql)){ 
+            echo 'QUERY COMPRUEBA DISPONIBILIDAD: <br>';
+            while($row = mysqli_fetch_assoc($res)){
+                $habNoDisp[] = $row['hab'];
+                echo $row['hab'].'<br>';
+            }  
+        }
+        /*HABITACIONES ACTIVAS*/
+        $sql = "SELECT numero FROM habitaciones WHERE tipo = '$tipo' AND disponible = 'si'";
+        if($res = mysqli_query($con, $sql)){
+            echo 'QUERY HABITACIONES ACTIVAS: <br>';
+            while ($row = mysqli_fetch_assoc($res)){
+                global $num;
+                $num = $row['numero']; 
+                echo $num.'<br>';
+            }
+        }
+        /*COMPARA DISPONIBILIDAD Y HABITACIONES*/
+        if($num!==null&&!in_array($num, $habNoDisp)){
+            
+            /*INSCRIPCION RESERVA EN BBDD*/
+            $sql = "INSERT INTO reservas(llegada, salida, tipo_habitacion, desayuno, cena, adultos, dni, ninos, supletoria, cuna, comentarios, hab)"
+                . " VALUES ('$llegada_cas','$salida_cas','$tipo','$desayuno','$cena',$adultos,'$dni',$ninos,$supletoria,$cuna,'$comentario', $num)";
+            $resultado = mysqli_query($con, $sql) or die (mysqli_error($con)); 
+            
+            /*COMPRUEBA SI YA HA VENIDO CLIENTE*/
+            $DNIexiste = "SELECT dni FROM clientes WHERE dni = '$dni'";
+            $DNIexisteRes = mysqli_query($con,$DNIexiste) or die (mysqli_error($con));
+            if(mysqli_num_rows($DNIexisteRes)==0){
+                $sql2 = "INSERT INTO clientes (dni, nombre, apellidos, telefono, email, pais, NumeroVisitas, tarjeta, caducidad)"
+                        ."VALUES ('$dni', '$nombre', '$apellidos', '$telf', '$email', '$pais', 1, '$tar', '$cad')";
+                $resultado2 = mysqli_query($con, $sql2) or die (mysqli_error($con));
+            }else{
+                $sql3 = "UPDATE clientes SET NumeroVisitas = NumeroVisitas+1 WHERE dni = '$dni'";
+                $resultado3 = mysqli_query($con, $sql3) or die (mysqli_error($con));
+            }
+            if(isset($_GET['site'])&&$_GET['site']=='workers'){
+                header("Location: workers/workers.php");
+            }else{
+                header("Location: bookin.php?booked=yes");
+            }
+        }else{
+            if(isset($_GET['site'])&&$_GET['site']=='workers'){
+                header("Location: workers/workers.php?error=yes");
+            }else{
+                header("Location: bookin.php?disponibilidad=no");
+            }
+        }
     }
     
 /*MAIL VERIFICACION*/
@@ -160,7 +238,8 @@ require './conexion.php';
         // Content
         $mail->isHTML(true);                                  // Set email format to HTML
         $mail->Subject = 'Reserva - HOSPEDERÍA DE ALESVES';
-        $mail->Body    = 'Reserva realizada, muchas gracias para mas informacion pongase en contacto con nostros via email o telefonicamente, muchas gracias.';           
+        $mail->Body    = '<h3>Reserva realizada.<h3><h4>Detalles de la reserva:</h4>
+                            <p><label>Llegada:</label>'.$llegada.'<label>Salida:</label><br><label>Tipo de habitación:</label>'.$tipo.'<br><label>Teléfono de contacto:</label><br>'.$telf.'<label>DNI:</label>'.$dni.'</p><br>Muchas gracias, para mas información póngase en contacto con nostros via email: <a href="mailto:info@hospederiadealesves.com">info@hospederiadealesves.com</a> o telefonicamente:<a href="tel:608144766">608144766</a>, nos vemos pronto.';           
         $mail->send();
         echo 'Message has been sent';
     } catch (Exception $e) {

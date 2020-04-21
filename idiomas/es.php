@@ -7,7 +7,7 @@
 
     $welcome = 'Bienvenido a la Hospedería de Alesves';
     
-    $idioma['1'] = '<a href="changelanguage.php?lan=es" class="dropdown-toggle select" data-hover="dropdown" data-toggle="dropdown">
+    $idioma['1'] = '<a href="change_idioma.php?lan=es" class="dropdown-toggle select" data-hover="dropdown" data-toggle="dropdown">
                                 <i class="famfamfam-flag-gb"></i>Español<b class="caret"></b>
                             </a>';
     $idioma['2'] = '<a href="idiomas/change_idioma.php?lan=fr"><i class="famfamfam-flag-fr"></i>Français</a>';
@@ -21,6 +21,7 @@
     $menu['4'] = 'ACTIVIDADES';
     $menu['5'] = 'CONTACTO';
     $menu['6'] = 'RESERVAR';
+    $menu['7'] = 'BLOG';
     
 /*SLIDER*/    
     $slider['1'] = 'Bienvenido';
@@ -31,7 +32,7 @@
     $slider['6'] = 'para relajarse';
  
 /*BOOKIN*/
-    $bookin['1'] = 'Dirección de correo:';
+    $bookin['1'] = 'Email:';
     $bookin['2'] = 'Seleccione habitación';
         $habitaciones['1'] = 'Habitaciones:';
         $habitaciones['2'] = 'Individual';
@@ -41,8 +42,8 @@
         $habitaciones['6'] = 'Familiar';
     $bookin['3'] = 'Fecha de llegada:';
     $bookin['4'] = 'Fecha de salida:';
-    $bookin['5'] = 'Adultos';    
-    $bookin['6'] = 'Niños';
+    $bookin['5'] = 'Teléfono';
+    $bookin['6'] = 'DNI';
 
 /*HABITACIONES*/
     $rooms['1'] = 'NUESTRAS HABITACIONES';
@@ -100,9 +101,7 @@
     $actividades = 'Actividades';
     $telefono = 'Teléfono';
     $derechos = 'Todos los derechos reservados.';
-    $descr = '<p>En la Hospedería de Alesves llevamos trabajando años en el sector, y seguimos dedicando empeño, esfuerzo y sudor como el primer día.</p>
-                <p>Consideramos que todo trabajo bien hecho es recompensado y por tanto actuamos en consecuencia brindando a nuestros huéspedes una experiencia inolvidable.</p>
-                           ';
+    $descr = '<p>En la Hospedería de Alesves llevamos trabajando años en el sector, y seguimos dedicando empeño, esfuerzo y sudor como el primer día.</p>';
     
     
     
@@ -201,9 +200,9 @@
             $campos_obl['3'] = 'Indique sus apellidos:';
         $obl_tit['3'] = 'DNI:';
             $campos_obl['4'] = 'Indique su DNI:';
-        $obl_tit['4'] = 'Tarjeta de crédito:';
+        $obl_tit['4.1'] = 'Tarjeta de crédito:';
             $campos_obl['5.1'] = 'GARANTÍA';
-            $campos_obl['5.2'] = 'No tendrá ningún cargo en su tarjeta a noser que anule la habitación antes de las 72h de su llegada, donde se le cobrará media habitación.';
+            $campos_obl['5.2'] = 'No tendrá ningún cargo en su tarjeta a noser que anule la habitación antes de las 72h de su llegada, donde se le cobrará una noche de estancia.';
             $campos_obl['5.3'] = 'Indique su nº de tarjeta:';
             $campos_obl['5.4'] = 'Fecha de caducidad:';
         $obl_tit['5'] = 'Número de teléfono';
@@ -218,7 +217,7 @@
     $campos_op['1'] = 'Campos opcionales:';
     $campos_op['2'] = 'Email';
     $campos_op['3'] = 'Le enviaremos un correo con los datos de su reserva.';
-    $campos_op['4'] = 'Country';
+    $campos_op['4'] = 'País';
     $campos_op['5'] = 'Seleccione su país:';
     $campos_op['6'] = 'Niños';
     $campos_op['7'] = 'Cama supletoria';
@@ -239,5 +238,87 @@
     
     
     $desde = 'Desde';
+    
+                                /* B A N N E R S */
+    
+    $descubre = 'Descubre el sur de Navarra';
+    
+    $fiestas = 'Fiestas navarras';    
+    $senderismo = 'Senderismo';    
+    $aves = 'Observatorio de aves';    
+    $y = 'y';    
+    $laguna = 'Laguna de Pitillas';    
+    $cister = 'Ruta del Císter';    
+    $bici = 'Rutas en bicicleta';    
+    $rios = 'Descenso de ríos';
+    $banners_blog = "PARA MÁS INFORMACIÓN SOBRE ACTIVIDADES Y NOTICIAS DE LA ZONA VISITE NUESTRO <a href='blog.php'>BLOG.</a>";
+
+                                    /* A C T I V I D A D E S */
+    
+    if(isset($_SESSION['actividad'])){
+        
+        $act = $_SESSION['actividad'];
+        
+        switch ($act) {
+            case 'Bardenas':
+                $imagen_fondo = 'background: url(images/monolito.jpg) center repeat;';
+                $actividad = 'Bardenas Reales';
+                $f1 = 'images/monolito.jpg';
+                $p1 = 'Una de las visitas más sorprendentes que puedes hacer en un viaje turístico por Navarra es el parque natural de las Bardenas Reales, el cual encuentras al sureste de la comunidad, no lejos de la localidad de Tudela.
+                    No hay duda de que una de las imágenes icono de Navarra son los bellos y verdes paisajes de los Pirineos navarros, que alcanzan su máxima expresión en rincones como la Selva de Irati o el pueblo de Ochagavia.
+                    Pero en Navarra también puedes encontrar paisajes más propios de ver en Arizona, con espectaculares formaciones rocosas como el cabezo de Castildetierra (imagen superior).';
+                $p2 = 'La principal característica de las Bardenas Reales son su paisajes semidesérticos.
+                    Conformados por arcillas y areniscas que durante millones de años han sufrido los efectos de la erosión, el resultado geológico es que ahora podemos ver curiosas formaciones rocosas, como mesetas o los característicos cabezos.
+                    Pero si visitas las Bardenas Reales en invierno o primavera, te sorprenderán los paisajes verdes de las llanuras, en gran parte debido a las plantaciones de cereales y arroz.';
+                $fotos['1'] = 'images/bardenas.jpg';
+                $fotos['2'] = 'images/bardenas_1.jpg';
+                $fotos['3'] = 'images/bardenas_2.jpg';
+                $fotos['4'] = 'images/bardenas_3.jpg';
+                $p3 = 'Se trata de un paisaje semidesértico, en parte, donde lluvias torrenciales han moldeado un terreno de yesos y 
+                    arcillas. Amplias llanuras se intercalan con barrancos, acantilados y cerros que llegan hasta los 600 metros de 
+                    altura. La llamada Bardena Blanca agrupa los paisajes más blancos, de sustrato de yeso y vegetación esteparia. Los
+                    bosques de pino carrasco y suelos arcillosos se encuentran en la llamada Bardena Negra. La riqueza paisajística de 
+                    este entorno se ha protegido, además, con la figura de Reserva Natural en tres lugares específicos. Así es el caso 
+                    del Vedado de Eguaras, donde se puede admirar un pequeño circo rodeado de barrancos de yeso y poblado de sabinas, 
+                    rebollos y romeros. El llamado Rincón de Bú posee cortados donde anidan los búhos reales, águilas reales y 
+                    alimoches. Por su parte, las Caídas de la Negra son un conjunto de grietas que llegan hasta los 270 metros de 
+                    profundidad. En conjunto, las Bardenas Reales dan cobijo a unas 24 aves rapaces (halcón peregrino, águila calzada,
+                    buitre leonado...), además de a una avifauna esteparia como la avutarda o la alondra. En el Parque Natural también 
+                    se encuentran más de 28 especies diferentes de mamíferos, ocho de las cuales corresponden a micromamíferos como la 
+                    musarañita o el ratón moruno. En las balsas de agua, tanto naturales como artificiales, habitan truchas, barbos, 
+                    tencas... mientras que a su alrededor tritones y ranas conviven con multitud de reptiles. El lagarto celado, la 
+                    culebra de escalera o el galápago leproso son sólo algunos de ellos.';
+                $p4 = 'Desde la hospedería os recomendamos realizar estas  <a href="https://app.bardenasreales.es/descarga-de-rutas-gpxkml">rutas</a>
+                        creadas por la asociación de <a href="https://bardenasreales.es">Bardenas Reales</a> tanto para ir a pie, en bicicleta o en vehículo a motor.';
+                $p5 = 'El parque de Bardenas Reales se puede visitar cualquier día desde las 8 de la mañana hasta una hora antes de que anochezca.
+                    Los horarios de visita del Centro de Visitantes de Bardenas Reales son, de abril a agosto, de 9 a 14 y de 16 a 19 horas; y de septiembre a marzo, de 9 a 14 y de 15 a 17 horas (en Semana Santa el centro abre de forma continua de 9 a 19 horas).';
+                $p6 = 'Las Bardenas Reales son un paisaje único que te da la sensación de ir al viejo oeste. Una experiencia que únicamente puede
+                    aprovecharse al máximo con su aconsejada visita.<br>
+                    Desde la Hospedería te encuentras a únicamente 25km para llegar al corazón de este maravilloso Parque Natural de visita obligada.';
+            break;
+            case 'Olite':
+                $imagen_fondo = 'background: url(images/Olite_4.jpg) center repeat;';
+                $actividad = 'Olite';
+                $f1 = 'images/Olite_1.jpg';
+                $p1 = 'La silueta esbelta y armoniosa de su castillo-palacio domina Olite, pequeña ciudad situada en el centro geográfico de Navarra, a 42 kilómetros al sur de Pamplona.
+                    Sede real durante la Edad Media, los gruesos muros y torres almenadas del palacio alojaron a reyes y princesas. Declarado monumento nacional en 1925, constituye el ejemplo más importante del gótico civil de Navarra y uno de los más notables de Europa.
+                    Un recorrido por las estrechas rúas de Olite te permitirán pasear al abrigo de nobles caserones de piedra con escudos de armas y grandiosos aleros de madera; galerías medievales y espléndidas iglesias, además de descubrir el recinto amurallado romano.
+                    El clima mediterráneo ha hecho también de Olite la capital del vino. Acércate a sus bodegas y degusta sus caldos. Déjate guiar y todo el conjunto te trasladará a una época de torneos, reyes y princesas, magos y juglares, halconeros y arqueros, que vuelven a la ciudad cada mes de agosto para celebrar las Fiestas Medievales.';
+                $p2 = 'Olite está situada en el corazón de Navarra, a 40 km. de Pamplona, en una zona donde el relieve accidentado de las sierras de la Navarra Media da paso a las tierras llanas de la Ribera.
+                        Erigida sobre un pequeño promontorio (388 m.), su término está recorrido por el río Cidacos, que fue encajonándose en su cauce actual dejando cinco niveles de terrazas fluviales que configuran un relieve de suaves desniveles amesetados en la margen derecha. Hacia el este se levanta la sierra de Ujué (932 m.).
+                        Su agradable clima mediterráneo continental, de veranos cálidos y secos, inviernos no muy fríos y poco lluviosos (500 l/m²), y su cielo despejado, junto a la fertilidad de sus tierras, hizo de Olite un lugar habitado desde la Prehistoria, efectuándose una intensa romanización y siendo posteriormente elegido por los monarcas navarros como sede real.';
+                $fotos['1'] = 'images/Olite_1.jpg';
+                $fotos['2'] = 'images/Olite_2.jpg';
+                $fotos['3'] = 'images/Olite_3.jpg';
+                $fotos['4'] = 'images/Olite_4.jpg';
+                $p3 = '';
+                $p4 = '';
+                $p5 = '';
+                $p6 = '';
+            default:
+            break;
+        }
+        
+    }
 ?>
 

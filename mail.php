@@ -60,7 +60,7 @@
         if($_GET['lugar']=='contacto'){
             header("Location: contacto.php?mail=enviado");
         }else{
-            (header("Location: index.php?mail=enviado#contact"));            
+            header("Location: index.php?mail=enviado#contact");            
         }
     
     } catch (Exception $e) {
