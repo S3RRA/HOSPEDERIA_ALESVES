@@ -126,20 +126,22 @@
 								}
 							?>
 			</p>
-
-				<!--F O R M U L A R I O - E L I G E F E C H A-->
-				<div class="form" style="display:none">
-					<img src="../images/hospederia-de-alesves.gif" class="imagen">
-					<form class="login-form" id="escoja_fecha">
-						<label>Indique fecha a consultar:</label>
-						<input type="date" id="fecha_elegida">
-						<input type="submit" id="enviar">
-					</form>
-				</div>
 		</div>
+				<!--F O R M U L A R I O - E L I G E F E C H A-->
+				<center>
+					<div class="form" style="display:none;position:absolute;bottom:20%;left:45%;">
+						<img src="../images/hospederia-de-alesves.gif" class="imagen">
+						<form class="login-form" id="escoja_fecha">
+							<label>Indique fecha a consultar:</label>
+							<input type="date" id="fecha_elegida">
+							<input type="submit" id="enviar">
+						</form>
+					</div>
+				</center>
+		
 				<!--S U B I R - I M A G E N-->
 				<center>
-					<div class="form_upload_imagenes" style="display:none">
+					<div class="form_upload_imagenes" style="display:none;position:absolute;bottom:20%;left:45%;">
 						<img src="../images/hospederia-de-alesves.gif"><br><br>
 						<div id="dropZone">
 							<h1>Arrastre o seleccione un archivo</h1>
@@ -199,8 +201,10 @@
 			ev.preventDefault();
 
 			closeMenu();
-			$('.info').show();
 			$('.form').hide();
+			$('.form_upload_imagenes').hide();
+			$('.info').show();
+			$('.containe').hide();
 			if(itemName == 'Hoy'){
 				<?php if(isset($_COOKIE['json'])){ ?>
 					muestra_reservas('<?php echo $_COOKIE['json'];?>');
@@ -253,7 +257,7 @@
 					});					
 				});
 			}else if(itemName == 'Subir imagen'){
-				$('.content').hide();
+				gridWrapper.innerHTML = '';				
 				$('.form_upload_imagenes').show();
 				upload_imagenes();
 			}else if(itemName == 'Validar comentario'){
@@ -332,7 +336,7 @@
 			if (!fileTypeAllowed.test(fileName))
 				$("#error").html('Solo se permiten archivos .gif, .jpg, .png y .jpeg');
 			else if (fileSize > 500000)
-				$("#error").html('Your file is too big! Max allowed size is: 500KB');
+				$("#error").html('Su archivo pesa demasiado, no puede superar los 500KB');
 			else {
 				$("#error").html("");
 				data.submit();
