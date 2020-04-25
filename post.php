@@ -8,6 +8,11 @@
     $resultado = mysqli_query($con,$sql);
     $row = mysqli_fetch_assoc($resultado);
 
+    $sql2 = "SELECT COUNT(POST_ID) FROM comentarios_posts WHERE POST_ID = $id AND apto = 'si'";
+    $resultado2 = mysqli_query($con,$sql2);
+    $res2 = mysqli_fetch_assoc($resultado2);
+    $num_com = $res2['COUNT(POST_ID)'];
+
 ?>
   <!-- =========== PAGE TITLE ========== -->
 <div class="page_title gradient_overlay" style="background: url(images/hospederia.jpg)bottom right no-repeat,url(images/06_exterior.jpg) center no-repeat,url(images/jardin_1.jpg) center repeat;">

@@ -262,6 +262,7 @@ Among the many activities that can be carried out in Navarra, especially in the 
     $rios = 'Downfall of rivers';
     $banners_blog = "FOR MORE INFORMATION ABOUT ZONE ACTIVITIES AND NEWS, VISIT OUR <a href='blog.php'> BLOG </a>";
     
+    $interesan = "If you are interested, contact us by phone or email.";
     
                                 /* A C T I V I D A D E S */
     

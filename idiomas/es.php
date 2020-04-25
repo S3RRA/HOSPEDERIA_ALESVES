@@ -2,6 +2,8 @@
 
                         /* I N D E X */
 
+$interesan = "Si te interesan ponte en contaco con nosotros por teléfono o mail.";
+
 /*BIENVENIDA + IDIOMA*/
     $lang = 'es';
 

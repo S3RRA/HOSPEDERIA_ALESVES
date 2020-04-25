@@ -33,27 +33,27 @@
                         <form id="contact-form-page" method='post' action='mail.php'>
                             <div class="row">
                                 <div class="form-group col-md-6 col-sm-6">
-                                    <label class="control-label">Nombre:</label>
-                                    <input type="text" class="form-control" name="name" placeholder="<?php echo $form_mail['2'];?>">
+                                    <label class="control-label"><?php echo $form_mail['2'];?>:</label>
+                                    <input type="text" class="form-control" name="name_cl" placeholder="<?php echo $form_mail['2'];?>">
                                 </div>
                                 <div class="form-group col-md-6 col-sm-6">
-                                    <label class="control-label">Teléfono:</label>
+                                    <label class="control-label"><?php echo $phone;?>:</label>
                                     <input type="text" class="form-control" name="phone" placeholder="<?php echo $phone;?>">
                                 </div>
                                 <div class="form-group col-md-6 col-sm-6">
-                                    <label class="control-label">Email</label>
-                                    <input type="email" class="form-control" name="email" placeholder="<?php echo $form_mail['3'];?>">
+                                    <label class="control-label"><?php echo $form_mail['3'];?></label>
+                                    <input type="email" class="form-control" name="email_cl" placeholder="<?php echo $form_mail['3'];?>">
                                 </div>
                                 <div class="form-group col-md-6 col-sm-6">
-                                    <label class="control-label">Asunto</label>
+                                    <label class="control-label"><?php echo $asunto;?></label>
                                     <input type="text" class="form-control" name="subject" placeholder="<?php echo $asunto;?>">
                                 </div>
                                 <div class="form-group col-md-12 col-sm-12 col-xs-12">
-                                    <label class="control-label">Mensaje</label>
-                                    <textarea class="form-control" name="message" placeholder="<?php echo $form_mail['4'];?>"></textarea>
+                                    <label class="control-label"><?php echo $form_mail['4'];?></label>
+                                    <textarea class="form-control" name="msj" placeholder="<?php echo $form_mail['4'];?>"></textarea>
                                 </div>
                                 <div class="form-group col-md-12 col-sm-12 col-xs-12">
-                                    <button class="button btn_lg btn_blue btn_full upper" type="submit"><i class="fa fa-location-arrow"></i><?php echo $form_mail['5'];?></button>
+                                    <input class="button btn_lg btn_blue btn_full upper" type="submit">
                                 </div>
                             </div>
                         </form>
@@ -62,7 +62,7 @@
                     
                     <div class="col-md-4">
                         <div id="contact-page22">
-                            <div class="embed-responsive-item">
+                            <div class="map-responsive">
                                 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1476.008799115618!2d-1.7498762!3d42.2781477!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd5a66cbeca9a55f%3A0xa339c0ae8d943e1f!2sHospeder%C3%ADa%20de%20Alesves%20(Entre%20las%20Bardenas%20y%20los%20r%C3%ADos)!5e0!3m2!1ses!2ses!4v1580839915806!5m2!1ses!2ses" width="350" height="130" frameborder="0" style="border:0;" allowfullscreen></iframe>
                             </div>
                               <ul class="contact-info upper mt40">
@@ -89,7 +89,7 @@
                         </ul>
 
                             <div class="social_media">
-                                <a class="facebook" href="#"><i class="fa fa-facebook"></i></a>
+                                <a class="facebook" href="https://www.facebook.com/hospederiadealesves/"><i class="fa fa-facebook"></i></a>
                                 <a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
                                 <a class="googleplus" href="#"><i class="fa fa-google-plus"></i></a>
                                 <a class="pinterest" href="#"><i class="fa fa-pinterest"></i></a>

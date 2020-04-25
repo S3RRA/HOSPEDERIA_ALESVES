@@ -487,15 +487,18 @@
                     <div class="col-md-4">
                         <div class="special_offers">
                             <div class="main_title a_left upper">
-                                <h2><?php echo $ofertas['1'];?>:</h2>
+                                <h2><?php echo $ofertas['1'];?>:</h2><br>
+                                <div class="help">
+                                    <?php echo $interesan;?>
+                                </div>
                             </div>
                             <article class="room mb40">
                                 <figure>
-                                    <a href="habitacion.php?tipo=trabajadores" class="hover_effect h_blue h_link">
+                                    <a href="" class="hover_effect h_blue h_blue">
                                         <img src="images/habitacion_1.jpg" class="img-responsive" alt="Image">
                                     </a>
                                     <figcaption>
-                                        <h4><a href="habitacion.php?tipo=trabajadores"><?php echo $ofertas['2'];?>:</a></h4>
+                                        <h4><a href=""><?php echo $ofertas['2'];?>:</a></h4>
                                         <p><?php echo $ofertas['3'];?></p>
                                         <div class="price">75 €<span>/ <?php echo $noche;?></span></div>
                                     </figcaption>
@@ -503,11 +506,11 @@
                             </article>
                             <article class="room mb40">
                                 <figure>
-                                    <a href="habitacion.php?tipo=pareja" class="hover_effect h_blue h_link">
+                                    <a href="" class="hover_effect h_blue h_blue">
                                         <img src="images/habitacion_2.jpg" class="img-responsive" alt="Image">
                                     </a>
                                     <figcaption>
-                                        <h4><a href="habitacion.php?tipo=pareja"><?php echo $ofertas['4'];?>:</a></h4>
+                                        <h4><a href=""><?php echo $ofertas['4'];?>:</a></h4>
                                         <p><?php echo $ofertas['5'];?></p>
                                         <div class="price">190 €<span>/ <?php echo $noche;?></span></div>
                                     </figcaption>
@@ -515,7 +518,7 @@
                             </article>
                             <article class="room mb40">
                                 <figure>
-                                    <a href="habitacionn.php" class="hover_effect h_blue h_link">
+                                    <a href="" class="hover_effect h_blue h_blue">
                                         <img src="images/habitacion_3.jpg" class="img-responsive" alt="Image">
                                     </a>
                                     <figcaption>

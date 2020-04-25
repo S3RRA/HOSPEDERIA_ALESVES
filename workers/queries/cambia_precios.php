@@ -8,9 +8,13 @@
         
         $tipo = $_POST['tipo'];
         $precio = $_POST['precio'];
-        
-        $sql_1 = "UPDATE habitaciones SET precio = $precio WHERE tipo = '$tipo'";
-        $res_1 = mysqli_query($con, $sql_1);
+        if($tipo = 'individual'){
+            $sql_1 = "UPDATE habitaciones SET ind = $precio WHERE tipo = 'doble'";
+            $res_1 = mysqli_query($con,$sql_1);
+        }else{
+            $sql_1 = "UPDATE habitaciones SET precio = $precio WHERE tipo = '$tipo'";
+            $res_1 = mysqli_query($con, $sql_1);
+        }
         
         header("Location: ../workers.php?done=yes");
     }
@@ -67,6 +71,34 @@
 
         header('Location:../workers.php?done=yes') or die (mysqli_error($con));
     } 
+    /*BORRAR POST*/
+    if(isset($_GET['borra'])&&$_GET['borra']=='post'){
+
+        $titulo = $_POST['post'];
+
+        $sql = "DELETE FROM posts WHERE titulo = '$titulo'";
+        $res = mysqli_query($con,$sql);
+
+        header('Location:../workers.php?done=yes') or die(mysqli_error($con));
+    }
+    /*BORRAR COMENTARIO*/
+    if(isset($_GET['borra'])&&$_GET['borra']=='comentario'){
+
+        $post = $_POST['post'];
+        $persona = $_POST['nombre'];
+
+        $sql = "SELECT ID FROM posts WHERE titulo = '$post'";
+        $res = mysqli_query($con,$sql);
+        while ($row = mysqli_fetch_assoc($res)){
+            $POST_ID = $row['ID'];
+        }    
+
+        $sql = "DELETE FROM comentarios_posts WHERE POST_ID = $POST_ID AND nombre = '$persona'";
+        $res = mysqli_query($con,$sql);
+
+        header('Location:../workers.php?done=yes') or die(mysqli_error($con));
+
+    }
 
 ?>
 

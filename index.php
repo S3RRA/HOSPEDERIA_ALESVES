@@ -245,7 +245,7 @@
                     <div class="col-md-4">
                         <article class="room">
                             <figure>
-                                <div class="price">56€ <span>/ <?php echo $noche;?></span></div>
+                                <div class="price"><?php echo $precio_individual;?>€ <span>/ <?php echo $noche;?></span></div>
                                 <a class="hover_effect h_blue h_link" href="habitacion.php?tipo=individual">
                                     <img src="images/habitacion_1.jpg" class="img-responsive" alt="Image">
                                 </a>
@@ -257,7 +257,7 @@
                                     </h4>
                                     <span class="f_right">
                                         <a href="habitacion.php?tipo=individual" class="button btn_sm btn_blue">
-                                        <?php echo $detalles;?>
+                                            <?php echo $detalles;?>
                                         </a>
                                     </span>
                                 </figcaption>
@@ -484,7 +484,7 @@
                 </p>
                 <div class="row">
                     <div class="col-md-6">
-                        <div class="embed-responsive-item">
+                        <div class="map-responsive">
                             <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1476.008799115618!2d-1.7498762!3d42.2781477!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd5a66cbeca9a55f%3A0xa339c0ae8d943e1f!2sHospeder%C3%ADa%20de%20Alesves%20(Entre%20las%20Bardenas%20y%20los%20r%C3%ADos)!5e0!3m2!1ses!2ses!4v1580839915806!5m2!1ses!2ses" width="500" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
                         </div>
                     </div>

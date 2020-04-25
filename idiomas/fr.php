@@ -250,6 +250,35 @@
     $rios = 'Descente de rivière';
     $banners_blog = "POUR PLUS D'INFORMATIONS SUR LES ACTIVITÉS ET LES NOUVELLES DE LA ZONE, VISITEZ NOTRE <a href='blog.php'> BLOG </a>";
 
+    $interesan = "Si vous êtes intéressé, contactez-nous par téléphone ou par e-mail.";
+
+                                /*ACTIVIDADES*/
+    if(isset($_SESSION['actividad'])){
+
+        $act = $_SESSION['actividad'];
+        
+        switch ($act) {
+            case 'Bardenas':
+                $imagen_fondo = 'background: url(images/monolito.jpg) center repeat;';
+                $actividad = 'Bardenas Reales';
+                $f1 = 'images/monolito.jpg';
+                $p1 = "L'une des visites les plus surprenantes que vous pouvez faire lors d'un voyage touristique à travers la Navarre est le parc naturel des Bardenas Reales, que vous pouvez trouver dans le sud-est de la municipalité près de la ville de Tudela. Il ne fait aucun doute que l'un des symboles de la Navarre est le paysage magnifique et verdoyant des Pyrénées navarraises, qui trouvent leur expression maximale dans des coins comme la forêt d'Irati ou la ville d'Ochagavia. En Navarre, il existe également des paysages plus typiques de l'Arizona avec des formations rocheuses spectaculaires telles que la tête de Castildenierra (photo ci-dessus).";
+                $p2 = "La caractéristique principale des Bardenas Reales sont les paysages semi-désertiques. Le résultat géologique est constitué d'argiles et de grès qui souffrent d'érosion depuis des millions d'années. Nous pouvons maintenant voir d'étranges formations rocheuses comme des plateaux ou la zone source caractéristique. Cependant, si vous visitez les Bardenas Reales en hiver ou au printemps, vous serez émerveillé par les paysages verdoyants des plaines, notamment à cause des plantations de céréales et de riz.";
+                $fotos['1'] = 'images/bardenas.jpg';
+                $fotos['2'] = 'images/bardenas_1.jpg';
+                $fotos['3'] = 'images/bardenas_2.jpg';
+                $fotos['4'] = 'images/bardenas_3.jpg';
+                $p3 = "Une partie de celui-ci est un paysage semi-désertique dans lequel de fortes pluies ont formé un sol en plâtre et de l'argile. De larges plaines sont entrecoupées de gorges, de falaises et de collines qui atteignent des hauteurs allant jusqu'à 600 mètres. La soi-disant Bardena Blanca regroupe les paysages les plus blancs de gypse et de végétation des steppes. Les forêts de pins d'Alep et les sols argileux sont situés dans la soi-disant Black Bardena. La richesse paysagère de cet environnement a également été protégée avec la figure de la réserve naturelle en trois endroits spécifiques. Il en est de même avec le Vedado de Eguaras, où vous pourrez admirer un petit cirque entouré de canyons de gypse et peuplé de genévriers, rebollos et romeros. Le soi-disant Rincón de Bú a des coupes où les hiboux royaux, les aigles royaux et les vautours égyptiens. Les cascades de La Negra sont une série de fissures pouvant atteindre 270 mètres de profondeur. Au total, les Bardenas Reales abritent 24 rapaces (faucon pèlerin, pygargue à tête blanche, vautour fauve ...) et une faune ornithologique des steppes comme la grande outarde ou l'alouette. Il existe également plus de 28 espèces différentes de mammifères dans le parc naturel, dont huit correspondent à de petits mammifères comme la musaraigne ou la souris maure. La truite, le barbillon, la tanche vivent dans les radeaux naturels et artificiels ... tandis que les tritons et les grenouilles vivent autour d'elle avec une variété de reptiles. Le lézard capé, le serpent d'échelle ou la tortue d'étang ne sont que quelques-uns d'entre eux.";
+                $p4 = "Depuis l'auberge, nous vous recommandons de suivre ces <a href='https://app.bardenasreales.es/descarga-de-rutas-gpxkml'> itinéraires </a>. Créé par l'Association des <a href='https://bardenasreales.es'> Bardenas Reales </a> pour les piétons, les cyclistes et les véhicules à moteur.";
+                $p5 = "Le parc Bardenas Reales peut être visité tous les jours de 8 h à une heure avant la tombée de la nuit. Les heures de visite du centre d'accueil des Bardenas Reales sont d'avril à août de 9 h à 14 h et de 16 h à 19 h. et de septembre à mars de 9h à 14h et de 15h à 17h (à Pâques, le centre est toujours ouvert de 9h à 19h)";
+                $p6 = "Les Bardenas Reales sont un paysage unique qui vous donne l'impression d'aller dans le vieil ouest. Une expérience qui ne peut que profiter au maximum de votre visite recommandée. <br>
+                                 Vous êtes à seulement 25 km de l'Hospedería pour rejoindre le cœur de ce magnifique parc naturel, qui est un must.";
+            break;
+            default:
+            break;
+        }
+    }
+
 ?>
 
 

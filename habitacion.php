@@ -3,10 +3,9 @@
     require 'conexion.php';
     include 'header.php';
 ?>
-
         <?php 
             if($_GET['tipo']=='individual'){
-                $precio=56;$img='images/habitacion_1.jpg';
+                $precio=$precio_individual;$img='images/habitacion_1.jpg';
                 $precio2=$precios['doble'];$img2='images/habitacion_3.jpg';$tit2='Doble';$tipo2='?tipo=doble';
                 $precio3=$precios['superior'];$img3='images/habitacion_2.jpg';$tit3='Superior';$tipo3='?tipo=superior';
                 $precio4=$precios['triple'];$img4='images/habitacion_3.jpg';$tit4='Triple';$tipo4='?tipo=triple';
@@ -14,12 +13,12 @@
                 $precio=$precios['doble'];$img='images/habitacion_3.jpg';
                 $precio2=$precios['superior'];$img2='images/habitacion_2.jpg';$tit2='Superior';$tipo2='?tipo=superior';
                 $precio3=$precios['triple'];$img3='images/habitacion_3.jpg';$tit3='Triple';$tipo3='?tipo=triple';
-                $precio4=56;$img4='images/habitacion_1.jpg';$tit4='Individual';$tipo4='?tipo=individual';
+                $precio4=$precio_individual;$img4='images/habitacion_1.jpg';$tit4='Individual';$tipo4='?tipo=individual';
             }else if($_GET['tipo']=='superior'){
                 $precio=$precios[2];$img='images/habitacion_2.jpg';
                 $precio2=$precios['triple'];$img2='images/habitacion_3.jpg';$tit2='Triple';$tipo2='?tipo=triple';
                 $precio3=$precios['doble'];$img3='images/habitacion_3.jpg';$tit3='Doble';$tipo3='?tipo=doble';
-                $precio4=56;$img4='images/habitacion_1.jpg';$tit4='Individual';$tipo4='?tipo=individual';
+                $precio4=$precio_individual;$img4='images/habitacion_1.jpg';$tit4='Individual';$tipo4='?tipo=individual';
             }else if($_GET['tipo']=='triple'){
                 $precio=$precios['triple'];$img='images/habitacion_3.jpg';
                 $precio2=$precios['familiar'];$img2='images/habitacion_4.jpg';$tit2='Familiar';$tipo2='?tipo=familiar';
@@ -30,16 +29,6 @@
                 $precio2=$precios['triple'];$img2='images/habitacion_3.jpg';$tit2='Triple';$tipo2='?tipo=triple';
                 $precio3=$precios['superior'];$img3='images/habitacion_2.jpg';$tit3='Superior';$tipo3='?tipo=superior';
                 $precio4=$precios['doble'];$img4='images/habitacion_3.jpg';$tit4='Doble';$tipo4='?tipo=doble';
-            }else if($_GET['tipo']=='trabajadores'){
-                $precio=75;$img='images/habitacion_1.jpg';
-                $precio2=56;$img2='images/habitacion_1.jpg';$tit2='Individual';$tipo2='?tipo=individual';
-                $precio4=68;$img4='images/habitacion_3.jpg';$tit4='Doble';$tipo4='?tipo=doble';                
-                $precio3=77;$img3='images/habitacion_2.jpg';$tit3='Superior';$tipo3='?tipo=superior';
-            }else if($_GET['tipo']=='pareja'){
-                $precio=190;$img='images/habitacion_2.jpg';
-                $precio2=77;$img2='images/habitacion_2.jpg';$tit2='Superior';$tipo2='?tipo=superior';
-                $precio3=68;$img3='images/habitacion_3.jpg';$tit3='Doble';$tipo3='?tipo=doble';
-                $precio4=118;$img4='images/habitacion_4.jpg';$tit4='Familiar';$tipo4='?tipo=familiar';
             }
         ?>
         <!-- =========== PAGE TITLE ========== -->

@@ -81,9 +81,11 @@
         </div>
         <!-- ========== HEADER ========== -->
         <?php 
+
             $var = explode('/',$_SERVER['SCRIPT_NAME']);
             $var1 = array_pop($var);
-        ?>
+
+        ?>       
         <header <?php if($var1=='index.php'){ echo 'class="fixed transparent"';}?>>
             <div class="container">
                 <div class="navbar-header">
@@ -91,13 +93,11 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
-                    </button>
-            <?php if($var1!=='index.php'){?> 
+                    </button> 
                     <a class="navbar-brand" href="index.php" style="position: relative;top:-30px;">
-                        <img src="images/hospederia-de-alesves.gif" height="74" alt="Logo">
+                        <img src="images/hospederia-de-alesves.gif" height="74" alt="Logo" <?php if($var1=='index.php'){echo 'style="display:none"';} ?>>
                     </a>
                 </div>
-            <?php } ?>
                 <nav id="main_menu" class="mobile_menu navbar-collapse">
                     <ul class="nav navbar-nav">
                         <li class="mobile_menu_title" style="display:none;"><?php echo $menu['1'];?></li>

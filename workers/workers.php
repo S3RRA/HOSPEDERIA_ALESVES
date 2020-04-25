@@ -23,7 +23,7 @@
 	<meta charset="UTF-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Area</title>
+	<title>Area Trabajadores</title>
 	<meta name="author" content="Codrops" />
 	<link rel="apple-touch-icon-precomposed" href="images/hospederia-de-alesves.gif" />
 	<link rel="icon" href="../images/hospederia-de-alesves.gif">
@@ -98,16 +98,20 @@
 <!-- Submenu 4 -->
 				<ul data-menu="submenu-4" id="submenu-4" class="menu__level" tabindex="-1" role="menu" aria-label="WEB">				
 					<li class="menu__item" role="menuitem"><a class="menu__link">Subir imagen</a></li>
-					<li class="menu__item" role="menuitem"><a class="menu__link">Crear post</a></li>					
-					<li class="menu__item" role="menuitem"><a class="menu__link">Borrar comentarios</a></li>
+					<li class="menu__item" role="menuitem"><a class="menu__link">Crear post</a></li>
+					<li class="menu__item" role="menuitem"><a class="menu__link">Borrar post</a></li>					
+					<li class="menu__item" role="menuitem"><a class="menu__link" data-submenu="submenu-6">Comentarios</a></li>
 				</ul>
 <!-- Submenu 5-->
 				<ul data-menu="submenu-5" id="submenu-5" class="menu__level" tabindex="-1" role="menu" aria-label="Habitaciones">
 					<li class="menu__item" role="menuitem"><a class="menu__link">Cambiar disponibilidad</a></li>					
 					<li class="menu__item" role="menuitem"><a class="menu__link" data-submenu="submenu-3" aria-owns="submenu-3">Cambiar precio</a></li>
 				</ul>
-				                                
-
+<!-- Submenu 6-->
+				<ul data-menu="submenu-6" id="submenu-6" class="menu__level" tabindex="-1" role="menu" aria-label="Comentarios">				
+					<li class="menu__item" role="menuitem"><a class="menu__link">Validar comentarios</a></li>
+					<li class="menu__item" role="menuitem"><a class="menu__link">Borrar comentarios</a></li>				                                
+				</ul>
 			</div>
 		</nav>
 		<div class="content" id="content">
@@ -132,10 +136,10 @@
 						<input type="submit" id="enviar">
 					</form>
 				</div>
-
+		</div>
 				<!--S U B I R - I M A G E N-->
 				<center>
-					<div id="imagenes" style="display:none">
+					<div class="form_upload_imagenes" style="display:none">
 						<img src="../images/hospederia-de-alesves.gif"><br><br>
 						<div id="dropZone">
 							<h1>Arrastre o seleccione un archivo</h1>
@@ -148,7 +152,7 @@
 				</center>
 				
 			
-		</div>
+		
 	</div>
 	<!-- vista  -->
 	<script src="js/classie.js"></script>
@@ -196,19 +200,45 @@
 
 			closeMenu();
 			$('.info').show();
+			$('.form').hide();
 			if(itemName == 'Hoy'){
-				muestra_reservas('<?php echo $_COOKIE['json'];?>');
+				<?php if(isset($_COOKIE['json'])){ ?>
+					muestra_reservas('<?php echo $_COOKIE['json'];?>');
+				<?php }else{ ?>
+					classie.add(gridWrapper, 'content--loading');
+					setTimeout(function() {
+						classie.remove(gridWrapper, 'content--loading');
+						gridWrapper.innerHTML = '<div class="info" style="color:white">NO HAY RESERVAS</div>';
+					}, 700);
+				<?php } ?>
 			}
 			else if(itemName == 'Esta semana'){
-				muestra_reservas('<?php echo $_COOKIE['json2'];?>');
+				<?php if(isset($_COOKIE['json2'])){ ?>
+					muestra_reservas('<?php echo $_COOKIE['json2'];?>');
+				<?php }else{ ?>
+					classie.add(gridWrapper, 'content--loading');
+					setTimeout(function() {
+						classie.remove(gridWrapper, 'content--loading');
+						gridWrapper.innerHTML = '<div class="info" style="color:white">NO HAY RESERVAS</div>';
+					}, 700);
+				<?php } ?>
 			}			
 			else if(itemName == 'Este mes'){
-				muestra_reservas('<?php echo $_COOKIE['json3'];?>');
+				<?php if(isset($_COOKIE['json3'])){ ?>
+					muestra_reservas('<?php echo $_COOKIE['json3'];?>');
+				<?php }else{ ?>
+					classie.add(gridWrapper, 'content--loading');
+					setTimeout(function() {
+						classie.remove(gridWrapper, 'content--loading');
+						gridWrapper.innerHTML = '<div class="info" style="color:white">NO HAY RESERVAS</div>';
+					}, 700);
+				<?php } ?>
 			}
 			else if(itemName == 'Escoja fecha'){
-				$('.info').hide();
+				gridWrapper.innerHTML = '';
 				$('.form').show();
-				$('#escoja_fecha').on('submit',function(){
+				$('#escoja_fecha').on('submit',function(e){
+					e.preventDefault();
 					$('.form').hide();
 					$.ajax({
 						url:'queries/r_fecha.php',
@@ -223,11 +253,20 @@
 					});					
 				});
 			}else if(itemName == 'Subir imagen'){
-				$('.info').hide();
-				$('#imagenes').show();
+				$('.content').hide();
+				$('.form_upload_imagenes').show();
 				upload_imagenes();
+			}else if(itemName == 'Validar comentario'){
+				<?php if(isset($_COOKIE['json_comentarios'])){ ?>
+					muestra_comentarios('<?php echo $_COOKIE['json_comentarios'];?>');
+				<?php }else{ ?>
+					classie.add(gridWrapper, 'content--loading');
+					setTimeout(function() {
+						classie.remove(gridWrapper, 'content--loading');
+						gridWrapper.innerHTML = '<div class="info" style="color:white">NO HAY COMENTARIOS A VALIDAR</div>';
+					}, 700);
+				<?php } ?>
 			}else{
-				console.log(itemName);
 				classie.add(gridWrapper, 'content--loading');
 				setTimeout(function() {
 					classie.remove(gridWrapper, 'content--loading');
@@ -239,33 +278,41 @@
 	})();
 	
 	function muestra_reservas(datos){
+		var gridWrapper = document.getElementById('content');
 		console.log('DATOS MUESTRA_RESERVAS: '+ datos + 'TIPO: ' + typeof(datos));
-		var reservas = JSON.parse(datos);
-		var contenido = '';	
-		for(var i=0;i<reservas.length;i++){
-			contenido += '<tr>'+
-							'<th scope="row">'+(i+1)+'</th>'+	
-							'<td>'+reservas[i]['hab']+'</td>'+
-							'<td>'+reservas[i]['tipo_habitacion']+'</td>'+
-							'<td>'+reservas[i]['llegada']+'</td>'+
-							'<td>'+reservas[i]['salida']+'</td>'+
-							'<td>'+reservas[i]['dni']+'</td>'+
-							'<td>'+reservas[i]['cod']+'</td>'+
-						'</tr>';
-			console.log(contenido);			
-			var gridWrapper = document.getElementById('content');
-			gridWrapper.innerHTML = 'HOLA QUE TAL';
+		if(datos=="NO HAY RESERVAS"){
 			classie.add(gridWrapper, 'content--loading');
-					setTimeout(function() {
-						classie.remove(gridWrapper, 'content--loading');
-						gridWrapper.innerHTML = '<center><div style="overflow-x:auto;background-color:white;color:black;display:flex;justify-content:center;align-items: center;width:60%;;border-radius:5px;"><img src="../images/hospederia-de-alesves.gif"><br><br><div>'+
-									'<table class="table" style="width=100%" cellspacing="5%">'+
-										'<thead><tr><th scope="col">#</th><th scope="col"><b>Nº hab</b></th><th scope="col"><b>Tipo hab</b></th><th scope="col"><b>Llegada</b></th><th scope="col"><b>Salida</b></th><th scope="col"><b>Cliente</b></th><th scope="col"><b>Codigo reserva</b></th></tr></thead><tbody>'+
-											contenido+
-									'</tbody></table>'+
-									'</div></div></center>';
-					}, 700);
-		}					
+				setTimeout(function() {
+					classie.remove(gridWrapper, 'content--loading');
+					gridWrapper.innerHTML = '<div class="info" style="color:white">NO HAY RESERVAS</div>';
+				}, 700);
+		}else{
+			var reservas = JSON.parse(datos);
+			var contenido = '';	
+			for(var i=0;i<reservas.length;i++){
+				contenido += '<tr>'+
+								'<th scope="row">'+(i+1)+'</th>'+	
+								'<td>'+reservas[i]['hab']+'</td>'+
+								'<td>'+reservas[i]['tipo_habitacion']+'</td>'+
+								'<td>'+reservas[i]['llegada']+'</td>'+
+								'<td>'+reservas[i]['salida']+'</td>'+
+								'<td>'+reservas[i]['dni']+'</td>'+
+								'<td>'+reservas[i]['cod']+'</td>'+
+							'</tr>';
+				console.log('DATOS A INSERTAR: '+contenido);			
+				gridWrapper.innerHTML = '';
+				classie.add(gridWrapper, 'content--loading');
+						setTimeout(function() {						
+							classie.remove(gridWrapper, 'content--loading');
+							gridWrapper.innerHTML = '<center><div style="overflow-x:auto;background-color:white;color:black;display:flex;justify-content:center;align-items: center;width:60%;;border-radius:5px;"><img src="../images/hospederia-de-alesves.gif" style="float:left"><br><br><div>'+
+										'<table class="table" style="width=100%" cellspacing="5%">'+
+											'<thead><tr><th scope="col">#</th><th scope="col"><b>Nº hab</b></th><th scope="col"><b>Tipo hab</b></th><th scope="col"><b>Llegada</b></th><th scope="col"><b>Salida</b></th><th scope="col"><b>Cliente</b></th><th scope="col"><b>Codigo reserva</b></th></tr></thead><tbody>'+
+												contenido+
+										'</tbody></table>'+
+										'</div></div></center>';
+						}, 700);
+			}
+		}
 	}	
         
 	function upload_imagenes() {
@@ -283,7 +330,7 @@
 			var fileSize = data.originalFiles[0]['size'];
 
 			if (!fileTypeAllowed.test(fileName))
-				$("#error").html('Only images are allowed!');
+				$("#error").html('Solo se permiten archivos .gif, .jpg, .png y .jpeg');
 			else if (fileSize > 500000)
 				$("#error").html('Your file is too big! Max allowed size is: 500KB');
 			else {
@@ -302,9 +349,15 @@
 				$("#error").html(msg);
 		}).on('fileuploadprogressall', function(e,data) {
 			var progress = parseInt(data.loaded / data.total * 100, 10);
-			$("#progress").html("Completed: " + progress + "%");
+			$("#progress").html("Completado: " + progress + "%");
 		});
 	}
+
+	function muestra_comentarios(datos){
+		var comentarios = JSON.parse(datos);
+		console.log(comentarios);
+	}
+
 	</script>
 
 </body>

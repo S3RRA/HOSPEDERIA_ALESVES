@@ -618,7 +618,20 @@ blockquote .quote_text {
     appearance: none;
     text-overflow: ellipsis;
 }
-
+/*MAP RESPONSIVE*/
+.map-responsive{
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+}
+.map-responsive iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+}
 .form-select select::-ms-expand {
     display: none;
 }
@@ -1912,9 +1925,7 @@ header.nav_bg {
 }
 
 header.transparent.fixed {
-    width:100%;
     position: absolute;
-    left:450px;
 }
 
 header.transparent.navbar-fixed-top {

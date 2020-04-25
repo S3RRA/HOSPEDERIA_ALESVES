@@ -252,7 +252,7 @@
     $rios = 'Flussabstieg';
     $banners_blog = "Weitere Informationen zu Zonenaktivitäten und Neuigkeiten finden Sie in unserem <a href='blog.php'> BLOG </a>";
                                     /* A C T I V I D A D E S */
-    
+    $interesan = "Wenn Sie interessiert sind, kontaktieren Sie uns per Telefon oder E-Mail.";
     if(isset($_SESSION['actividad'])){
         
         $act = $_SESSION['actividad'];
@@ -262,35 +262,17 @@
                 $imagen_fondo = 'background: url(images/monolito.jpg) center repeat;';
                 $actividad = 'Bardenas Reales';
                 $f1 = 'images/monolito.jpg';
-                $p1 = "One of the most surprising visits you can make on a tourist trip through Navarra is the Bardenas Reales Natural Park, which you find in the southeast of the community, not far from the town of Tudela. 
-                    There is no doubt that one of the iconic images of Navarra is the beautiful and green landscapes of the Navarrese Pyrenees, which reach their maximum expression in corners such as the Irati Forest or the town of Ochagavia. 
-                    But in Navarra you can also find more typical landscapes to see in Arizona, with spectacular rock formations such as the head of Castildetierra (image above).";
-                $p2 = 'The main characteristic of the Bardenas Reales is its semi-desert landscapes. 
-                    Made up of clays and sandstones that for millions of years have suffered the effects of erosion, the geological result is that now we can see curious rock formations, such as plateaus or the characteristic headwaters. 
-                    But if you visit the Bardenas Reales in winter or spring, you will be amazed by the green landscapes of the plains, largely due to the cereal and rice plantations.';
+                $p1 = "Einer der überraschendsten Besuche, die Sie auf einer Touristenreise durch Navarra machen können, ist der Naturpark Bardenas Reales, den Sie im Südosten der Gemeinde unweit der Stadt Tudela finden. Es besteht kein Zweifel, dass eines der Wahrzeichen von Navarra die wunderschönen und grünen Landschaften der Navarrese-Pyrenäen sind, die in Ecken wie dem Irati-Wald oder der Stadt Ochagavia ihren maximalen Ausdruck finden. In Navarra gibt es aber auch typischere Landschaften in Arizona mit spektakulären Felsformationen wie dem Kopf von Castildetierra (Bild oben).";
+                $p2 = "Das Hauptmerkmal der Bardenas Reales sind die Halbwüstenlandschaften. Das geologische Ergebnis besteht aus Tonen und Sandsteinen, die seit Millionen von Jahren unter Erosion leiden. Jetzt können wir merkwürdige Felsformationen wie Hochebenen oder das charakteristische Quellgebiet sehen. Wenn Sie jedoch im Winter oder Frühling die Bardenas Reales besuchen, werden Sie von den grünen Landschaften der Ebenen begeistert sein, vor allem aufgrund der Getreide- und Reisplantagen.";
                 $fotos['1'] = 'images/bardenas.jpg';
                 $fotos['2'] = 'images/bardenas_1.jpg';
                 $fotos['3'] = 'images/bardenas_2.jpg';
                 $fotos['4'] = 'images/bardenas_3.jpg';
-                $p3 = 'It is a semi-desert landscape, in part, where torrential rains have shaped a plaster ground and 
-                    clays. Wide plains are interspersed with ravines, cliffs and hills that reach up to 600 meters 
-                    height. The so-called Bardena Blanca groups the whitest landscapes, of plaster substrate and steppe vegetation. The 
-                    Aleppo pine forests and clay soils are found in the so-called Black Bardena. The landscape wealth of
-                    this environment has also been protected with the figure of Nature Reserve in three specific places. So is the case 
-                    of the Vedado de Eguaras, where you can admire a small circus surrounded by plaster ravines and populated by junipers, 
-                    rebollos and romeros. The so-called Rincón de Bú has cuts where the royal owls, golden eagles and 
-                    Egyptian vultures. For its part, the Falls of La Negra are a set of cracks that reach up to 270 meters in 
-                    depth. Altogether, the Bardenas Reales shelter some 24 birds of prey (peregrine falcon, booted eagle, 
-                    griffon vulture ...), in addition to a steppe bird fauna such as the great bustard or the lark. In the Natural Park too 
-                    there are more than 28 different species of mammals, eight of which correspond to small mammals such as 
-                    shrew or the Moorish mouse. In the rafts of water, both natural and artificial, inhabit trout, barbels, 
-                    tench ... while around him newts and frogs live with a multitude of reptiles. The Caped Lizard, the 
-                    ladder snake or terrapin leper are just some of them.';
-                $p4 = 'From the hostel we recommend you to do these <a href="https://app.bardenasreales.es/descarga-de-rutas-gpxkml"> routes </a> '
-                        . 'created by the association of <a href="https://bardenasreales.es"> Bardenas Reales </a> both for walking, cycling or motor vehicles.';
-                $p5 = 'The Bardenas Reales park can be visited any day from 8 in the morning until an hour before dark. The visiting hours of the Bardenas Reales Visitors Center are from April to August, from 9 to 14 and from 16 to 19 hours; and from September to March, from 9 a.m. to 2 p.m. and from 3 to 5 p.m. (during Easter the center is open continuously from 9 a.m. to 7 p.m.).';
-                $p6 = 'The Bardenas Reales are a unique landscape that gives you the feeling of going to the old west. An experience that can only make the most of your recommended visit. <br>
-                    From the Hospedería you are only 25 km away to reach the heart of this wonderful Natural Park, a must-see.';
+                $p3 = 'Zum Teil handelt es sich um eine Halbwüstenlandschaft, in der heftige Regenfälle einen Putzboden und Ton geformt haben. Weite Ebenen sind mit Schluchten, Klippen und Hügeln durchsetzt, die bis zu 600 Meter hoch werden. Die sogenannte Bardena Blanca gruppiert die weißesten Landschaften aus Gipsuntergrund und Steppenvegetation. Die Aleppo-Kiefernwälder und Lehmböden befinden sich in der sogenannten Black Bardena. Der landschaftliche Reichtum dieser Umgebung wurde auch mit der Figur des Naturschutzgebietes an drei spezifischen Orten geschützt. So ist es auch mit dem Vedado de Eguaras, wo Sie einen kleinen Zirkus bewundern können, der von Gipsschluchten umgeben ist und von Wacholder, Rebollos und Romeros bevölkert wird. Der sogenannte Rincón de Bú hat Schnitte, wo die königlichen Eulen, Steinadler und ägyptischen Geier. Die Wasserfälle von La Negra sind eine Reihe von Rissen, die bis zu 270 Meter tief sind. Insgesamt beherbergen die Bardenas Reales 24 Raubvögel (Wanderfalke, Stiefeladler, Gänsegeier ...) sowie eine Steppenvogelfauna wie die Großtrappe oder die Lerche. Auch im Naturpark gibt es mehr als 28 verschiedene Säugetierarten, von denen acht kleinen Säugetieren wie Spitzmaus oder der maurischen Maus entsprechen. In den natürlichen und künstlichen Wasserflößen leben Forellen, Barben, Schleien ... während um ihn herum Molche und Frösche mit einer Vielzahl von Reptilien leben. Die Caped Lizard, die Leiterschlange oder der Sumpfschildkröte sind nur einige davon.';
+                $p4 = 'Vom Hostel aus empfehlen wir Ihnen, diese <a href="https://app.bardenasreales.es/descarga-de-rutas-gpxkml"> Routen </a> durchzuführen. Erstellt von der Vereinigung der <a href="https://bardenasreales.es"> Bardenas Reales </a> sowohl für Fußgänger, Radfahrer als auch für Kraftfahrzeuge.';
+                $p5 = 'Der Bardenas Reales Park kann jeden Tag von 8 Uhr morgens bis eine Stunde vor Einbruch der Dunkelheit besucht werden. Die Besuchszeiten des Bardenas Reales Besucherzentrums sind von April bis August von 9 bis 14 Uhr und von 16 bis 19 Uhr. und von September bis März von 9 bis 14 Uhr und von 15 bis 17 Uhr (Zu Ostern ist das Zentrum ständig von 9 bis 19 Uhr geöffnet.)';
+                $p6 = 'Die Bardenas Reales sind eine einzigartige Landschaft, die Ihnen das Gefühl gibt, in den alten Westen zu gehen. Eine Erfahrung, die Ihren empfohlenen Besuch nur optimal nutzen kann. <br>
+                Von der Hospedería sind Sie nur 25 km entfernt, um das Herz dieses wunderschönen Naturparks zu erreichen, der ein Muss ist.';
             break;
             default:
             break;

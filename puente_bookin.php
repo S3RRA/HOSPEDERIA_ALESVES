@@ -76,35 +76,35 @@ require './conexion.php';
         }else{
             switch($tipo):
                 case 'individual':
-                    if(!isset($_POST['supletoria'])){
+                    if(isset($_POST['supletoria'])){
                         $adultos = 1+$supletoria;
                     }else{
                         $adultos = 1;
                     }
                 break;
                 case 'doble':
-                    if(!isset($_POST['supletoria'])){
+                    if(isset($_POST['supletoria'])){
                         $adultos = 2+$supletoria;
                     }else{
                         $supletoria = 2;
                     }
                 break;
                 case 'superior':
-                    if(!isset($_POST['supletoria'])){
+                    if(isset($_POST['supletoria'])){
                         $adultos = 2+$supletoria;
                     }else{
                         $adultos = 2;
                     }
                 break;
                 case 'triple':
-                    if(!isset($_POST['supletoria'])){
+                    if(isset($_POST['supletoria'])){
                         $adultos = 3+$supletoria;
                     }else{
                         $adultos = 3;
                     }
                 break;
                 case 'familiar':
-                    if(!isset($_POST['supletoria'])){
+                    if(isset($_POST['supletoria'])){
                         $adultos = 4+$supletoria;
                     }else{
                         $adultos = 4;

@@ -13,5 +13,10 @@
     while($row = mysqli_fetch_array($resultado)){
 	    $precios[$row['tipo']] = $row['precio'];
     }  
+    $sql2 = "SELECT DISTINCT ind FROM habitaciones WHERE tipo = 'doble'";
+    $resultado2 = mysqli_query($con, $sql2);
+    while($row = mysqli_fetch_array($resultado2)){
+        $precio_individual = $row['ind'];
+    }
 
 ?>

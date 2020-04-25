@@ -10,7 +10,7 @@
 
 /*UPLOAD IMAGES*/
 
-#imagenes{
+.form_upload_imagenes{
 	background-color: white;
 	border-radius: 5px;
 	width:33%;
