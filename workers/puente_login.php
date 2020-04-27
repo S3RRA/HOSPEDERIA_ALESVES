@@ -1,5 +1,7 @@
 <?php
-
+session_start(); 
+?>
+<?php   
 require '../conexion.php';
 
     $usuario = $_POST['user'];
@@ -15,11 +17,12 @@ require '../conexion.php';
             $stmt->fetch();
             if ($password1==$password) {
                     $_SESSION['loggedin'] = TRUE;
-                    $_SESSION['name'] = $usuario;
+                    $_SESSION['usuario'] = $usuario;
+                    echo $_SESSION['usuario'];
                     header('Location: workers.php');
-	} else if($usuario != '') {
-            header('Location: login.php?error=pass');
-	}
+            } else if($usuario != '') {
+                    header('Location: login.php?error=pass');
+            }
         } else if($usuario != ''){
             header('Location: login.php?error=user');
         }        

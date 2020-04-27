@@ -13,5 +13,7 @@
 
         echo $_COOKIE['json_comentarios'];
 
+    }else{
+        echo 'Hola';
     }
 ?>

@@ -1,9 +1,4 @@
 <?php
-    if(isset($_SESSION)){
-      session_destroy();
-      unset ($_SESSION['name']);
-      unset ($_SESSION['id']);
-    } 
     session_start();
 ?>
 <!DOCTYPE html>

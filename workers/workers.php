@@ -1,4 +1,7 @@
 <?php
+session_start();
+	if(isset($_SESSION['usuario'])){
+
     if (isset($_FILES['attachments'])) {
         $msg = "";
         $targetFile = "../images/" . basename($_FILES['attachments']['name'][0]);
@@ -62,10 +65,11 @@
 		<header class="bp-header cf">
 			<div class="dummy-logo">
 				<h2 class="dummy-heading">Hospedería de Alesves</h2>
+				<h5><a class="dummy-heading" href="cerrar_sesion.php">Cerrar sesión</a></h5>
 			</div>
 			<div class="bp-header__main">
 				<span class="bp-header__present">Hospedería de Alesves</span>
-				<h1 class="bp-header__title">Trabajadores</h1>				
+				<h1 class="bp-header__title">Trabajadores</h1>							
 			</div>
 		</header>
 		<button class="action action--open" aria-label="Open Menu"><span class="icon icon--menu"></span></button>
@@ -260,7 +264,7 @@
 				gridWrapper.innerHTML = '';				
 				$('.form_upload_imagenes').show();
 				upload_imagenes();
-			}else if(itemName == 'Validar comentario'){
+			}else if(itemName == 'Validar comentarios'){
 				<?php if(isset($_COOKIE['json_comentarios'])){ ?>
 					muestra_comentarios('<?php echo $_COOKIE['json_comentarios'];?>');
 				<?php }else{ ?>
@@ -367,3 +371,8 @@
 </body>
 
 </html>
+<?php 
+	}else{
+		header('Location: login.php');
+	}
+?>
