@@ -362,8 +362,26 @@ session_start();
 	}
 
 	function muestra_comentarios(datos){
-		var comentarios = JSON.parse(datos);
 		console.log(comentarios);
+		if(comentarios == 'NO HAY COMENTARIOS'){
+			classie.add(gridWrapper, 'content--loading');
+				setTimeout(function() {
+					classie.remove(gridWrapper, 'content--loading');
+					gridWrapper.innerHTML = '<div class="info" style="color:white">NO HAY RESERVAS</div>';
+				}, 700);
+		}else{
+			var comentarios = JSON.parse(datos);
+			var contenido = "<div class='containe'><form method='post' action='valida_com.php'>"
+			for($i=0;$i<comentarios.length;$i++){
+				contenido += "<div><label>POST:</label></div><br>"
+			}
+			contenido += "<input type='submit'></form><br></div>";
+			classie.add(gridWrapper, 'content--loading');
+				setTimeout(function() {
+					classie.remove(gridWrapper, 'content--loading');
+					gridWrapper.innerHTML = contenido;
+				}, 700);
+		}
 	}
 
 	</script>

@@ -145,16 +145,7 @@
                 </div>
             </div>
             <div class="col-md-3">
-                <div class="sidebar">
-                    <aside class="widget">
-                        <h4>ARCHIVO</h4>
-                        <ul class="archive">
-                            <li><a href="blog.php?archivo=2020-05">Mayo 2020<span class="num_posts">21</span></a></li>
-                            <li><a href="blog.php?archivo=2020-06">Junio 2020<span class="num_posts">24</span></a></li>
-                            <li><a href="blog.php?archivo=2020-07">Julio 2020<span class="num_posts">38</span></a></li>
-                            <li><a href="blog.php?archivo=2020-08">Agosto 2020<span class="num_posts">11</span></a></li>
-                        </ul>
-                    </aside>
+                <div class="sidebar">                    
                     <aside class="widget">
                         <h4>Latest Posts</h4>
                         <div class="latest_posts">
@@ -215,6 +206,68 @@
                             </article>
                         </div>
                     </aside>
+                    <aside class="widget">
+                                <h4>ARCHIVO</h4>
+                                <ul class="archive">
+                                <?php 
+                                    $sql3 = "SELECT DISTINCT MONTH(fecha) AS mes, YEAR(fecha) AS anio FROM posts ORDER BY fecha DESC";
+                                    $res3 = mysqli_query($con,$sql3);
+                                    while($row = mysqli_fetch_assoc($res3)){
+                                        
+                                        $month = $row['mes'];
+                                        $year = $row['anio'];
+
+                                        $sql4 = "SELECT COUNT(ID) AS num FROM posts WHERE MONTH(fecha) = $month AND YEAR(fecha) = $year";
+                                        $res4 = mysqli_query($con,$sql4);
+                                        $ress4 = mysqli_fetch_assoc($res4);
+                                        $num = $ress4['num'];
+
+                                        switch($row['mes']){
+                                            case 1:
+                                                $mes = 'Enero';
+                                            break;
+                                            case 2:
+                                                $mes = 'Febrero';
+                                            break;
+                                            case 3:
+                                                $mes = 'Marzo';
+                                            break;
+                                            case 4:
+                                                $mes = 'Abril';
+                                            break;
+                                            case 5:
+                                                $mes = 'Mayo';
+                                            break;
+                                            case 6:
+                                                $mes = 'Junio';
+                                            break;
+                                            case 7:
+                                                $mes = 'Julio';
+                                            break;
+                                            case 8:
+                                                $mes = 'Agosto';
+                                            break;
+                                            case 9:
+                                                $mes = 'Septiembre';
+                                            break;
+                                            case 10:
+                                                $mes = 'Octubre';
+                                            break;
+                                            case 11:
+                                                $mes = 'Noviembre';
+                                            break;
+                                            case 12:
+                                                $mes = 'Diciembre';
+                                            break;
+                                            default:
+                                                $mes = 'Error, disculpe las molestias';
+                                        break;
+                                        }
+                                        echo '<li><a href="blog.php?archivo='.$year.'-'.$month.'">'.$mes.' '.$row['anio'].'<span class="num_posts">'.$num.'</span></a></li>';
+                                    }
+                                ?>                                
+                                </ul>
+                            </aside>
                     </div>
             </div>
         </div>

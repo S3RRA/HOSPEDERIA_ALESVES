@@ -52,13 +52,13 @@
 
         // Content
         $mail->isHTML(true);                                  // Set email format to HTML
-        $mail->Subject = 'Reserva - HOSPEDERÍA DE ALESVES';
+        $mail->Subject = 'Reserva - HOSPEDERIA DE ALESVES';
         $mail->Body    = utf8_decode($mensaje);   
         $mail->AltBody = 'hola';
         $mail->send();
         echo 'Message has been sent';
         if($_GET['lugar']=='contacto'){
-            header("Location: contacto.php?mail=enviado");
+            //header("Location: contacto.php?mail=enviado");
         }else{
             header("Location: index.php?mail=enviado#contact");            
         }

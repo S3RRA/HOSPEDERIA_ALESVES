@@ -1,19 +1,17 @@
 <?php
-    require '../../conexion.php';
-    error_reporting(E_ERROR);
 
-    $sql = "SELECT * FROM comentarios_posts WHERE apto = 'no'";
+    $sql = "SELECT * FROM comentarios_posts WHERE apto = 'no' ORDER BY POST_ID DESC";
     $resultado = mysqli_query($con,$sql);
-    echo 'QUERY A REALIZAR: '.$sql;
-    if(mysqli_num_rows($resultado)>0){
+
+    if(mysqli_num_rows($resultado)>0){        
+        /*ENVIA DATOS*/
         $res = array();
         $res = $resultado->fetch_all(MYSQLI_ASSOC);
-       
-        $_COOKIE['json_comentarios'] = json_encode($res);
 
-        echo $_COOKIE['json_comentarios'];
+        $_COOKIE['json_comentarios'] = json_encode($res);        
 
     }else{
-        echo 'Hola';
+        echo 'NO HAY COMENTARIOS';
     }
+    
 ?>
