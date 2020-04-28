@@ -146,66 +146,31 @@
             </div>
             <div class="col-md-3">
                 <div class="sidebar">                    
-                    <aside class="widget">
-                        <h4>Latest Posts</h4>
-                        <div class="latest_posts">
-                            <article class="latest_post">
-                                <figure>
-                                    <a href="blog-post.html" class="hover_effect h_link h_blue">
-                                        <img src="images/blog/thumb1.jpg" alt="Image">
-                                    </a>
-                                </figure>
-                                <div class="details">
-                                    <h6><a href="blog-post.html">Live your myth in Greece</a></h6>
-                                    <span><i class="fa fa-calendar"></i>23/11/2017</span>
+                <aside class="widget">
+                                <h4>Últimos posts</h4>
+                                <div class="latest_posts">                                
+                        <?php 
+                            //$sql4 = "SELECT DISTINCT POST_ID, count(*) from comentarios_posts GROUP by POST_ID";
+                            $sql4 = "SELECT * FROM posts ORDER BY fecha DESC LIMIT 4";
+                            $resultado4 = mysqli_query($con,$sql4);
+                            while($row = mysqli_fetch_assoc($resultado4)){                               
+
+                            echo    '<!-- ITEM -->
+                                    <article class="latest_post">
+                                        <figure>
+                                            <a href="post.php?id='.$row['ID'].'" class="hover_effect h_link h_blue">
+                                                <img src="'.$row['imagen'].'" width="120" height="62" alt="Image">
+                                            </a>
+                                        </figure>
+                                        <div class="details">
+                                            <h6><a href="post.php?id='.$row['ID'].'">'.$row['titulo'].'</a></h6>
+                                            <span><i class="fa fa-calendar"></i>'.$row['fecha'].'</span>
+                                        </div>
+                                    </article>';
+                            }
+                        ?>
                                 </div>
-                            </article>
-                            <article class="latest_post">
-                                <figure>
-                                    <a href="blog-post.html" class="hover_effect h_link h_blue">
-                                        <img src="images/blog/thumb2.jpg" alt="Image">
-                                    </a>
-                                </figure>
-                                <div class="details">
-                                    <h6><a href="blog-post.html">Hotel Zante in pictures</a></h6>
-                                    <span><i class="fa fa-calendar"></i>18/10/2017</span>
-                                </div>
-                            </article>
-                            <article class="latest_post">
-                                <figure>
-                                    <a href="blog-post.html" class="hover_effect h_link h_blue">
-                                        <img src="images/blog/thumb3.jpg" alt="Image">
-                                    </a>
-                                </figure>
-                                <div class="details">
-                                    <h6><a href="blog-post.html">Hotel Zante family party</a></h6>
-                                    <span><i class="fa fa-calendar"></i>13/08/2017</span>
-                                </div>
-                            </article>
-                            <article class="latest_post">
-                                <figure>
-                                    <a href="blog-post.html" class="hover_effect h_link h_blue">
-                                        <img src="images/blog/thumb4.jpg" alt="Image">
-                                    </a>
-                                </figure>
-                                <div class="details">
-                                    <h6><a href="blog-post.html">Hotel Zante weddings</a></h6>
-                                    <span><i class="fa fa-calendar"></i>13/08/2017</span>
-                                </div>
-                            </article>
-                            <article class="latest_post">
-                                <figure>
-                                    <a href="blog-post.html" class="hover_effect h_link h_blue">
-                                        <img src="images/blog/thumb5.jpg" alt="Image">
-                                    </a>
-                                </figure>
-                                <div class="details">
-                                    <h6><a href="blog-post.html">10 things you should know</a></h6>
-                                    <span><i class="fa fa-calendar"></i>13/08/2017</span>
-                                </div>
-                            </article>
-                        </div>
-                    </aside>
+                            </aside>
                     <aside class="widget">
                                 <h4>ARCHIVO</h4>
                                 <ul class="archive">
