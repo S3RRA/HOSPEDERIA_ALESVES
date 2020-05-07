@@ -287,7 +287,6 @@ session_start();
 	
 	function muestra_reservas(datos){
 		var gridWrapper = document.getElementById('content');
-		console.log('DATOS MUESTRA_RESERVAS: '+ datos + 'TIPO: ' + typeof(datos));
 		if(datos=="NO HAY RESERVAS"){
 			classie.add(gridWrapper, 'content--loading');
 				setTimeout(function() {
@@ -307,7 +306,6 @@ session_start();
 								'<td>'+reservas[i]['dni']+'</td>'+
 								'<td>'+reservas[i]['cod']+'</td>'+
 							'</tr>';
-				console.log('DATOS A INSERTAR: '+contenido);			
 				gridWrapper.innerHTML = '';
 				classie.add(gridWrapper, 'content--loading');
 						setTimeout(function() {						

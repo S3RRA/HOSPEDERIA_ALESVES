@@ -6,6 +6,8 @@
             unset($_SESSION['actividad']);
         }
         $_SESSION['actividad'] = $_GET['act'];
+    }else{
+        header('Location:error.php');
     }
     include 'header.php';
 ?>

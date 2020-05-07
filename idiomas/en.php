@@ -264,6 +264,12 @@ Among the many activities that can be carried out in Navarra, especially in the 
     
     $interesan = "If you are interested, contact us by phone or email.";
     
+/* ERROR */
+
+$error ['1'] = "Wow, we couldn't find the page you are trying to access";
+$error ['2'] = 'RETURN TO HOME';
+$error ['3'] = 'OR';
+$error ['4'] = 'CONTACT US';
                                 /* A C T I V I D A D E S */
     
         if(isset($_SESSION['actividad'])){
@@ -305,7 +311,40 @@ Among the many activities that can be carried out in Navarra, especially in the 
                 $p6 = 'The Bardenas Reales are a unique landscape that gives you the feeling of going to the old west. An experience that can only make the most of your recommended visit. <br>
                     From the Hospedería you are only 25 km away to reach the heart of this wonderful Natural Park, a must-see.';
             break;
-
+            case 'Olite':
+                $background_image = 'background: url (images / Olite_4.jpg) center repeat;';
+                $actividad = 'Olite';
+                $f1 = 'images / Olite_1.jpg';
+                $p1 = "The slender and harmonious silhouette of its castle-palace dominates Olite, a small city located in the geographical center of Navarra, 42 kilometers south of Pamplona.
+                    Royal seat during the Middle Ages, the palace's thick walls and crenelated towers housed kings and princesses. Declared a national monument in 1925, it constitutes the most important example of Navarre's civil Gothic and one of the most notable in Europe.
+                    A tour of the narrow streets of Olite will allow you to stroll in the shelter of noble stone houses with coats of arms and grandiose wooden eaves; medieval galleries and splendid churches, in addition to discovering the Roman walled enclosure.
+                    The Mediterranean climate has also made Olite the wine capital. Come to their cellars and taste their wines. Let yourself be guided and the whole ensemble will take you to a time of tournaments, kings and princesses, magicians and minstrels, falconers and archers, who return to the city every August to celebrate the Medieval Festivities. ";
+                $p2 = "Olite is located in the heart of Navarra, 40 km. from Pamplona, ​​in an area where the rugged relief of the Sierra de la Navarra Media gives way to the flat lands of La Ribera.
+                        Erected on a small promontory (388 m.), Its terminus is crossed by the Cidacos river, which was encapsulated in its current channel, leaving five levels of river terraces that make up a relief of gently sloped slopes on the right bank. Towards the east the Sierra de Ujué rises (932 m.).
+                        Its pleasant continental Mediterranean climate, with hot and dry summers, winters that are not very cold and not very rainy (500 l / m²), and its clear sky, together with the fertility of its lands, made Olite a place inhabited since Prehistory, taking place an intense romanization and later being chosen by the Navarrese monarchs as the royal seat. ";
+                $fotos['1'] = 'images / Olite_1.jpg';
+                $fotos['2'] = 'images / Olite_2.jpg';
+                $fotos['3'] = 'images / Olite_3.jpg';
+                $fotos['4'] = 'images / Olite_4.jpg';
+                $p3 = '';
+                $p4 = "If you are interested in visiting this medieval city, don't miss the pages of <a href='https://guiailustradadenavarra.com/castillo-olite-navarra/'> the illustrated guide to navarra </a> or <a href="https://www.turismo.navarra.es/esp/organice-viaje/recurso/Localidades/2466/Olite.htm"> turismo de navarra </a> ";
+                $p5 = '';
+                $p6 = '';
+            break;
+            case 'fiestas':
+                $background_image = 'background: url (images / sanfermin1.jpg) center repeat;';
+                $activity = 'Fiestas navarras';
+                $f1 = 'images / pañuelo.jpg';
+                $p1 = "It is said that the party where he goes makes friends and leaves lasting memories. You can also experience it by participating with us in the bustling Sanfermines of Pamplona or in the simplest and most endearing parties in the last corner of our geography.";
+                $p2 = "Saying Pamplona means San Fermín festivities. How are you going to miss the best festivals in the world? 9 days with its 24 hours full of festivals, brass bands, peñas, concerts, typical dances, bullfights, rural sports and much, much atmosphere on the street. Start the day with the targets, continue watching the bull running. At noon, tour with the big heads or to enjoy the programmed shows, then typical food and in the afternoon, bulls or to plunge into the revelry of the streets. Don't leave without enjoying fireworks and nightly concerts. Living the Sanfermines, is to do an accelerated course on popular culture in Navarre, but also having a good time.";
+                $photos ['1'] = 'images / gigante.jpg';
+                $photos ['2'] = 'images / fiestas2.jpg';
+                $photos ['3'] = 'images / ftudela.jpg';
+                $photos ['4'] = 'images / gigante2.jpg';
+                $p3 = "In the south, the bagpipe is the one that takes center stage and is danced at its rhythm in the paloteados, 'dances of the era' and jotas from Tudela or Tafalla. If you want to get off your feet and dance, get close to any charade chatty and full of good humor, who never miss their date. At any time of the party you can hear a typical jota from the Ribera singing at the top of your lungs. This is a land of livestock: running of the bulls, bullfights, loosening of heifers, heifers and bullfights delight fans. As you can see, the San Fermin festivities are the starting gun for countless holidays that fill the calendar with appointments.";
+                $p4 = "From the hostel we encourage you to enjoy the festivities of Navarra";
+                $p5 = 'Both the Provincial Council and the local municipalities and universities promote a large number of popular initiatives that coexist with others anchored in mountain villages and rural traditions and that are framed in ways of life and custom that are lost in the night of the times, such as pilgrimages or festivities of a religious nature. ';
+                $p6 = '';
             default:
             break;
         }

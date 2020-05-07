@@ -164,6 +164,16 @@ require './conexion.php';
             }  
         }
         /*HABITACIONES ACTIVAS*/
+        if($tipo == 'individual'){
+            $sql = "SELECT numero FROM habitaciones WHERE tipo = 'doble' AND disponible = 'si'";
+            if($res = mysqli_query($con, $sql)){
+                while ($row = mysqli_fetch_assoc($res)){
+                    global $num;
+                    $num = $row['numero']; 
+                    echo $num.'<br>';
+                }
+            }
+        }
         $sql = "SELECT numero FROM habitaciones WHERE tipo = '$tipo' AND disponible = 'si'";
         if($res = mysqli_query($con, $sql)){
             echo 'QUERY HABITACIONES ACTIVAS: <br>';

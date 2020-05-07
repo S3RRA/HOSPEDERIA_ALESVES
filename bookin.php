@@ -25,7 +25,7 @@
                     if(isset($_GET['booked'])&&$_GET['booked']='yes'){
                         echo '<div class="main_title a_left upper">
                                 <h3>Su reserva se ha realizado con éxito.</h3> <br><br>                                
-                                <h6>Pulse en <a> este link </a> para generar un PDF con los detalles de su reserva.</h6> <br><br>
+                                <h6>Pulse en <a href="pdf.php"> este link </a> para generar un PDF con los detalles de su reserva.</h6> <br><br>
                                 <p>Verifique su correo para más detalles.</p>
                             </div>
                         </div>';
@@ -93,7 +93,7 @@
                                         <div class="form-group">
                                             <label><?php echo $obl_tit['6'];?></label>
                                             <div class="form_select">
-                                                <select name="tipo" class="form-control" title="Tipo de habitación:" data-header="Tipo de habitación:">
+                                                <select name="tipo" class="form-control" title="Tipo de habitación:" data-header="Tipo de habitación:" required>
                                                     <option value="individual" data-subtext="<span class='label label-info'>56€ / <?php echo $noche;?></span>" <?php if(isset($_GET['tipo'])=='individual'){echo 'selected';} ?>><?php echo $habitaciones['2'];?></option>
                                                     <option value="doble" data-subtext="<span class='label label-info'>68€ / <?php echo $noche;?></span>" <?php if(isset($_GET['tipo'])=='doble'){echo 'selected';} ?>><?php echo $habitaciones['3'];?></option>
                                                     <option value="superior" data-subtext="<span class='label label-info'>77€ / <?php echo $noche;?></span>" <?php if(isset($_GET['tipo'])=='superior'){echo 'selected';} ?>><?php echo $habitaciones['4'];?></option>

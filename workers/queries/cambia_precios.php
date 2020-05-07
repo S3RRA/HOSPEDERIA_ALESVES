@@ -8,10 +8,12 @@
         
         $tipo = $_POST['tipo'];
         $precio = $_POST['precio'];
-        if($tipo = 'individual'){
+        if($tipo == 'individual'){
+            echo 'HOls';
             $sql_1 = "UPDATE habitaciones SET ind = $precio WHERE tipo = 'doble'";
             $res_1 = mysqli_query($con,$sql_1);
         }else{
+            echo 'holS';
             $sql_1 = "UPDATE habitaciones SET precio = $precio WHERE tipo = '$tipo'";
             $res_1 = mysqli_query($con, $sql_1);
         }

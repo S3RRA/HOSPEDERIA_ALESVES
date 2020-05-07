@@ -251,7 +251,16 @@
     $bici = 'Fahrradrouten';    
     $rios = 'Flussabstieg';
     $banners_blog = "Weitere Informationen zu Zonenaktivitäten und Neuigkeiten finden Sie in unserem <a href='blog.php'> BLOG </a>";
-                                    /* A C T I V I D A D E S */
+  
+/* FEHLER */
+
+$error ['1'] = "Wow, wir konnten die Seite, auf die Sie zugreifen möchten, nicht finden";
+$error ['2'] = 'RETURN TO HOME';
+$error ['3'] = 'ODER';
+$error ['4'] = 'KONTAKTIEREN SIE UNS';
+  
+  
+    /* A C T I V I D A D E S */
     $interesan = "Wenn Sie interessiert sind, kontaktieren Sie uns per Telefon oder E-Mail.";
     if(isset($_SESSION['actividad'])){
         
@@ -274,8 +283,21 @@
                 $p6 = 'Die Bardenas Reales sind eine einzigartige Landschaft, die Ihnen das Gefühl gibt, in den alten Westen zu gehen. Eine Erfahrung, die Ihren empfohlenen Besuch nur optimal nutzen kann. <br>
                 Von der Hospedería sind Sie nur 25 km entfernt, um das Herz dieses wunderschönen Naturparks zu erreichen, der ein Muss ist.';
             break;
-            default:
-            break;
+
+            case 'fiestas':
+                $background_image = 'Hintergrund: URL (images / sanfermin1.jpg) in der Mitte wiederholen;';
+                $actividad = 'Fiestas navarras';
+                $f1 = 'images / pañuelo.jpg';
+                $p1 = "Es wird gesagt, dass die Party, auf die er geht, Freunde findet und bleibende Erinnerungen hinterlässt. Sie können dies auch erleben, indem Sie mit uns an den lebhaften Sanfermines von Pamplona oder an den einfachsten und aufregendsten Abenden von teilnehmen letzte Ecke unserer Geographie. ";
+                $p2 = "Pamplona zu sagen bedeutet Feste von San Fermin. Wie werden Sie die besten Festivals der Welt verpassen? 9 Tage mit 24 Stunden voller Festivals, Fanfaren, Peñas, Konzerten, typischen Tänzen, Stierkämpfen, ländlichen Sportarten und vielem mehr. viel Atmosphäre auf der Straße. Beginnen Sie den Tag mit den Zielen, beobachten Sie den Stier beim Laufen. Drehen Sie sich mittags mit den großen Köpfen um oder genießen Sie die geplanten Shows, dann typisches Essen und am Nachmittag. Bullen oder tauchen Sie in die Freuden der Straßen ein. Gehen Sie nicht ohne Feuerwerk und Nachtkonzerte. Das Leben in den Sanfermines bedeutet nicht nur einen beschleunigten Kurs in Populärkultur in Navarra, sondern auch eine gute Zeit zu haben. ";
+                $fotos['1'] = 'images / gigante.jpg';
+                $fotos['2'] = 'images / fiestas2.jpg';
+                $fotos['3'] = 'images / ftudela.jpg';
+                $fotos['4'] = 'images / gigante2.jpg';
+                $p3 = "Im Süden steht der Dudelsack im Mittelpunkt und wird in den Paloteados, 'Tänzen der Zeit' und Jotas von Tudela oder Tafalla nach seinem Rhythmus getanzt. Wenn Sie aufstehen und tanzen möchten Gehen Sie auf eine gesprächige Scharade voller guter Laune zu, die nie ihr Datum verpasst. Zu jeder Zeit der Party können Sie einen typischen Jota von Ribera aus vollem Herzen singen hören. ein Nährboden: das Laufen von Stieren, Stierkämpfen, die Freilassung von Färsen, Färsen und Stierkämpfen erfreuen die Fans. Wie Sie sehen können, sind die Feierlichkeiten von San Fermin der Ausgangspunkt vieler Feiertage, die Füllen Sie den Terminkalender aus. ";
+                $p4 = "Vom Hostel aus empfehlen wir Ihnen, die Feierlichkeiten von Navarra zu genießen";
+                $p5 = "Sowohl der Provinzrat als auch die Gemeinden und lokalen Universitäten fördern eine große Anzahl populärer Initiativen, die mit anderen koexistieren, die in Bergdörfern und ländlichen Traditionen verwurzelt sind und Teil des Lebensstils sind in der Nacht der Pilgerfahrten oder religiösen Feste verlorene Bräuche. ";
+                $p6 = '';
         }
     }
     

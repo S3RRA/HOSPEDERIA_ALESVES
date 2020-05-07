@@ -252,6 +252,14 @@
 
     $interesan = "Si vous êtes intéressé, contactez-nous par téléphone ou par e-mail.";
 
+    
+    /* ERREUR */
+
+    $error ['1'] = "Wow, nous n'avons pas trouvé la page à laquelle vous essayez d'accéder";
+    $error ['2'] = 'RETOUR À LA MAISON';
+    $error ['3'] = 'OU';
+    $error ['4'] = 'CONTACTEZ-NOUS';
+
                                 /*ACTIVIDADES*/
     if(isset($_SESSION['actividad'])){
 
@@ -274,6 +282,40 @@
                 $p6 = "Les Bardenas Reales sont un paysage unique qui vous donne l'impression d'aller dans le vieil ouest. Une expérience qui ne peut que profiter au maximum de votre visite recommandée. <br>
                                  Vous êtes à seulement 25 km de l'Hospedería pour rejoindre le cœur de ce magnifique parc naturel, qui est un must.";
             break;
+            case 'Olite':
+                $background_image = 'background: url (images / Olite_4.jpg) répéter au centre;';
+                $actividad = 'Olite';
+                $f1 = 'images / Olite_1.jpg';
+                $p1 = "La silhouette élancée et harmonieuse de son château-palais domine Olite, une petite ville située au centre géographique de la Navarre, à 42 kilomètres au sud de Pampelune.
+                Siège royal au Moyen Âge, les murs épais et les tours crénelées du palais abritaient rois et princesses. Déclaré monument national en 1925, il constitue l'exemple le plus important du gothique civil de Navarre et l'un des plus notables d'Europe.
+                Une visite des rues étroites d'Olite vous permettra de vous promener à l'abri de maisons en pierre noble aux armoiries et aux avant-toits en bois grandioses; galeries médiévales et splendides églises, en plus de découvrir l'enceinte fortifiée romaine.
+                Le climat méditerranéen a également fait d'Olite la capitale du vin. Venez dans leurs caves et dégustez leurs vins. Laissez-vous guider et l'ensemble vous emmènera dans un temps de tournois, rois et princesses, magiciens et ménestrels, fauconniers et archers, qui reviennent dans la ville chaque août pour célébrer les festivités médiévales. ";
+                $p2 = "Olite est situé au cœur de la Navarre, à 40 km de Pampelune, dans une zone où le relief accidenté de la Sierra de la Navarra Media cède la place aux terres plates de La Ribera.
+                Érigée sur un petit promontoire (388 m), son terminus est traversé par la rivière Cidacos, qui a été encapsulée dans son canal actuel, laissant cinq niveaux de terrasses fluviales qui composent un relief de pentes en pente douce sur la rive droite. Vers l'est, la Sierra de Ujué s'élève (932 m.).
+                Son climat méditerranéen continental agréable, avec des étés chauds et secs, des hivers peu froids et peu pluvieux (500 l / m²), et son ciel dégagé, alliés à la fertilité de ses terres, ont fait d'Olite un lieu habité depuis la Préhistoire, ayant lieu une intense romanisation et plus tard étant choisi par les monarques navarrais comme siège royal. ";
+                $fotos ['1'] = 'images / Olite_1.jpg';
+                $fotos ['2'] = 'images / Olite_2.jpg';
+                $fotos ['3'] = 'images / Olite_3.jpg';
+                $fotos ['4'] = 'images / Olite_4.jpg';
+                $p3 = '';
+                $p4 = "Si vous êtes intéressé à visiter cette cité médiévale, ne manquez pas les pages de <a href='https://guiailustradadenavarra.com/castillo-olite-navarra/'> le guide illustré de la navarra </ a > ou <a href="https://www.turismo.navarra.es/esp/organice-viaje/recurso/Localidades/2466/Olite.htm"> turismo de navarra </a> ";
+                $p5 = '';
+                $p6 = '';
+            break;
+            case 'fiestas':
+                $background_image = 'background: url (images / sanfermin1.jpg) répéter au centre;';
+                $actividad = 'Fiestas navarras';
+                $f1 = 'images / pañuelo.jpg';
+                $p1 = "On dit que la fête où il va se fait des amis et laisse des souvenirs durables. Vous pouvez aussi en faire l'expérience en participant avec nous aux Sanfermines animées de Pampelune ou aux soirées les plus simples et les plus attachantes du dernier coin de notre géographie . ";
+                $p2 = "Dire Pampelune signifie festivités de San Fermín. Comment allez-vous manquer les meilleurs festivals du monde? 9 jours avec ses 24 heures pleines de festivals, fanfares, peñas, concerts, danses typiques, corridas, sports ruraux et bien plus , beaucoup d'ambiance dans la rue. Commencez la journée avec les cibles, continuez à regarder le taureau courir. A midi, tournez avec les grosses têtes ou pour profiter des spectacles programmés, puis de la nourriture typique et l'après-midi, des taureaux ou plongez dans les réjouissances des rues. Ne partez pas sans feux d'artifice et concerts nocturnes. Vivre les Sanfermines, c'est faire un cours accéléré de culture populaire en Navarre, mais aussi passer un bon moment. ";
+                $fotos['1'] = 'images / gigante.jpg';
+                $fotos['2'] = 'images / fiestas2.jpg';
+                $fotos['3'] = 'images / ftudela.jpg';
+                $fotos['4'] = 'images / gigante2.jpg';
+                $p3 = "Dans le sud, la cornemuse est celle qui occupe le devant de la scène et se danse à son rythme dans les paloteados, 'danses de l'époque' et jotas de Tudela ou Tafalla. Si vous voulez vous lever et danser , approchez-vous de n`importe quelle charade bavarde et pleine de bonne humeur, qui ne manque jamais sa date. À tout moment de la fête, vous pouvez entendre un jota typique de la Ribera chanter au sommet de vos poumons. C´est une terre d´élevage: la course à pied des taureaux, des corridas, du relâchement des génisses, des génisses et des corridas ravissent les fans. Comme vous pouvez le voir, les festivités de San Fermin sont le point de départ de nombreuses vacances qui remplissent le calendrier de rendez-vous. ";
+                $p4 = "De l`auberge, nous vous encourageons à profiter des festivités de Navarre";
+                $p5 = "Tant le Conseil provincial que les municipalités et les universités locales promeuvent un grand nombre d`initiatives populaires qui coexistent avec d`autres ancrées dans les villages de montagne et les traditions rurales et qui s`inscrivent dans des modes de vie et des coutumes qui se perdent dans la nuit du des pèlerinages ou des fêtes de nature religieuse.";
+                $p6 = '';
             default:
             break;
         }

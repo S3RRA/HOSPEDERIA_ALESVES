@@ -73,10 +73,9 @@
                     <div class="col-md-3">
                         <div class="sidebar">
                             <aside class="widget">
-                                <h4>Últimos posts</h4>
+                                <h4>Actividades</h4>
                                 <div class="latest_posts">                                
                         <?php 
-                            //$sql4 = "SELECT DISTINCT POST_ID, count(*) from comentarios_posts GROUP by POST_ID";
                             $sql4 = "SELECT * FROM posts ORDER BY fecha DESC LIMIT 4";
                             $resultado4 = mysqli_query($con,$sql4);
                             while($row = mysqli_fetch_assoc($resultado4)){                               

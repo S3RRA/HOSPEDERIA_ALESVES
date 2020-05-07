@@ -30,28 +30,33 @@
                         <div class="main_title  a_left">
                             <h2><?php echo $contact_us_MAY;?></h2>
                         </div>
-                        <form id="contact-form-page" method='post' action='mail.php'>
+                        <form method='post' action='mail.php?site=contacto'>
                             <div class="row">
                                 <div class="form-group col-md-6 col-sm-6">
-                                    <label class="control-label"><?php echo $form_mail['2'];?>:</label>
+                                    <h6 class="control-label"><?php echo $form_mail['2'];?></h6>
                                     <input type="text" class="form-control" name="name_cl" placeholder="<?php echo $form_mail['2'];?>">
                                 </div>
+                                <br>
                                 <div class="form-group col-md-6 col-sm-6">
-                                    <label class="control-label"><?php echo $phone;?>:</label>
+                                    <h6 class="control-label"><?php echo $phone;?></h6>
                                     <input type="text" class="form-control" name="phone" placeholder="<?php echo $phone;?>">
                                 </div>
+                                <br>
                                 <div class="form-group col-md-6 col-sm-6">
-                                    <label class="control-label"><?php echo $form_mail['3'];?></label>
+                                    <h6 class="control-label"><?php echo $form_mail['3'];?></h6>
                                     <input type="email" class="form-control" name="email_cl" placeholder="<?php echo $form_mail['3'];?>">
                                 </div>
+                                <br>
                                 <div class="form-group col-md-6 col-sm-6">
-                                    <label class="control-label"><?php echo $asunto;?></label>
+                                    <h6 class="control-label"><?php echo $asunto;?></label>
                                     <input type="text" class="form-control" name="subject" placeholder="<?php echo $asunto;?>">
                                 </div>
+                                <br>
                                 <div class="form-group col-md-12 col-sm-12 col-xs-12">
                                     <label class="control-label"><?php echo $form_mail['4'];?></label>
                                     <textarea class="form-control" name="msj" placeholder="<?php echo $form_mail['4'];?>"></textarea>
                                 </div>
+                                <br>
                                 <div class="form-group col-md-12 col-sm-12 col-xs-12">
                                     <input class="button btn_lg btn_blue btn_full upper" type="submit">
                                 </div>
@@ -59,7 +64,7 @@
                         </form>
                         <?php } ?>
                     </div>
-                    
+                    <br><br>
                     <div class="col-md-4">
                         <div id="contact-page22">
                             <div class="map-responsive">

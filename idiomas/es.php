@@ -255,6 +255,13 @@ $interesan = "Si te interesan ponte en contaco con nosotros por teléfono o mail
     $rios = 'Descenso de ríos';
     $banners_blog = "PARA MÁS INFORMACIÓN SOBRE ACTIVIDADES Y NOTICIAS DE LA ZONA VISITE NUESTRO <a href='blog.php'>BLOG.</a>";
 
+                                /* ERROR */
+
+    $error['1'] = "Vaya, no encontramos la página a la que intentas acceder";
+    $error['2'] = 'VOLVER AL INICIO';
+    $error['3'] = 'O';
+    $error['4'] = 'CONTÁCTANOS';
+
                                     /* A C T I V I D A D E S */
     
     if(isset($_SESSION['actividad'])){
@@ -314,10 +321,77 @@ $interesan = "Si te interesan ponte en contaco con nosotros por teléfono o mail
                 $fotos['3'] = 'images/Olite_3.jpg';
                 $fotos['4'] = 'images/Olite_4.jpg';
                 $p3 = '';
+                $p4 = 'Si estas interesado en visitar esta ciudad medieval no te pierdas las páginas de <a href="https://guiailustradadenavarra.com/castillo-olite-navarra/">la guía ilustrada de navarra</a> o de <a href="https://www.turismo.navarra.es/esp/organice-viaje/recurso/Localidades/2466/Olite.htm">turismo de navarra</a>';
+                $p5 = '';
+                $p6 = '';
+            break;
+            case 'fiestas':
+                $imagen_fondo = 'background: url(images/sanfermin1.jpg) center repeat;';
+                $actividad = 'Fiestas navarras';
+                $f1 = 'images/pañuelo.jpg';
+                $p1 = 'Se dice que la fiesta allí por donde pasa hace amigos y deja recuerdos imborrables. Tú también puedes experimentarlo participando con nosotros en los bulliciosos Sanfermines de Pamplona o en las más sencillas y entrañables fiestas del último rincón de nuestra geografía.';
+                $p2 = 'Decir Pamplona es decir fiestas de San Fermín ¿Cómo te vas a perder las mejores fiestas del mundo? 9 días con sus 24 horas repletas de verbenas, charangas, peñas, conciertos, bailes típicos, toros, deporte rural y mucho, mucho ambiente en la calle. Empieza el día con las dianas, continúalo viendo el encierro de toros. Al mediodía, recorrido con los cabezudos o a disfrutar de los espectáculos programados, luego comida típica y por la tarde, toros o a sumergirse en el jolgorio de las calles. No te vayas sin disfrutar de los fuegos artificiales y de los conciertos nocturnos. Vivir los Sanfermines, es hacer un cursillo acelerado de cultura popular navarra, pero además pasándolo bien.';
+                $fotos['1'] = 'images/gigantes.jpg';
+                $fotos['2'] = 'images/fiestas2.jpg';
+                $fotos['3'] = 'images/ftudela.jpg';
+                $fotos['4'] = 'images/gigantes2.jpg';
+                $p3 = 'En el sur la gaita es la que toma el protagonismo y se baila a su ritmo en los paloteados, "bailes de la era" y jotas de Tudela o de Tafalla. Si quieres desfogarte y bailar, arrímate a cualquier charanga dicharachera y llena de buen humor, que no faltan nunca a su cita. En cualquier momento de la fiesta podrás oír entonar una jota típica de la Ribera a pleno pulmón. Esta es tierra de ganaderías: encierros, capeas, suelta de vaquillas, novilladas y corridas hacen las delicias de los aficionados. Como ves los Sanfermines son el pistoletazo de salida a un sinfín de días de fiesta que llenan de citas el calendario.';
+                $p4 = 'From the hostel we encourage you to enjoy the festivities of Navarre to immerse yourself in this unique culture and festivities. You can see all the information about the patron saint festivities at <a href = "https://www.turismo.navarra.es/esp/organice-viaje/recurso/Ocioycultura/8523/Fiestas-Patronales-de-Navarra-2019. htm "> the official page of Tourism of Navarra </a> ';
+                $p5 = 'Tanto la Diputación Foral como los Ayuntamientos y las Universidades locales promueven un gran número de iniciativas populares que conviven con otras ancladas en los pueblos de montaña y en las tradiciones rurales y que se enmarcan en formas de vida y costumbre que se pierden en la noche de los tiempos, como las romerías o las festividades de cariz religioso.';
+                $p6 = '';
+            break;
+            case 'Tudela':
+                $imagen_fondo = 'background: url(images/tudela4.jpg) center;';
+                $actividad = '';
+                $f1 = 'images/tudela.jpg';
+                $p1 = '';
+                $p2 = '';
+                $fotos['1'] = 'images/tudela2.jpg';
+                $fotos['2'] = 'images/tudela3.jpg';
+                $fotos['3'] = 'images/tudela5.jpg';                
+                $fotos['4'] = 'images/tudela4.jpg';
+                $p3 = '';
                 $p4 = '';
                 $p5 = '';
                 $p6 = '';
+            break;
+            case '':
+                $imagen_fondo = '';
+                $actividad = '';
+                $f1 = '';
+                $p1 = '';
+                $p2 = '';
+                $fotos['1'] = '';
+                $fotos['2'] = '';
+                $fotos['3'] = '';                
+                $fotos['4'] = '';
+                $p3 = '';
+                $p4 = '';
+                $p5 = '';
+                $p6 = '';
+            break;
+            case '':
+                $imagen_fondo = '';
+                $actividad = '';
+                $p2 = '';
+                $fotos['1'] = '';
+                $fotos['2'] = '';
+                $fotos['3'] = '';                
+                $fotos['4'] = '';
+                $f1 = '';
+                $p1 = '';
+                $p2 = '';
+                $fotos['1'] = '';
+                $fotos['2'] = '';
+                $fotos['3'] = '';                
+                $fotos['4'] = '';
+                $p3 = '';
+                $p4 = '';
+                $p5 = '';
+                $p6 = '';
+            break;
             default:
+                header('Location:error.php');
             break;
         }
         

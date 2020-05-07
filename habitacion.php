@@ -15,7 +15,7 @@
                 $precio3=$precios['triple'];$img3='images/habitacion_3.jpg';$tit3='Triple';$tipo3='?tipo=triple';
                 $precio4=$precio_individual;$img4='images/habitacion_1.jpg';$tit4='Individual';$tipo4='?tipo=individual';
             }else if($_GET['tipo']=='superior'){
-                $precio=$precios[2];$img='images/habitacion_2.jpg';
+                $precio=$precios['superior'];$img='images/habitacion_2.jpg';
                 $precio2=$precios['triple'];$img2='images/habitacion_3.jpg';$tit2='Triple';$tipo2='?tipo=triple';
                 $precio3=$precios['doble'];$img3='images/habitacion_3.jpg';$tit3='Doble';$tipo3='?tipo=doble';
                 $precio4=$precio_individual;$img4='images/habitacion_1.jpg';$tit4='Individual';$tipo4='?tipo=individual';

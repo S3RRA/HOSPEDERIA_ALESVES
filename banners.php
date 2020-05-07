@@ -1,6 +1,7 @@
 <?php 
     require './idiomas/language.php';
     include 'header.php';
+    
 ?>
         <!-- =========== PAGE TITLE ========== -->
         <div class="page_title gradient_overlay"  style="background: url(images/hospederia.jpg)bottom right no-repeat,url(images/06_exterior.jpg) center no-repeat,url(images/jardin_1.jpg   ) center repeat;">
