@@ -33,31 +33,33 @@
                         <form method='post' action='mail.php?site=contacto'>
                             <div class="row">
                                 <div class="form-group col-md-6 col-sm-6">
-                                    <h6 class="control-label"><?php echo $form_mail['2'];?></h6>
+                                    <h6 class="control-label"><?php echo $form_mail['2'];?></h6><br>
                                     <input type="text" class="form-control" name="name_cl" placeholder="<?php echo $form_mail['2'];?>">
+                                    <br>
                                 </div>
                                 <br>
                                 <div class="form-group col-md-6 col-sm-6">
-                                    <h6 class="control-label"><?php echo $phone;?></h6>
+                                    <h6 class="control-label"><?php echo $phone;?></h6><br>
                                     <input type="text" class="form-control" name="phone" placeholder="<?php echo $phone;?>">
                                 </div>
                                 <br>
                                 <div class="form-group col-md-6 col-sm-6">
-                                    <h6 class="control-label"><?php echo $form_mail['3'];?></h6>
+                                    <h6 class="control-label"><?php echo $form_mail['3'];?></h6><br>
                                     <input type="email" class="form-control" name="email_cl" placeholder="<?php echo $form_mail['3'];?>">
                                 </div>
                                 <br>
-                                <div class="form-group col-md-6 col-sm-6">
-                                    <h6 class="control-label"><?php echo $asunto;?></label>
+                                <div class="form-group col-md-6 col-sm-6"><br>
+                                    <h6 class="control-label"><?php echo $asunto;?></h6><br>
                                     <input type="text" class="form-control" name="subject" placeholder="<?php echo $asunto;?>">
                                 </div>
                                 <br>
-                                <div class="form-group col-md-12 col-sm-12 col-xs-12">
-                                    <label class="control-label"><?php echo $form_mail['4'];?></label>
+                                <div class="form-group col-md-12 col-sm-12">
+                                    <label class="control-label"><?php echo $form_mail['4'];?></label><br>
                                     <textarea class="form-control" name="msj" placeholder="<?php echo $form_mail['4'];?>"></textarea>
+                                        
                                 </div>
                                 <br>
-                                <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                <div class="form-group col-md-12 col-sm-12" ><br>
                                     <input class="button btn_lg btn_blue btn_full upper" type="submit">
                                 </div>
                             </div>

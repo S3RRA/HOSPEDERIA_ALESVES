@@ -171,6 +171,9 @@ session_start();
 	<script src="js/jquery.fileupload.js" type="text/javascript"></script>
 	<script>
 
+	// simulate grid content loading
+	var gridWrapper = document.querySelector('.content');
+
 	(function() {
 		var menuEl = document.getElementById('ml-menu'),
 			mlmenu = new MLMenu(menuEl, {
@@ -197,9 +200,6 @@ session_start();
 			classie.remove(menuEl, 'menu--open');
 			openMenuCtrl.focus();
 		}
-
-		// simulate grid content loading
-		var gridWrapper = document.querySelector('.content');
 
 		function loadDummyData(ev, itemName) {
 			ev.preventDefault();
@@ -255,7 +255,6 @@ session_start();
 							'datos':$('#fecha_elegida').val()//'nombre_post': + $ + idform + .serialize() --> coge todos los campos
 						},
 						success: function(dataa){
-							console.log('DATOS SUCCESS: ' + dataa + 'TIPO: ' + typeof(dataa));	
 							muestra_reservas(dataa);													
 						}
 					});					
@@ -265,15 +264,12 @@ session_start();
 				$('.form_upload_imagenes').show();
 				upload_imagenes();
 			}else if(itemName == 'Validar comentarios'){
-				<?php if(isset($_COOKIE['json_comentarios'])){ ?>
-					muestra_comentarios('<?php echo $_COOKIE['json_comentarios'];?>');
-				<?php }else{ ?>
-					classie.add(gridWrapper, 'content--loading');
-					setTimeout(function() {
-						classie.remove(gridWrapper, 'content--loading');
-						gridWrapper.innerHTML = '<div class="info" style="color:white">NO HAY COMENTARIOS A VALIDAR</div>';
-					}, 700);
-				<?php } ?>
+				$.ajax({
+						url:'queries/comentarios.php',
+						success: function(dataa){	
+							muestra_comentarios(dataa);													
+						}
+					});	
 			}else{
 				classie.add(gridWrapper, 'content--loading');
 				setTimeout(function() {
@@ -360,7 +356,6 @@ session_start();
 	}
 
 	function muestra_comentarios(datos){
-		console.log(comentarios);
 		if(comentarios == 'NO HAY COMENTARIOS'){
 			classie.add(gridWrapper, 'content--loading');
 				setTimeout(function() {
@@ -368,12 +363,21 @@ session_start();
 					gridWrapper.innerHTML = '<div class="info" style="color:white">NO HAY RESERVAS</div>';
 				}, 700);
 		}else{
-			var comentarios = JSON.parse(datos);
-			var contenido = "<div class='containe'><form method='post' action='valida_com.php'>"
-			for($i=0;$i<comentarios.length;$i++){
-				contenido += "<div><label>POST:</label></div><br>"
+			var comentarios = JSON.parse(datos);	
+			var contenido = "<br><br><br><center><div class='containe' style='width:90%;'><form method='post' action='queries/valida_com.php'><table>";
+			contenido += '<thead><tr><th scope="col">#</th><th scope="col"><b>POST ID</b></th><th scope="col"><b>Nombre</b></th><th scope="col"><b>Fecha</b></th><th scope="col"><b>Contenido</b></th><th scope="col"><b>Validar</b></th><th scope="col"><b>Eliminar</b></th></thead><tbody>';
+			for(var i=0;i<comentarios['comentarios'].length;i++){
+				contenido += "<tr><th scope='row'></th>";
+				contenido += "<td>"+comentarios['comentarios'][i]['POST_ID']+"</td>";
+				contenido += "<td>"+comentarios['comentarios'][i]['nombre']+"</td>";
+				contenido += "<td>"+comentarios['comentarios'][i]['fecha']+"</td>";
+				contenido += "<td>"+comentarios['comentarios'][i]['contenido']+"</td>";
+				contenido += "<td><input type='checkbox' name='"+comentarios['comentarios'][i]['id']+"' value='validar'></td>";
+				contenido += "<td><input type='checkbox' name='"+comentarios['comentarios'][i]['id']+"' value='eliminar'></td>";
+				contenido += "</tr>";
 			}
-			contenido += "<input type='submit'></form><br></div>";
+			contenido += "</tbody></table><br><input type='submit'><br></form><br></div></center>";
+			console.log(contenido);
 			classie.add(gridWrapper, 'content--loading');
 				setTimeout(function() {
 					classie.remove(gridWrapper, 'content--loading');
