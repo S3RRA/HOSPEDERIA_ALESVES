@@ -422,10 +422,7 @@
                             <div class="item">
                                 <img src="images/persona.jpg" alt="Image">
                                 <div class="review_content">
-                                    <p><i>"Hotelito muy acogedor situado en un pequeño pueblo algo alejado pero suficientemente cerca de todo a la vez.
-                                        El personal es encantador, muy amable y atento.
-                                        Las camas son muy cómodas!!
-                                        Cada vez que venimos por la zona repetimos!"</i>
+                                    <p><i>"<?php echo $comentario1; ?>"</i>
                                     </p>
                                     <div class="review_rating">
                                         <i class="fa fa-star" aria-hidden="true"></i>
@@ -434,14 +431,14 @@
                                         <i class="fa fa-star" aria-hidden="true"></i>
                                         <i class="fa fa-star" aria-hidden="true"></i>
                                     </div>
-                                    <div class="review_author">Elia P. desde <a href="https://www.tripadvisor.es/ShowUserReviews-g1078800-d1047568-r672866541-Hospederia_de_Alesves-Villafranca_Navarra.html?m=19905">Trip Advisor</a></div>
+                                    <div class="review_author">Elia P. <?php echo $comentario2;?> <a href="https://www.tripadvisor.es/ShowUserReviews-g1078800-d1047568-r672866541-Hospederia_de_Alesves-Villafranca_Navarra.html?m=19905">Trip Advisor</a></div>
                                 </div>
                             </div>
                             <!-- ITEM -->
                             <div class="item">
                                 <img src="images/cara.jpg" alt="Image">
                                 <div class="review_content">
-                                    <p><b><i>"Donde la paz y el sosiego se sienten.</b> La cena riquísima, con una música de fondo suave sin la estridencia del televisor un sitio para estar a gusto. Y descansar es una auténtica experiencia para los sentidos. El olor a madera en la habitación. Las vistas al amanecer. Sin duda alguna recomendable.</i></p>
+                                    <p><b><i>"<?php echo $comentario3;?>"</i></p>
                                     <div class="review_rating">
                                         <i class="fa fa-star" aria-hidden="true"></i>
                                         <i class="fa fa-star" aria-hidden="true"></i>
@@ -449,14 +446,14 @@
                                         <i class="fa fa-star" aria-hidden="true"></i>
                                         <i class="fa fa-star" aria-hidden="true"></i>
                                     </div>
-                                    <div class="review_author">Luis desde <a href="https://www.booking.com/hotel/es/hospederia-de-alesves.es.html#tab-reviews">Booking</a></div>
+                                    <div class="review_author">Luis <?php echo $comentario2;?> <a href="https://www.booking.com/hotel/es/hospederia-de-alesves.es.html#tab-reviews">Booking</a></div>
                                 </div>
                             </div>
                             <!-- ITEM -->
                             <div class="item">
                                 <img src="images/cara2.jpg" alt="Image">
                                 <div class="review_content">
-                                    <p><i><b>"Lugar agradable y para descansar.</b> Edificio bonito ,con amplias y luminosas habitaciones. Personal agradable . Recomendable para todo el mundo!!!"</i></p>
+                                    <p><i><b>"<?php echo $comentario4;?>"</i></p>
                                     <div class="review_rating">
                                         <i class="fa fa-star" aria-hidden="true"></i>
                                         <i class="fa fa-star" aria-hidden="true"></i>
@@ -464,7 +461,7 @@
                                         <i class="fa fa-star" aria-hidden="true"></i>
                                         <i class="fa fa-star-o" aria-hidden="true"></i>
                                     </div>
-                                    <div class="review_author">Pilar Hernan desde <a href="https://www.escapadarural.com/opiniones/hospederia-de-alesves/5412c8e78e20d">Escapada Rural</a></div>
+                                    <div class="review_author">Pilar Hernan <?php echo $comentario2;?> <a href="https://www.escapadarural.com/opiniones/hospederia-de-alesves/5412c8e78e20d">Escapada Rural</a></div>
                                 </div>
                             </div>
                         </div>

@@ -27,7 +27,9 @@
         <!-- =========== MAIN ========== -->
         <main>
             <div class="container">
+            <center>
                 <img src="<?php echo $f1;?>" class="img-responsive br2 mb20" alt="Image">
+            </center>
                 <p>
                     <?php echo $p1;?>
                 </p>
@@ -37,25 +39,25 @@
                 <div class="row image-gallery">
                     <!-- ITEM -->
                     <div class="col-md-3 col-sm-6 mt20 mb20">
-                        <a href="images/places.jpg">
+                        <a href="">
                             <img src="<?php echo $fotos['1'];?>" class="img-responsive full_width br2" height="50" alt="Image">
                         </a>
                     </div>
                     <!-- ITEM -->
                     <div class="col-md-3 col-sm-6 mt20 mb20">
-                        <a href="images/places/place5.jpg">
+                        <a href="">
                             <img src="<?php echo $fotos['2'];?>" class="img-responsive full_width br2" height="50" alt="Image">
                         </a>
                     </div>
                     <!-- ITEM -->
                     <div class="col-md-3 col-sm-6 mt20 mb20">
-                        <a href="images/places/place3.jpg">
+                        <a href="">
                             <img src="<?php echo $fotos['3'];?>" class="img-responsive full_width br2" height="50" alt="Image">
                         </a>
                     </div>
                     <!-- ITEM -->
                     <div class="col-md-3 col-sm-6 mt20 mb20">
-                        <a href="images/places/place4.jpg">
+                        <a href="">
                             <img src="<?php echo $fotos['4'];?>" class="img-responsive full_width br2" height="50" alt="Image">
                         </a>
                     </div>

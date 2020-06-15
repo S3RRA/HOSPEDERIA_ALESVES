@@ -24,7 +24,7 @@
                         <!-- ITEM -->
                         <div class="col-md-3 col-sm-3 col-xs-12 g_item">
                             <div class="places_item">
-                                <a href="actividad.php?act=Olite">
+                                <a href="post.php?id=13">
                                     <img src="images/olite.jpg" alt="Image">
                                     <div class="place_name">
                                         <h2>Olite</h2>
@@ -35,7 +35,7 @@
                         <!-- ITEM -->
                         <div class="col-md-6 col-sm-6 col-xs-12 g_item">
                             <div class="places_item">
-                                <a href="actividad.php?act=Bardenas">
+                                <a href="post.php?id=14">
                                     <img src="images/monolito.jpg" alt="Image">
                                     <div class="place_name">
                                         <h2>Bardenas Reales</h2>
@@ -46,7 +46,7 @@
                         <!-- ITEM -->
                         <div class="col-md-3 col-sm-3 col-xs-12 g_item">
                             <div class="places_item">
-                                <a href="actividad.php?act=fiestas">
+                                <a href="post.php?id=16">
                                     <img src="images/sanfermin1.jpg" alt="Image">
                                     <div class="place_name">
                                         <h2><?php echo $fiestas;?></h2>
@@ -57,7 +57,7 @@
                         <!-- ITEM -->
                         <div class="col-md-3 col-sm-3 col-xs-12 g_item">
                             <div class="places_item">
-                                <a href="actividad.php?act=Tudela">
+                                <a href="post.php?id=17">
                                     <img src="images/tudela.jpg" alt="Image">
                                     <div class="place_name">
                                         <h2>Tudela</h2>
@@ -79,7 +79,7 @@
                         <!-- ITEM -->
                         <div class="col-md-3 col-sm-3 col-xs-12 g_item">
                             <div class="places_item">
-                                <a href="actividad.php?act=senderismo">
+                                <a href="post.php?id=18">
                                     <img src="images/senderismo.jpg" alt="Image">
                                     <div class="place_name">
                                         <h2><?php echo $senderismo;?></h2>
@@ -90,7 +90,7 @@
                         <!-- ITEM -->
                         <div class="col-md-3 col-sm-3 col-xs-12 g_item">
                             <div class="places_item">
-                                <a href="actividad.php?act=aves">
+                                <a href="post.php?id=19">
                                     <img src="images/observatorio_aves.jpg" alt="Image">
                                     <div class="place_name">
                                         <h2><?php echo $aves;?></h2>
@@ -101,7 +101,7 @@
                         <!-- ITEM -->
                         <div class="col-md-3 col-sm-3  col-xs-12 g_item">
                             <div class="places_item">
-                                <a href="actividad.php?act=rios">
+                                <a href="post.php?id=20">
                                     <img src="images/soto.jpg" alt="Image">
                                     <div class="place_name">
                                         <h2>Arga <?php echo $y;?> Aragón</h2>
@@ -112,7 +112,7 @@
                         <!-- ITEM -->
                         <div class="col-md-3 col-sm-3 col-xs-12 g_item">
                             <div class="places_item">
-                                <a href="actividad.php?act=Pitillas">
+                                <a href="post.php?id=21">
                                     <img src="images/pitillas.jpg" alt="Image">
                                     <div class="place_name">
                                         <h2><?php echo $laguna;?></h2>
@@ -123,7 +123,7 @@
                         <!-- ITEM -->
                         <div class="col-md-3 col-sm-3 col-xs-12 g_item">
                             <div class="places_item">
-                                <a href="actividad.php?act=Moncayo">
+                                <a href="post.php?id=22">
                                     <img src="images/moncayo.jpg" alt="Image">
                                     <div class="place_name">
                                         <h2>Moncayo</h2>
@@ -134,7 +134,7 @@
                         <!-- ITEM -->
                         <div class="col-md-6 col-sm-6 col-xs-12 g_item">
                             <div class="places_item">
-                                <a href="actividad.php?act=Cister">
+                                <a href="post.php?id=23">
                                     <img src="images/cister.jpg" alt="Image">
                                     <div class="place_name">
                                         <h2><?php echo $cister;?></h2>
@@ -145,40 +145,34 @@
                         <!-- ITEM -->
                         <div class="col-md-3 col-sm-3 col-xs-12 g_item">
                             <div class="places_item">
-                                <a href="actividad.php?act=BBT">
                                     <img src="images/bicicleta-segway.jpg" alt="Image">
                                     <div class="place_name">
                                         <h2><?php echo $bici;?></h2>
                                     </div>
-                                </a>
                             </div>
                         </div>
                         <!-- ITEM -->
                         <div class="col-md-6 col-sm-6 col-xs-12 g_item">
                             <div class="places_item">
-                                <a href="actividad.php?act=praguismo">
                                     <img src="images/piraguismo.jpg" alt="Image">
                                     <div class="place_name">
                                         <h2><?php echo $rios;?></h2>
                                     </div>
-                                </a>
                             </div>
                         </div>
                         <!-- ITEM -->
                         <div class="col-md-3 col-sm-3 col-xs-12 g_item">
                             <div class="places_item">
-                                <a href="actividad.php?act=Villafranca">
                                     <img src="images/Villafranca Navarra (14).JPG" alt="Image">
                                     <div class="place_name">
                                         <h2>Villafranca</h2>
                                     </div>
-                                </a>
                             </div>
                         </div>
                         <!-- ITEM -->
                         <div class="col-md-3 col-sm-3 col-xs-12 g_item">
                             <div class="places_item">
-                                <a href="actividad.php?act=SendaViva">
+                                <a href="post.php?id=11">
                                     <img src="images/sendaviva.jpg" alt="Image">
                                     <div class="place_name">
                                         <h2>Senda Viva</h2>

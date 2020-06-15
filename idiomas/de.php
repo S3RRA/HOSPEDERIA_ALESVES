@@ -259,47 +259,11 @@ $error ['2'] = 'RETURN TO HOME';
 $error ['3'] = 'ODER';
 $error ['4'] = 'KONTAKTIEREN SIE UNS';
   
-  
-    /* A C T I V I D A D E S */
-    $interesan = "Wenn Sie interessiert sind, kontaktieren Sie uns per Telefon oder E-Mail.";
-    if(isset($_SESSION['actividad'])){
-        
-        $act = $_SESSION['actividad'];
-        
-        switch ($act) {
-            case 'Bardenas':
-                $imagen_fondo = 'background: url(images/monolito.jpg) center repeat;';
-                $actividad = 'Bardenas Reales';
-                $f1 = 'images/monolito.jpg';
-                $p1 = "Einer der überraschendsten Besuche, die Sie auf einer Touristenreise durch Navarra machen können, ist der Naturpark Bardenas Reales, den Sie im Südosten der Gemeinde unweit der Stadt Tudela finden. Es besteht kein Zweifel, dass eines der Wahrzeichen von Navarra die wunderschönen und grünen Landschaften der Navarrese-Pyrenäen sind, die in Ecken wie dem Irati-Wald oder der Stadt Ochagavia ihren maximalen Ausdruck finden. In Navarra gibt es aber auch typischere Landschaften in Arizona mit spektakulären Felsformationen wie dem Kopf von Castildetierra (Bild oben).";
-                $p2 = "Das Hauptmerkmal der Bardenas Reales sind die Halbwüstenlandschaften. Das geologische Ergebnis besteht aus Tonen und Sandsteinen, die seit Millionen von Jahren unter Erosion leiden. Jetzt können wir merkwürdige Felsformationen wie Hochebenen oder das charakteristische Quellgebiet sehen. Wenn Sie jedoch im Winter oder Frühling die Bardenas Reales besuchen, werden Sie von den grünen Landschaften der Ebenen begeistert sein, vor allem aufgrund der Getreide- und Reisplantagen.";
-                $fotos['1'] = 'images/bardenas.jpg';
-                $fotos['2'] = 'images/bardenas_1.jpg';
-                $fotos['3'] = 'images/bardenas_2.jpg';
-                $fotos['4'] = 'images/bardenas_3.jpg';
-                $p3 = 'Zum Teil handelt es sich um eine Halbwüstenlandschaft, in der heftige Regenfälle einen Putzboden und Ton geformt haben. Weite Ebenen sind mit Schluchten, Klippen und Hügeln durchsetzt, die bis zu 600 Meter hoch werden. Die sogenannte Bardena Blanca gruppiert die weißesten Landschaften aus Gipsuntergrund und Steppenvegetation. Die Aleppo-Kiefernwälder und Lehmböden befinden sich in der sogenannten Black Bardena. Der landschaftliche Reichtum dieser Umgebung wurde auch mit der Figur des Naturschutzgebietes an drei spezifischen Orten geschützt. So ist es auch mit dem Vedado de Eguaras, wo Sie einen kleinen Zirkus bewundern können, der von Gipsschluchten umgeben ist und von Wacholder, Rebollos und Romeros bevölkert wird. Der sogenannte Rincón de Bú hat Schnitte, wo die königlichen Eulen, Steinadler und ägyptischen Geier. Die Wasserfälle von La Negra sind eine Reihe von Rissen, die bis zu 270 Meter tief sind. Insgesamt beherbergen die Bardenas Reales 24 Raubvögel (Wanderfalke, Stiefeladler, Gänsegeier ...) sowie eine Steppenvogelfauna wie die Großtrappe oder die Lerche. Auch im Naturpark gibt es mehr als 28 verschiedene Säugetierarten, von denen acht kleinen Säugetieren wie Spitzmaus oder der maurischen Maus entsprechen. In den natürlichen und künstlichen Wasserflößen leben Forellen, Barben, Schleien ... während um ihn herum Molche und Frösche mit einer Vielzahl von Reptilien leben. Die Caped Lizard, die Leiterschlange oder der Sumpfschildkröte sind nur einige davon.';
-                $p4 = 'Vom Hostel aus empfehlen wir Ihnen, diese <a href="https://app.bardenasreales.es/descarga-de-rutas-gpxkml"> Routen </a> durchzuführen. Erstellt von der Vereinigung der <a href="https://bardenasreales.es"> Bardenas Reales </a> sowohl für Fußgänger, Radfahrer als auch für Kraftfahrzeuge.';
-                $p5 = 'Der Bardenas Reales Park kann jeden Tag von 8 Uhr morgens bis eine Stunde vor Einbruch der Dunkelheit besucht werden. Die Besuchszeiten des Bardenas Reales Besucherzentrums sind von April bis August von 9 bis 14 Uhr und von 16 bis 19 Uhr. und von September bis März von 9 bis 14 Uhr und von 15 bis 17 Uhr (Zu Ostern ist das Zentrum ständig von 9 bis 19 Uhr geöffnet.)';
-                $p6 = 'Die Bardenas Reales sind eine einzigartige Landschaft, die Ihnen das Gefühl gibt, in den alten Westen zu gehen. Eine Erfahrung, die Ihren empfohlenen Besuch nur optimal nutzen kann. <br>
-                Von der Hospedería sind Sie nur 25 km entfernt, um das Herz dieses wunderschönen Naturparks zu erreichen, der ein Muss ist.';
-            break;
+$comentario1 = "Sehr gemütliches kleines Hotel in einer kleinen Stadt etwas abgelegen, aber nah genug an alles gleichzeitig.Die Angestellten sind charmant, sehr freundlich und aufmerksam.Die Betten sind sehr bequem !!Jedes Mal, wenn wir in die Gegend kommen, wiederholen wir!";
+$comentario2="schon seit";
+$comentario3="Wo Ruhe und Frieden zu spüren sind. </ B> Das köstliche Abendessen mit sanfter Hintergrundmusik ohne die Aufmerksamkeit des Fernsehers ist ein Ort, an dem man sich wohl fühlen kann. Und Ausruhen ist eine authentische Erfahrung für die Sinne. Der Geruch von Holz im Raum. Die Aussicht bei Sonnenaufgang. Auf jeden Fall zu empfehlen.";
+$comenario4="Schöner Ort zum Ausruhen. </ B> Schönes Gebäude mit geräumigen und hellen Zimmern. Nettes Personal. Empfohlen für alle !!! ";
 
-            case 'fiestas':
-                $background_image = 'Hintergrund: URL (images / sanfermin1.jpg) in der Mitte wiederholen;';
-                $actividad = 'Fiestas navarras';
-                $f1 = 'images / pañuelo.jpg';
-                $p1 = "Es wird gesagt, dass die Party, auf die er geht, Freunde findet und bleibende Erinnerungen hinterlässt. Sie können dies auch erleben, indem Sie mit uns an den lebhaften Sanfermines von Pamplona oder an den einfachsten und aufregendsten Abenden von teilnehmen letzte Ecke unserer Geographie. ";
-                $p2 = "Pamplona zu sagen bedeutet Feste von San Fermin. Wie werden Sie die besten Festivals der Welt verpassen? 9 Tage mit 24 Stunden voller Festivals, Fanfaren, Peñas, Konzerten, typischen Tänzen, Stierkämpfen, ländlichen Sportarten und vielem mehr. viel Atmosphäre auf der Straße. Beginnen Sie den Tag mit den Zielen, beobachten Sie den Stier beim Laufen. Drehen Sie sich mittags mit den großen Köpfen um oder genießen Sie die geplanten Shows, dann typisches Essen und am Nachmittag. Bullen oder tauchen Sie in die Freuden der Straßen ein. Gehen Sie nicht ohne Feuerwerk und Nachtkonzerte. Das Leben in den Sanfermines bedeutet nicht nur einen beschleunigten Kurs in Populärkultur in Navarra, sondern auch eine gute Zeit zu haben. ";
-                $fotos['1'] = 'images / gigante.jpg';
-                $fotos['2'] = 'images / fiestas2.jpg';
-                $fotos['3'] = 'images / ftudela.jpg';
-                $fotos['4'] = 'images / gigante2.jpg';
-                $p3 = "Im Süden steht der Dudelsack im Mittelpunkt und wird in den Paloteados, 'Tänzen der Zeit' und Jotas von Tudela oder Tafalla nach seinem Rhythmus getanzt. Wenn Sie aufstehen und tanzen möchten Gehen Sie auf eine gesprächige Scharade voller guter Laune zu, die nie ihr Datum verpasst. Zu jeder Zeit der Party können Sie einen typischen Jota von Ribera aus vollem Herzen singen hören. ein Nährboden: das Laufen von Stieren, Stierkämpfen, die Freilassung von Färsen, Färsen und Stierkämpfen erfreuen die Fans. Wie Sie sehen können, sind die Feierlichkeiten von San Fermin der Ausgangspunkt vieler Feiertage, die Füllen Sie den Terminkalender aus. ";
-                $p4 = "Vom Hostel aus empfehlen wir Ihnen, die Feierlichkeiten von Navarra zu genießen";
-                $p5 = "Sowohl der Provinzrat als auch die Gemeinden und lokalen Universitäten fördern eine große Anzahl populärer Initiativen, die mit anderen koexistieren, die in Bergdörfern und ländlichen Traditionen verwurzelt sind und Teil des Lebensstils sind in der Nacht der Pilgerfahrten oder religiösen Feste verlorene Bräuche. ";
-                $p6 = '';
-        }
-    }
     
 ?>
 

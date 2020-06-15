@@ -24,8 +24,7 @@
                     <?php
                     if(isset($_GET['booked'])&&$_GET['booked']='yes'){
                         echo '<div class="main_title a_left upper">
-                                <h3>Su reserva se ha realizado con éxito.</h3> <br><br>                                
-                                <h6>Pulse en <a href="pdf.php"> este link </a> para generar un PDF con los detalles de su reserva.</h6> <br><br>
+                                <h3>Su reserva se ha realizado con éxito.</h3> <br><br>
                                 <p>Verifique su correo para más detalles.</p>
                             </div>
                         </div>';

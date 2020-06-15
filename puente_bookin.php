@@ -1,5 +1,13 @@
 <?php
-error_reporting(E_ERROR);
+/*MAIL VERIFICACION*/
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require './mail/Exception.php';
+require './mail/PHPMailer.php';
+require './mail/SMTP.php';
+              
+//error_reporting(E_ERROR);
 require './conexion.php';
 /*POSTS*/
     if(isset($_GET['post_id'])){
@@ -74,6 +82,9 @@ require './conexion.php';
         if(isset($_POST['adultos'])){
             $adultos = mysqli_real_escape_string($con,$_POST['adultos']);
         }else{
+            $adultos = 1;
+        
+            /*
             switch($tipo):
                 case 'individual':
                     if(isset($_POST['supletoria'])){
@@ -113,6 +124,7 @@ require './conexion.php';
             default :
                 $adultos = 0;
             endswitch;
+            */
         }
         $llegada = $_POST['llegada'];
         $salida = $_POST['salida'];
@@ -122,7 +134,6 @@ require './conexion.php';
         foreach($_POST as $post => $contenido){
             echo $post.'='.$contenido.'<br>';
         }
-        
         /*HASH DE DATOS BANCARIOS*/
         if(isset($_POST['tarjeta'])){
             $tar = $_POST['tarjeta'];        
@@ -204,6 +215,51 @@ require './conexion.php';
             }
             if(isset($_GET['site'])&&$_GET['site']=='workers'){
                 header("Location: workers/workers.php");
+            }else if(isset($_POST['email'])){
+                if ($nombre=='NULL') { $nombre = ''; }
+                $mensaje = '<html>
+                                <head></head>
+                                <body>
+                                    Gracias '.$nombre.' por realizar tu reserva con nosotros.<br>
+                                    Te esperamos en la Hospedería de Alesves para tu estancia
+                                        entre el '.$llegada.' y el '.$salida.' <br>
+                                    Esperamos que tu estancia en tu habitación '.$tipo.' sea de tu agrado. <br>
+                                    Si necesitas cualquier tipo de información no dudes en ponerte en contacto con nosotros.
+                                </body>
+                            </html>';
+                echo $mensaje;
+                try {   
+                    $mail = new PHPMailer();
+                    //Server settings
+                    $mail->SMTPDebug = 0;                      // Enable verbose debug output
+                    $mail->isSMTP();                                            // Send using SMTP
+                    $mail->Host       = 'smtp.gmail.com';                        // Set the SMTP server to send through
+                    $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
+                    $mail->Username   = 's3rraclothing@gmail.com';                     // SMTP username
+                    $mail->Password   = 'Calamar77!';                               // SMTP password
+                    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` also accepted
+                    $mail->Port       = 587;                                    // TCP port to connect to
+
+                    //Recipients
+                    $mail->setFrom('s3rraclothing@gmail.com','S3RRA');
+                    $mail->addAddress(''.$email.'', ''.$user.'');     // Add a recipient
+
+
+                    // Content
+                    $mail->isHTML(true);                                  // Set email format to HTML
+                    
+                        $mail->Subject = 'Confirmacion Reserva - HOSPEDERIA DE ALESVES';
+                    
+                    $mail->Body    = utf8_decode($mensaje);   
+                    $mail->AltBody = 'hola';
+                    $mail->send();
+                    echo 'Message has been sent';
+                    header("Location: bookin.php?booked=yes");
+                
+                } catch (Exception $e) {
+                    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+                }                   
+               
             }else{
                 header("Location: bookin.php?booked=yes");
             }
@@ -214,46 +270,6 @@ require './conexion.php';
                 header("Location: bookin.php?disponibilidad=no");
             }
         }
-    }
-    
-/*MAIL VERIFICACION*/
-    use PHPMailer\PHPMailer\PHPMailer;
-    use PHPMailer\PHPMailer\Exception;
-
-    require './mail/Exception.php';
-    require './mail/PHPMailer.php';
-    require './mail/SMTP.php';
-    error_reporting(E_ERROR);
-    session_start();
-
-    // Instantiation and passing `true` enables exceptions
-    $mail = new PHPMailer(true);
-
-    try {
-        //Server settings
-        $mail->SMTPDebug = 0;                      // Enable verbose debug output
-        $mail->isSMTP();                                            // Send using SMTP
-        $mail->Host       = 'smtp.gmail.com';                        // Set the SMTP server to send through
-        $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-        $mail->Username   = 's3rraclothing@gmail.com';                     // SMTP username
-        $mail->Password   = 's3rras3rra';                               // SMTP password
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` also accepted
-        $mail->Port       = 587;                                    // TCP port to connect to
-
-        //Recipients
-        $mail->setFrom('s3rraclothing@gmail.com','S3RRA');
-        $mail->addAddress(''.$email.'', ''.$nombre.'');     // Add a recipient
-
-
-        // Content
-        $mail->isHTML(true);                                  // Set email format to HTML
-        $mail->Subject = 'Reserva - HOSPEDERÍA DE ALESVES';
-        $mail->Body    = '<h3>Reserva realizada.<h3><h4>Detalles de la reserva:</h4>
-                            <p><label>Llegada:</label>'.$llegada.'<label>Salida:</label><br><label>Tipo de habitación:</label>'.$tipo.'<br><label>Teléfono de contacto:</label><br>'.$telf.'<label>DNI:</label>'.$dni.'</p><br>Muchas gracias, para mas información póngase en contacto con nostros via email: <a href="mailto:info@hospederiadealesves.com">info@hospederiadealesves.com</a> o telefonicamente:<a href="tel:608144766">608144766</a>, nos vemos pronto.';           
-        $mail->send();
-        echo 'Message has been sent';
-    } catch (Exception $e) {
-        echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
     }
     
 ?>

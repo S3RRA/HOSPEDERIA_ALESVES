@@ -18,6 +18,7 @@ body{
   width: 360px;
   padding: 8% 0 0;
   margin: auto;
+  color:white;
 }
 .form {
   border-radius: 5px;

@@ -29,11 +29,19 @@
     if(isset($_POST['phone'])&&isset($_POST['subject'])){
         $telf = $_POST['phone'];
         $asunto = $_POST['subject'];
-        $mensaje = '<html><head></head><body>Nombre cliente: '.$name_cl.'<br>Asunto: '.$asunto.'<br>E-mail cliente: '.$email_cl.'   Teléfono: '.$telf.'<br><br>'.$msj.'</body></html>';
+        $mensaje = '<html>
+                    <head></head>
+                    <body>
+                        Nombre cliente: '.$name_cl.'
+                        <br>Asunto: '.$asunto.'
+                        <br>E-mail cliente: '.$email_cl.'   
+                        Teléfono: '.$telf.'<br><br>'.$msj.'
+                    </body>
+                    </html>';
     }
     $mensaje = '<html><head></head><body>Nombre cliente: '.$name_cl.'<br>E-mail cliente: '.$email_cl.'<br><br>'.$msj.'</body></html>';
     echo $mensaje;
-    $email = 'pserranomanzarbeitia@gmail.com';
+    $email = $email_cl;
     try {   
         //Server settings
         $mail->SMTPDebug = 0;                      // Enable verbose debug output
@@ -47,16 +55,12 @@
 
         //Recipients
         $mail->setFrom('s3rraclothing@gmail.com','S3RRA');
-        $mail->addAddress(''.$email.'', ''.$user.'');     // Add a recipient
+        $mail->addAddress(''.'s3rra97@gmail.com'.'', ''.$user.'');     // Add a recipient
 
 
         // Content
         $mail->isHTML(true);                                  // Set email format to HTML
-        if(isset($_GET['site'])&&$_GET['site']){
-            $mail->Subject = 'MENSAJE - CONTACTO';
-        }else{
-            $mail->Subject = 'Reserva - HOSPEDERIA DE ALESVES';
-        }
+        $mail->Subject = 'MENSAJE - CONTACTO';       
         $mail->Body    = utf8_decode($mensaje);   
         $mail->AltBody = 'hola';
         $mail->send();

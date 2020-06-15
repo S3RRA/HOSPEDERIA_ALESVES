@@ -8,26 +8,25 @@
     if(mysqli_num_rows($resultado)>0){  
         $contenido = ' { "comentarios":[ ';
         while($row = mysqli_fetch_assoc($resultado)){
-            $contenido .= '{';
-            $contenido .= '"POST_ID":"'.$row['POST_ID'].'",';
-            $contenido .= '"nombre":"'.$row['nombre'].'",';
-            $contenido .= '"fecha":"'.$row['fecha'].'",';
-            $contenido .= '"contenido":"'.$row['contenido'].'",';
-            $contenido .= '"id":"'.$row['ID'].'"';
-            $contenido .= '},';
+
+            $id = $row['POST_ID'];
+            $sql2 = "SELECT * FROM posts WHERE ID = $id";
+            $resultado2 = mysqli_query($con,$sql2);
+            while($row2 = mysqli_fetch_assoc($resultado2)){
+
+                $contenido .= '{';
+                $contenido .= '"POST_ID":"'.$row2['titulo'].'",';
+                $contenido .= '"nombre":"'.$row['nombre'].'",';
+                $contenido .= '"fecha":"'.$row['fecha'].'",';
+                $contenido .= '"contenido":"'.$row['contenido'].'",';
+                $contenido .= '"id":"'.$row['ID'].'"';
+                $contenido .= '},'; 
+            }
         }
         $contenido .= "]}";
         $parte1 = substr($contenido, 0,strlen($contenido)-3);
         $parte2 = substr($contenido,-2);
         $json = $parte1.$parte2;
-        /*
-        for($i=0;$i<strlen($json);$i++){
-            echo $i .'='. $json[$i].'<br>';
-            if($i == '}'){
-
-            }
-        }
-        */
         echo $json;
     }
 ?>

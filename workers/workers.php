@@ -1,6 +1,6 @@
 <?php
 session_start();
-	if(isset($_SESSION['usuario'])){
+if(isset($_SESSION['usuario'])){
 
     if (isset($_FILES['attachments'])) {
         $msg = "";
@@ -306,7 +306,7 @@ session_start();
 				classie.add(gridWrapper, 'content--loading');
 						setTimeout(function() {						
 							classie.remove(gridWrapper, 'content--loading');
-							gridWrapper.innerHTML = '<center><div style="overflow-x:auto;background-color:white;color:black;display:flex;justify-content:center;align-items: center;width:60%;;border-radius:5px;"><img src="../images/hospederia-de-alesves.gif" style="float:left"><br><br><div>'+
+							gridWrapper.innerHTML = '<center><div style="overflow-x:auto;background-color:white;color:black;display:flex;justify-content:center;align-items: center;width:60%;border-radius:5px;"><img src="../images/hospederia-de-alesves.gif" style="float:left"><br><br><div>'+
 										'<table class="table" style="width=100%" cellspacing="5%">'+
 											'<thead><tr><th scope="col">#</th><th scope="col"><b>Nº hab</b></th><th scope="col"><b>Tipo hab</b></th><th scope="col"><b>Llegada</b></th><th scope="col"><b>Salida</b></th><th scope="col"><b>Cliente</b></th><th scope="col"><b>Codigo reserva</b></th></tr></thead><tbody>'+
 												contenido+
@@ -364,8 +364,8 @@ session_start();
 				}, 700);
 		}else{
 			var comentarios = JSON.parse(datos);	
-			var contenido = "<br><br><br><center><div class='containe' style='width:90%;'><form method='post' action='queries/valida_com.php'><table>";
-			contenido += '<thead><tr><th scope="col">#</th><th scope="col"><b>POST ID</b></th><th scope="col"><b>Nombre</b></th><th scope="col"><b>Fecha</b></th><th scope="col"><b>Contenido</b></th><th scope="col"><b>Validar</b></th><th scope="col"><b>Eliminar</b></th></thead><tbody>';
+			var contenido = "<br><br><br><center><div class='containe' style='width:90%;overflow-x:auto;background-color:white;color:black;display:flex;justify-content:center;align-items: center;border-radius:5px;'><form method='post' action='queries/valida_com.php'><table class='table' style='width=100%'>";
+			contenido += '<thead><tr><th scope="col">#</th><th scope="col"><b>Título post</b></th><th scope="col"><b>Nombre</b></th><th scope="col"><b>Fecha</b></th><th scope="col"><b>Contenido</b></th><th scope="col"><b>Validar</b></th><th scope="col"><b>Eliminar</b></th></thead><tbody>';
 			for(var i=0;i<comentarios['comentarios'].length;i++){
 				contenido += "<tr><th scope='row'></th>";
 				contenido += "<td>"+comentarios['comentarios'][i]['POST_ID']+"</td>";

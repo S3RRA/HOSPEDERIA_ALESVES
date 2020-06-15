@@ -270,84 +270,13 @@ $error ['1'] = "Wow, we couldn't find the page you are trying to access";
 $error ['2'] = 'RETURN TO HOME';
 $error ['3'] = 'OR';
 $error ['4'] = 'CONTACT US';
-                                /* A C T I V I D A D E S */
-    
-        if(isset($_SESSION['actividad'])){
-        
-        $act = $_SESSION['actividad'];
-        
-        switch ($act) {
-            case 'Bardenas':
-                $imagen_fondo = 'background: url(images/monolito.jpg) center repeat;';
-                $actividad = 'Bardenas Reales';
-                $f1 = 'images/monolito.jpg';
-                $p1 = "One of the most surprising visits you can make on a tourist trip through Navarra is the Bardenas Reales Natural Park, which you find in the southeast of the community, not far from the town of Tudela. 
-                    There is no doubt that one of the iconic images of Navarra is the beautiful and green landscapes of the Navarrese Pyrenees, which reach their maximum expression in corners such as the Irati Forest or the town of Ochagavia. 
-                    But in Navarra you can also find more typical landscapes to see in Arizona, with spectacular rock formations such as the head of Castildetierra (image above).";
-                $p2 = 'The main characteristic of the Bardenas Reales is its semi-desert landscapes. 
-                    Made up of clays and sandstones that for millions of years have suffered the effects of erosion, the geological result is that now we can see curious rock formations, such as plateaus or the characteristic headwaters. 
-                    But if you visit the Bardenas Reales in winter or spring, you will be amazed by the green landscapes of the plains, largely due to the cereal and rice plantations.';
-                $fotos['1'] = 'images/bardenas.jpg';
-                $fotos['2'] = 'images/bardenas_1.jpg';
-                $fotos['3'] = 'images/bardenas_2.jpg';
-                $fotos['4'] = 'images/bardenas_3.jpg';
-                $p3 = 'It is a semi-desert landscape, in part, where torrential rains have shaped a plaster ground and 
-                    clays. Wide plains are interspersed with ravines, cliffs and hills that reach up to 600 meters 
-                    height. The so-called Bardena Blanca groups the whitest landscapes, of plaster substrate and steppe vegetation. The 
-                    Aleppo pine forests and clay soils are found in the so-called Black Bardena. The landscape wealth of
-                    this environment has also been protected with the figure of Nature Reserve in three specific places. So is the case 
-                    of the Vedado de Eguaras, where you can admire a small circus surrounded by plaster ravines and populated by junipers, 
-                    rebollos and romeros. The so-called Rincón de Bú has cuts where the royal owls, golden eagles and 
-                    Egyptian vultures. For its part, the Falls of La Negra are a set of cracks that reach up to 270 meters in 
-                    depth. Altogether, the Bardenas Reales shelter some 24 birds of prey (peregrine falcon, booted eagle, 
-                    griffon vulture ...), in addition to a steppe bird fauna such as the great bustard or the lark. In the Natural Park too 
-                    there are more than 28 different species of mammals, eight of which correspond to small mammals such as 
-                    shrew or the Moorish mouse. In the rafts of water, both natural and artificial, inhabit trout, barbels, 
-                    tench ... while around him newts and frogs live with a multitude of reptiles. The Caped Lizard, the 
-                    ladder snake or terrapin leper are just some of them.';
-                $p4 = 'From the hostel we recommend you to do these <a href="https://app.bardenasreales.es/descarga-de-rutas-gpxkml"> routes </a> '
-                        . 'created by the association of <a href="https://bardenasreales.es"> Bardenas Reales </a> both for walking, cycling or motor vehicles.';
-                $p5 = 'The Bardenas Reales park can be visited any day from 8 in the morning until an hour before dark. The visiting hours of the Bardenas Reales Visitors Center are from April to August, from 9 to 14 and from 16 to 19 hours; and from September to March, from 9 a.m. to 2 p.m. and from 3 to 5 p.m. (during Easter the center is open continuously from 9 a.m. to 7 p.m.).';
-                $p6 = 'The Bardenas Reales are a unique landscape that gives you the feeling of going to the old west. An experience that can only make the most of your recommended visit. <br>
-                    From the Hospedería you are only 25 km away to reach the heart of this wonderful Natural Park, a must-see.';
-            break;
-            case 'Olite':
-                $background_image = 'background: url (images / Olite_4.jpg) center repeat;';
-                $actividad = 'Olite';
-                $f1 = 'images / Olite_1.jpg';
-                $p1 = "The slender and harmonious silhouette of its castle-palace dominates Olite, a small city located in the geographical center of Navarra, 42 kilometers south of Pamplona.
-                    Royal seat during the Middle Ages, the palace's thick walls and crenelated towers housed kings and princesses. Declared a national monument in 1925, it constitutes the most important example of Navarre's civil Gothic and one of the most notable in Europe.
-                    A tour of the narrow streets of Olite will allow you to stroll in the shelter of noble stone houses with coats of arms and grandiose wooden eaves; medieval galleries and splendid churches, in addition to discovering the Roman walled enclosure.
-                    The Mediterranean climate has also made Olite the wine capital. Come to their cellars and taste their wines. Let yourself be guided and the whole ensemble will take you to a time of tournaments, kings and princesses, magicians and minstrels, falconers and archers, who return to the city every August to celebrate the Medieval Festivities. ";
-                $p2 = "Olite is located in the heart of Navarra, 40 km. from Pamplona, ​​in an area where the rugged relief of the Sierra de la Navarra Media gives way to the flat lands of La Ribera.
-                        Erected on a small promontory (388 m.), Its terminus is crossed by the Cidacos river, which was encapsulated in its current channel, leaving five levels of river terraces that make up a relief of gently sloped slopes on the right bank. Towards the east the Sierra de Ujué rises (932 m.).
-                        Its pleasant continental Mediterranean climate, with hot and dry summers, winters that are not very cold and not very rainy (500 l / m²), and its clear sky, together with the fertility of its lands, made Olite a place inhabited since Prehistory, taking place an intense romanization and later being chosen by the Navarrese monarchs as the royal seat. ";
-                $fotos['1'] = 'images / Olite_1.jpg';
-                $fotos['2'] = 'images / Olite_2.jpg';
-                $fotos['3'] = 'images / Olite_3.jpg';
-                $fotos['4'] = 'images / Olite_4.jpg';
-                $p3 = '';
-                $p4 = "If you are interested in visiting this medieval city, don't miss the pages of <a href='https://guiailustradadenavarra.com/castillo-olite-navarra/'> the illustrated guide to navarra </a> or <a href="https://www.turismo.navarra.es/esp/organice-viaje/recurso/Localidades/2466/Olite.htm"> turismo de navarra </a> ";
-                $p5 = '';
-                $p6 = '';
-            break;
-            case 'fiestas':
-                $background_image = 'background: url (images / sanfermin1.jpg) center repeat;';
-                $activity = 'Fiestas navarras';
-                $f1 = 'images / pañuelo.jpg';
-                $p1 = "It is said that the party where he goes makes friends and leaves lasting memories. You can also experience it by participating with us in the bustling Sanfermines of Pamplona or in the simplest and most endearing parties in the last corner of our geography.";
-                $p2 = "Saying Pamplona means San Fermín festivities. How are you going to miss the best festivals in the world? 9 days with its 24 hours full of festivals, brass bands, peñas, concerts, typical dances, bullfights, rural sports and much, much atmosphere on the street. Start the day with the targets, continue watching the bull running. At noon, tour with the big heads or to enjoy the programmed shows, then typical food and in the afternoon, bulls or to plunge into the revelry of the streets. Don't leave without enjoying fireworks and nightly concerts. Living the Sanfermines, is to do an accelerated course on popular culture in Navarre, but also having a good time.";
-                $photos ['1'] = 'images / gigante.jpg';
-                $photos ['2'] = 'images / fiestas2.jpg';
-                $photos ['3'] = 'images / ftudela.jpg';
-                $photos ['4'] = 'images / gigante2.jpg';
-                $p3 = "In the south, the bagpipe is the one that takes center stage and is danced at its rhythm in the paloteados, 'dances of the era' and jotas from Tudela or Tafalla. If you want to get off your feet and dance, get close to any charade chatty and full of good humor, who never miss their date. At any time of the party you can hear a typical jota from the Ribera singing at the top of your lungs. This is a land of livestock: running of the bulls, bullfights, loosening of heifers, heifers and bullfights delight fans. As you can see, the San Fermin festivities are the starting gun for countless holidays that fill the calendar with appointments.";
-                $p4 = "From the hostel we encourage you to enjoy the festivities of Navarra";
-                $p5 = 'Both the Provincial Council and the local municipalities and universities promote a large number of popular initiatives that coexist with others anchored in mountain villages and rural traditions and that are framed in ways of life and custom that are lost in the night of the times, such as pilgrimages or festivities of a religious nature. ';
-                $p6 = '';
-            default:
-            break;
-        }
-    }
-    
+
+$comentario1="Very cozy little hotel located in a small town somewhat remote but close enough to everything at the same time.
+The staff are charming, very friendly and attentive.
+The beds are very comfortable!!
+Every time we come to the area we repeat!";
+$comentario2="from";
+$comentario3="Where peace and quiet are felt. </b> The delicious dinner, with soft background music without the stridency of the television, a place to be at ease. And resting is an authentic experience for the senses. The smell of wood in the room. The views at sunrise. Definitely recommended.";
+$comenario4="Nice place to rest. </b> Nice building with spacious and bright rooms. Nice staff. Recommended for everyone!!!";
+
 ?>

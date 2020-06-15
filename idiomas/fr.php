@@ -260,66 +260,12 @@
     $error ['3'] = 'OU';
     $error ['4'] = 'CONTACTEZ-NOUS';
 
-                                /*ACTIVIDADES*/
-    if(isset($_SESSION['actividad'])){
+    $comentario1="Petit hôtel très confortable situé dans une petite ville un peu éloignée mais assez proche de tout en même temps.Le personnel est charmant, très sympathique et attentionné.Les lits sont très confortables !!Chaque fois que nous venons dans la région, nous répétons!";
+    $comentario2="depuis";
+    $comentario3="Là où la paix et la tranquillité se font sentir. </b> Le délicieux dîner, avec une douce musique de fond sans la stridence de la télévision, un endroit pour être à l'aise. Et le repos est une expérience authentique pour les sens. L'odeur de bois dans la chambre. Les vues au lever du soleil. Certainement recommandé.";
+    $comenario4="Bel endroit pour se reposer. </b> Bel immeuble avec des chambres spacieuses et lumineuses. Personnel sympa. Recommandé pour tout le monde !!! ";
 
-        $act = $_SESSION['actividad'];
-        
-        switch ($act) {
-            case 'Bardenas':
-                $imagen_fondo = 'background: url(images/monolito.jpg) center repeat;';
-                $actividad = 'Bardenas Reales';
-                $f1 = 'images/monolito.jpg';
-                $p1 = "L'une des visites les plus surprenantes que vous pouvez faire lors d'un voyage touristique à travers la Navarre est le parc naturel des Bardenas Reales, que vous pouvez trouver dans le sud-est de la municipalité près de la ville de Tudela. Il ne fait aucun doute que l'un des symboles de la Navarre est le paysage magnifique et verdoyant des Pyrénées navarraises, qui trouvent leur expression maximale dans des coins comme la forêt d'Irati ou la ville d'Ochagavia. En Navarre, il existe également des paysages plus typiques de l'Arizona avec des formations rocheuses spectaculaires telles que la tête de Castildenierra (photo ci-dessus).";
-                $p2 = "La caractéristique principale des Bardenas Reales sont les paysages semi-désertiques. Le résultat géologique est constitué d'argiles et de grès qui souffrent d'érosion depuis des millions d'années. Nous pouvons maintenant voir d'étranges formations rocheuses comme des plateaux ou la zone source caractéristique. Cependant, si vous visitez les Bardenas Reales en hiver ou au printemps, vous serez émerveillé par les paysages verdoyants des plaines, notamment à cause des plantations de céréales et de riz.";
-                $fotos['1'] = 'images/bardenas.jpg';
-                $fotos['2'] = 'images/bardenas_1.jpg';
-                $fotos['3'] = 'images/bardenas_2.jpg';
-                $fotos['4'] = 'images/bardenas_3.jpg';
-                $p3 = "Une partie de celui-ci est un paysage semi-désertique dans lequel de fortes pluies ont formé un sol en plâtre et de l'argile. De larges plaines sont entrecoupées de gorges, de falaises et de collines qui atteignent des hauteurs allant jusqu'à 600 mètres. La soi-disant Bardena Blanca regroupe les paysages les plus blancs de gypse et de végétation des steppes. Les forêts de pins d'Alep et les sols argileux sont situés dans la soi-disant Black Bardena. La richesse paysagère de cet environnement a également été protégée avec la figure de la réserve naturelle en trois endroits spécifiques. Il en est de même avec le Vedado de Eguaras, où vous pourrez admirer un petit cirque entouré de canyons de gypse et peuplé de genévriers, rebollos et romeros. Le soi-disant Rincón de Bú a des coupes où les hiboux royaux, les aigles royaux et les vautours égyptiens. Les cascades de La Negra sont une série de fissures pouvant atteindre 270 mètres de profondeur. Au total, les Bardenas Reales abritent 24 rapaces (faucon pèlerin, pygargue à tête blanche, vautour fauve ...) et une faune ornithologique des steppes comme la grande outarde ou l'alouette. Il existe également plus de 28 espèces différentes de mammifères dans le parc naturel, dont huit correspondent à de petits mammifères comme la musaraigne ou la souris maure. La truite, le barbillon, la tanche vivent dans les radeaux naturels et artificiels ... tandis que les tritons et les grenouilles vivent autour d'elle avec une variété de reptiles. Le lézard capé, le serpent d'échelle ou la tortue d'étang ne sont que quelques-uns d'entre eux.";
-                $p4 = "Depuis l'auberge, nous vous recommandons de suivre ces <a href='https://app.bardenasreales.es/descarga-de-rutas-gpxkml'> itinéraires </a>. Créé par l'Association des <a href='https://bardenasreales.es'> Bardenas Reales </a> pour les piétons, les cyclistes et les véhicules à moteur.";
-                $p5 = "Le parc Bardenas Reales peut être visité tous les jours de 8 h à une heure avant la tombée de la nuit. Les heures de visite du centre d'accueil des Bardenas Reales sont d'avril à août de 9 h à 14 h et de 16 h à 19 h. et de septembre à mars de 9h à 14h et de 15h à 17h (à Pâques, le centre est toujours ouvert de 9h à 19h)";
-                $p6 = "Les Bardenas Reales sont un paysage unique qui vous donne l'impression d'aller dans le vieil ouest. Une expérience qui ne peut que profiter au maximum de votre visite recommandée. <br>
-                                 Vous êtes à seulement 25 km de l'Hospedería pour rejoindre le cœur de ce magnifique parc naturel, qui est un must.";
-            break;
-            case 'Olite':
-                $background_image = 'background: url (images / Olite_4.jpg) répéter au centre;';
-                $actividad = 'Olite';
-                $f1 = 'images / Olite_1.jpg';
-                $p1 = "La silhouette élancée et harmonieuse de son château-palais domine Olite, une petite ville située au centre géographique de la Navarre, à 42 kilomètres au sud de Pampelune.
-                Siège royal au Moyen Âge, les murs épais et les tours crénelées du palais abritaient rois et princesses. Déclaré monument national en 1925, il constitue l'exemple le plus important du gothique civil de Navarre et l'un des plus notables d'Europe.
-                Une visite des rues étroites d'Olite vous permettra de vous promener à l'abri de maisons en pierre noble aux armoiries et aux avant-toits en bois grandioses; galeries médiévales et splendides églises, en plus de découvrir l'enceinte fortifiée romaine.
-                Le climat méditerranéen a également fait d'Olite la capitale du vin. Venez dans leurs caves et dégustez leurs vins. Laissez-vous guider et l'ensemble vous emmènera dans un temps de tournois, rois et princesses, magiciens et ménestrels, fauconniers et archers, qui reviennent dans la ville chaque août pour célébrer les festivités médiévales. ";
-                $p2 = "Olite est situé au cœur de la Navarre, à 40 km de Pampelune, dans une zone où le relief accidenté de la Sierra de la Navarra Media cède la place aux terres plates de La Ribera.
-                Érigée sur un petit promontoire (388 m), son terminus est traversé par la rivière Cidacos, qui a été encapsulée dans son canal actuel, laissant cinq niveaux de terrasses fluviales qui composent un relief de pentes en pente douce sur la rive droite. Vers l'est, la Sierra de Ujué s'élève (932 m.).
-                Son climat méditerranéen continental agréable, avec des étés chauds et secs, des hivers peu froids et peu pluvieux (500 l / m²), et son ciel dégagé, alliés à la fertilité de ses terres, ont fait d'Olite un lieu habité depuis la Préhistoire, ayant lieu une intense romanisation et plus tard étant choisi par les monarques navarrais comme siège royal. ";
-                $fotos ['1'] = 'images / Olite_1.jpg';
-                $fotos ['2'] = 'images / Olite_2.jpg';
-                $fotos ['3'] = 'images / Olite_3.jpg';
-                $fotos ['4'] = 'images / Olite_4.jpg';
-                $p3 = '';
-                $p4 = "Si vous êtes intéressé à visiter cette cité médiévale, ne manquez pas les pages de <a href='https://guiailustradadenavarra.com/castillo-olite-navarra/'> le guide illustré de la navarra </ a > ou <a href="https://www.turismo.navarra.es/esp/organice-viaje/recurso/Localidades/2466/Olite.htm"> turismo de navarra </a> ";
-                $p5 = '';
-                $p6 = '';
-            break;
-            case 'fiestas':
-                $background_image = 'background: url (images / sanfermin1.jpg) répéter au centre;';
-                $actividad = 'Fiestas navarras';
-                $f1 = 'images / pañuelo.jpg';
-                $p1 = "On dit que la fête où il va se fait des amis et laisse des souvenirs durables. Vous pouvez aussi en faire l'expérience en participant avec nous aux Sanfermines animées de Pampelune ou aux soirées les plus simples et les plus attachantes du dernier coin de notre géographie . ";
-                $p2 = "Dire Pampelune signifie festivités de San Fermín. Comment allez-vous manquer les meilleurs festivals du monde? 9 jours avec ses 24 heures pleines de festivals, fanfares, peñas, concerts, danses typiques, corridas, sports ruraux et bien plus , beaucoup d'ambiance dans la rue. Commencez la journée avec les cibles, continuez à regarder le taureau courir. A midi, tournez avec les grosses têtes ou pour profiter des spectacles programmés, puis de la nourriture typique et l'après-midi, des taureaux ou plongez dans les réjouissances des rues. Ne partez pas sans feux d'artifice et concerts nocturnes. Vivre les Sanfermines, c'est faire un cours accéléré de culture populaire en Navarre, mais aussi passer un bon moment. ";
-                $fotos['1'] = 'images / gigante.jpg';
-                $fotos['2'] = 'images / fiestas2.jpg';
-                $fotos['3'] = 'images / ftudela.jpg';
-                $fotos['4'] = 'images / gigante2.jpg';
-                $p3 = "Dans le sud, la cornemuse est celle qui occupe le devant de la scène et se danse à son rythme dans les paloteados, 'danses de l'époque' et jotas de Tudela ou Tafalla. Si vous voulez vous lever et danser , approchez-vous de n`importe quelle charade bavarde et pleine de bonne humeur, qui ne manque jamais sa date. À tout moment de la fête, vous pouvez entendre un jota typique de la Ribera chanter au sommet de vos poumons. C´est une terre d´élevage: la course à pied des taureaux, des corridas, du relâchement des génisses, des génisses et des corridas ravissent les fans. Comme vous pouvez le voir, les festivités de San Fermin sont le point de départ de nombreuses vacances qui remplissent le calendrier de rendez-vous. ";
-                $p4 = "De l`auberge, nous vous encourageons à profiter des festivités de Navarre";
-                $p5 = "Tant le Conseil provincial que les municipalités et les universités locales promeuvent un grand nombre d`initiatives populaires qui coexistent avec d`autres ancrées dans les villages de montagne et les traditions rurales et qui s`inscrivent dans des modes de vie et des coutumes qui se perdent dans la nuit du des pèlerinages ou des fêtes de nature religieuse.";
-                $p6 = '';
-            default:
-            break;
-        }
-    }
+
 
 ?>
 

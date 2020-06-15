@@ -1,12 +1,20 @@
 <?php 
+    if(isset($_GET['id'])){
+        $id = $_GET['id'];
+    }else{
+        header("Location:error.php");
+    }
+
     require 'conexion.php';
     include 'idiomas/language.php';
     include 'header.php';   
 
-    $id = $_GET['id'];
+   
     $sql = "SELECT * FROM posts WHERE ID = $id";
     $resultado = mysqli_query($con,$sql);
     $row = mysqli_fetch_assoc($resultado);
+
+
 
     $sql2 = "SELECT COUNT(POST_ID) FROM comentarios_posts WHERE POST_ID = $id AND apto = 'si'";
     $resultado2 = mysqli_query($con,$sql2);
@@ -61,12 +69,10 @@
                                 <a href="#" rel="tag"><?php echo $row['etiqueta3'];?></a>
                             </div>
                             <div class="share">
-                                <span><i class="fa fa-share-alt"></i> SHARE</span>
+                                <span><i class="fa fa-share-alt"></i> COMPARTIR </span>
                                 <div class="social_media">
-                                    <a class="facebook" href="#" data-toggle="tooltip" data-original-title="Facebook"><i class="fa fa-facebook"></i></a>
-                                    <a class="twitter" href="#" data-toggle="tooltip" data-original-title="Twitter"><i class="fa fa-twitter"></i></a>
-                                    <a class="googleplus" href="#" data-toggle="tooltip" data-original-title="Google Plus"><i class="fa fa-google-plus"></i></a>
-                                    <a class="pinterest" href="#" data-toggle="tooltip" data-original-title="Pinterest"><i class="fa fa-pinterest"></i></a>
+                                    <a class="facebook" href="https://www.facebook.com/hospederiadealesves/" data-toggle="tooltip" data-original-title="Facebook"><i class="fa fa-facebook"></i></a>
+                                    <a class="pinterest" href="https://www.pinterest.es/hotelalesves/" data-toggle="tooltip" data-original-title="Pinterest"><i class="fa fa-pinterest"></i></a>
                                 </div>
                             </div>
                         </div>

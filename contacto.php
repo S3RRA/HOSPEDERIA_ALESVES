@@ -22,11 +22,11 @@
                 <div class="row">
                     
                     <div class="col-md-8">
-                        <?php if(isset($_GET['mail'])) { ?>
+                <?php if(isset($_GET['mail'])) { ?>
                         <div class="main_title  a_left">
-                            <h2><?php echo $form_mail;?></h2>
+                            <h2><?php echo $form_mail['1'];?></h2>
                         </div>
-                        <?php }else{ ?>
+                <?php }else{ ?>
                         <div class="main_title  a_left">
                             <h2><?php echo $contact_us_MAY;?></h2>
                         </div>
